@@ -32,6 +32,9 @@ export const site = {
   heroImage: heroAsset.url,
 } as const;
 
+// Only the owner-supplied carousel image belongs here; display photography is separate.
+export const heroSlides = [{ src: site.heroImage, alt: "Owner-supplied One Point Solution security installation banner" }];
+
 export const offices = [
   { city: "Lahore", address: "Office No. 204, 2nd Floor, Corporate Plaza, Gulberg III, Lahore, Pakistan." },
   { city: "Islamabad", address: "Office No. 307, 3rd Floor, Business Centre, Blue Area, Islamabad, Pakistan." },
@@ -120,6 +123,10 @@ export const clients = [
   { name: "Syed Brother Builders" },
   { name: "Coca-Cola, Raiwind Road" },
 ] as const;
+
+export const suppliedLogos = [...brands, ...clients].flatMap((item) =>
+  "image" in item ? [{ name: item.name, image: item.image }] : [],
+);
 
 export const articles = [
   {
