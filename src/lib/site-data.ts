@@ -40,18 +40,20 @@ export const offices = [
 
 export type Service = {
   slug: string;
+  path: "/services/electric-fencing" | "/services/cctv-cameras" | "/services/gate-automation" | "/services/fire-alarm-systems";
   title: string;
   short: string;
   intro: string;
   description: string;
-  benefits: string[];
-  applications: string[];
+  benefits: readonly string[];
+  applications: readonly string[];
   icon: LucideIcon;
 };
 
-export const services: Service[] = [
+export const services = [
   {
     slug: "electric-fencing",
+    path: "/services/electric-fencing",
     title: "Electric Fencing",
     short: "A visible perimeter security layer for homes, businesses and industrial facilities.",
     intro: "Professionally planned electric fencing for stronger perimeter control.",
@@ -62,6 +64,7 @@ export const services: Service[] = [
   },
   {
     slug: "cctv-cameras",
+    path: "/services/cctv-cameras",
     title: "CCTV Cameras",
     short: "Thoughtful camera coverage for entrances, boundaries and important activity areas.",
     intro: "CCTV layouts shaped around visibility, access routes and property use.",
@@ -72,6 +75,7 @@ export const services: Service[] = [
   },
   {
     slug: "gate-automation",
+    path: "/services/gate-automation",
     title: "Gate Automation",
     short: "Convenient controlled access for suitable sliding and swing gate arrangements.",
     intro: "Automatic gate solutions planned for practical access and everyday reliability.",
@@ -82,6 +86,7 @@ export const services: Service[] = [
   },
   {
     slug: "fire-alarm-systems",
+    path: "/services/fire-alarm-systems",
     title: "Fire Alarm Systems",
     short: "Alarm planning that supports early warning across occupied commercial and industrial spaces.",
     intro: "Fire alarm systems considered around the layout and use of your premises.",
@@ -90,7 +95,7 @@ export const services: Service[] = [
     applications: ["Commercial buildings", "Offices", "Warehouses", "Industrial facilities"],
     icon: BellRing,
   },
-];
+] as const satisfies readonly Service[];
 
 export const industries = [
   { title: "Residential Security", copy: "Layered protection designed around family homes, boundary walls, entrances and everyday access.", icon: House },
@@ -119,24 +124,28 @@ export const clients = [
 export const articles = [
   {
     slug: "electric-fencing-for-homes-in-pakistan",
+    path: "/blog/electric-fencing-for-homes-in-pakistan",
     title: "Electric Fencing for Homes in Pakistan: Benefits, Safety and Installation",
     excerpt: "What homeowners should consider when adding electric fencing to a wider residential security plan.",
     service: "Electric Fencing",
   },
   {
     slug: "choosing-the-right-cctv-camera-system",
+    path: "/blog/choosing-the-right-cctv-camera-system",
     title: "How to Choose the Right CCTV Camera System for Your Property",
     excerpt: "A practical look at coverage, camera placement, image needs and everyday monitoring.",
     service: "CCTV Cameras",
   },
   {
     slug: "gate-automation-installation-considerations",
+    path: "/blog/gate-automation-installation-considerations",
     title: "Gate Automation: What to Consider Before Installing an Automatic Gate",
     excerpt: "Gate type, available movement, traffic patterns and controls all shape a suitable installation.",
     service: "Gate Automation",
   },
   {
     slug: "fire-alarm-systems-for-commercial-buildings",
+    path: "/blog/fire-alarm-systems-for-commercial-buildings",
     title: "Fire Alarm Systems for Commercial Buildings: A Practical Guide",
     excerpt: "Key questions for businesses preparing to discuss fire detection and alarm coverage.",
     service: "Fire Alarm Systems",

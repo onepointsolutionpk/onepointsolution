@@ -28,7 +28,7 @@ export function SiteHeader() {
               </Link>
               <div className="invisible absolute left-1/2 top-full w-64 -translate-x-1/2 border border-border bg-background p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 {services.map((service) => (
-                  <Link key={service.slug} to={`/services/${service.slug}`} className="block px-4 py-3 text-sm font-medium hover:bg-accent hover:text-primary">
+                  <Link key={service.slug} to={service.path} className="block px-4 py-3 text-sm font-medium hover:bg-accent hover:text-primary">
                     {service.title}
                   </Link>
                 ))}
@@ -54,7 +54,7 @@ export function SiteHeader() {
             {navItems.map((item) => (
               <div key={item.to} className="border-b border-border">
                 <Link to={item.to} onClick={() => setOpen(false)} className="block py-4 text-lg font-bold">{item.label}</Link>
-                {item.to === "/services" && <div className="pb-3 pl-4">{services.map((service) => <Link key={service.slug} to={`/services/${service.slug}`} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground">{service.title}</Link>)}</div>}
+                {item.to === "/services" && <div className="pb-3 pl-4">{services.map((service) => <Link key={service.slug} to={service.path} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted-foreground">{service.title}</Link>)}</div>}
               </div>
             ))}
             <a href={site.phoneHref} className="mt-6 flex min-h-12 items-center gap-3 font-bold"><Phone className="size-5 text-primary" />{site.phoneDisplay}</a>
