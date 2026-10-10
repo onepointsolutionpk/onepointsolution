@@ -12,3 +12,5 @@
 - Keep company facts, offices, services, editorial summaries, and media mappings centralized in `src/lib/site-data.ts` so every public route stays consistent.
 - Use reusable shared site chrome and content components while keeping each route's SEO metadata and page composition explicit.
 - Quotation requests remain browser-only WhatsApp message preparation; do not add persistence or imply delivery unless the owner changes the workflow.
+- Source homepage carousel slides and supplied-logo lists from centralized media mappings; show carousel controls only when multiple genuine slides exist to avoid fake or duplicated content.
+- Use one shared, content-sized navigation with explicit submenu state across breakpoints; document dismissal and focus-leave handling keep click, keyboard, and touch behaviour consistent.

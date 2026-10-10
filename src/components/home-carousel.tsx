@@ -1,0 +1,34 @@
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { heroSlides } from "@/lib/site-data";
+
+export function HomeCarousel() {
+  const [viewportRef, carousel] = useEmblaCarousel({ loop: heroSlides.length > 1 });
+  const [selected, setSelected] = useState(0);
+  const updateSelected = useCallback(() => setSelected(carousel?.selectedScrollSnap() ?? 0), [carousel]);
+  useEffect(() => {
+    if (!carousel) return;
+    updateSelected();
+    carousel.on("select", updateSelected);
+    return () => { carousel.off("select", updateSelected); };
+  }, [carousel, updateSelected]);
+
+  return <section aria-label="Security installation images" aria-roledescription="carousel" className="border-b border-border bg-surface">
+    <div className="relative mx-auto max-w-[1180px]">
+      <div ref={viewportRef} className="overflow-hidden">
+        <div className="flex touch-pan-y">
+          {heroSlides.map((image, index) => <div key={image.src} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${heroSlides.length}`} className="h-[240px] min-w-0 flex-[0_0_100%] min-[390px]:h-[270px] sm:h-[360px] lg:h-[420px]">
+            <img src={image.src} alt={image.alt} width="1920" height="1440" fetchPriority={index === 0 ? "high" : "auto"} className="h-full w-full object-contain object-center" />
+          </div>)}
+        </div>
+      </div>
+      {heroSlides.length > 1 && <>
+        <Button variant="outline" size="icon" aria-label="Previous image" className="absolute left-3 top-1/2 -translate-y-1/2 rounded-sm" onClick={() => carousel?.scrollPrev()}><ChevronLeft /></Button>
+        <Button variant="outline" size="icon" aria-label="Next image" className="absolute right-3 top-1/2 -translate-y-1/2 rounded-sm" onClick={() => carousel?.scrollNext()}><ChevronRight /></Button>
+        <div className="absolute inset-x-0 bottom-2 flex justify-center gap-1">{heroSlides.map((image, index) => <Button key={image.src} variant="ghost" size="icon" aria-label={`Show image ${index + 1}`} aria-current={selected === index} className="size-6 hover:bg-transparent" onClick={() => carousel?.scrollTo(index)}><span className={`size-1.5 rounded-full ${selected === index ? "bg-primary" : "bg-muted-foreground"}`} /></Button>)}</div>
+      </>}
+    </div>
+  </section>;
+}
