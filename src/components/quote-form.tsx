@@ -20,4 +20,4 @@ export function QuoteForm() {
   </form>;
 }
 
-function FormField({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) { return <div><Label>{label}<span className="text-primary"> *</span></Label>{children}{error && <p role="alert" className="mt-1 text-xs text-destructive">{error}</p>}</div>; }
+function FormField({ label, error, children }: { label: string; error: string | undefined; children: React.ReactNode }) { return <div><Label>{label}<span className="text-primary"> *</span></Label>{children}{error && <p role="alert" className="mt-1 text-xs text-destructive">{error}</p>}</div>; }
