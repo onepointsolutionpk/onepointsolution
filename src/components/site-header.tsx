@@ -186,14 +186,6 @@ export function SiteHeader() {
             )}
           </div>
         ))}
-
-        <a
-          href={site.phoneHref}
-          className="flex min-h-10 items-center gap-2 border-t border-border text-sm font-semibold lg:hidden"
-        >
-          <Phone className="size-4 text-primary" />
-          {site.phoneDisplay}
-        </a>
       </nav>
     </header>
   );
