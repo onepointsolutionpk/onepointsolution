@@ -16,10 +16,12 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogChoosingTheRightCctvCameraSystemRouteImport } from './routes/blog.choosing-the-right-cctv-camera-system'
 import { Route as BlogElectricFencingForHomesInPakistanRouteImport } from './routes/blog.electric-fencing-for-homes-in-pakistan'
 import { Route as BlogFireAlarmSystemsForCommercialBuildingsRouteImport } from './routes/blog.fire-alarm-systems-for-commercial-buildings'
 import { Route as BlogGateAutomationInstallationConsiderationsRouteImport } from './routes/blog.gate-automation-installation-considerations'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesCctvCamerasRouteImport } from './routes/services.cctv-cameras'
 import { Route as ServicesElectricFencingRouteImport } from './routes/services.electric-fencing'
 import { Route as ServicesFireAlarmSystemsRouteImport } from './routes/services.fire-alarm-systems'
@@ -60,6 +62,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
 const BlogChoosingTheRightCctvCameraSystemRoute =
   BlogChoosingTheRightCctvCameraSystemRouteImport.update({
     id: '/choosing-the-right-cctv-camera-system',
@@ -84,6 +91,11 @@ const BlogGateAutomationInstallationConsiderationsRoute =
     path: '/gate-automation-installation-considerations',
     getParentRoute: () => BlogRoute,
   } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const ServicesCctvCamerasRoute = ServicesCctvCamerasRouteImport.update({
   id: '/cctv-cameras',
   path: '/cctv-cameras',
@@ -122,15 +134,15 @@ export interface FileRoutesByFullPath {
   '/services/electric-fencing': typeof ServicesElectricFencingRoute
   '/services/fire-alarm-systems': typeof ServicesFireAlarmSystemsRoute
   '/services/gate-automation': typeof ServicesGateAutomationRoute
+  '/blog/': typeof BlogIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRouteWithChildren
   '/blog/choosing-the-right-cctv-camera-system': typeof BlogChoosingTheRightCctvCameraSystemRoute
   '/blog/electric-fencing-for-homes-in-pakistan': typeof BlogElectricFencingForHomesInPakistanRoute
   '/blog/fire-alarm-systems-for-commercial-buildings': typeof BlogFireAlarmSystemsForCommercialBuildingsRoute
@@ -139,6 +151,8 @@ export interface FileRoutesByTo {
   '/services/electric-fencing': typeof ServicesElectricFencingRoute
   '/services/fire-alarm-systems': typeof ServicesFireAlarmSystemsRoute
   '/services/gate-automation': typeof ServicesGateAutomationRoute
+  '/blog': typeof BlogIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -157,6 +171,8 @@ export interface FileRoutesById {
   '/services/electric-fencing': typeof ServicesElectricFencingRoute
   '/services/fire-alarm-systems': typeof ServicesFireAlarmSystemsRoute
   '/services/gate-automation': typeof ServicesGateAutomationRoute
+  '/blog/': typeof BlogIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -176,15 +192,15 @@ export interface FileRouteTypes {
     | '/services/electric-fencing'
     | '/services/fire-alarm-systems'
     | '/services/gate-automation'
+    | '/blog/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/privacy-policy'
     | '/projects'
-    | '/services'
     | '/blog/choosing-the-right-cctv-camera-system'
     | '/blog/electric-fencing-for-homes-in-pakistan'
     | '/blog/fire-alarm-systems-for-commercial-buildings'
@@ -193,6 +209,8 @@ export interface FileRouteTypes {
     | '/services/electric-fencing'
     | '/services/fire-alarm-systems'
     | '/services/gate-automation'
+    | '/blog'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -210,6 +228,8 @@ export interface FileRouteTypes {
     | '/services/electric-fencing'
     | '/services/fire-alarm-systems'
     | '/services/gate-automation'
+    | '/blog/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -273,6 +293,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/choosing-the-right-cctv-camera-system': {
       id: '/blog/choosing-the-right-cctv-camera-system'
       path: '/choosing-the-right-cctv-camera-system'
@@ -300,6 +327,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/gate-automation-installation-considerations'
       preLoaderRoute: typeof BlogGateAutomationInstallationConsiderationsRouteImport
       parentRoute: typeof BlogRoute
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/cctv-cameras': {
       id: '/services/cctv-cameras'
@@ -337,6 +371,7 @@ interface BlogRouteChildren {
   BlogElectricFencingForHomesInPakistanRoute: typeof BlogElectricFencingForHomesInPakistanRoute
   BlogFireAlarmSystemsForCommercialBuildingsRoute: typeof BlogFireAlarmSystemsForCommercialBuildingsRoute
   BlogGateAutomationInstallationConsiderationsRoute: typeof BlogGateAutomationInstallationConsiderationsRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
@@ -348,6 +383,7 @@ const BlogRouteChildren: BlogRouteChildren = {
     BlogFireAlarmSystemsForCommercialBuildingsRoute,
   BlogGateAutomationInstallationConsiderationsRoute:
     BlogGateAutomationInstallationConsiderationsRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
@@ -357,6 +393,7 @@ interface ServicesRouteChildren {
   ServicesElectricFencingRoute: typeof ServicesElectricFencingRoute
   ServicesFireAlarmSystemsRoute: typeof ServicesFireAlarmSystemsRoute
   ServicesGateAutomationRoute: typeof ServicesGateAutomationRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
@@ -364,6 +401,7 @@ const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesElectricFencingRoute: ServicesElectricFencingRoute,
   ServicesFireAlarmSystemsRoute: ServicesFireAlarmSystemsRoute,
   ServicesGateAutomationRoute: ServicesGateAutomationRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 
 const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
