@@ -10,33 +10,112 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServicesCctvCamerasRouteImport } from './routes/services.cctv-cameras'
+import { Route as ServicesElectricFencingRouteImport } from './routes/services.electric-fencing'
+import { Route as ServicesFireAlarmSystemsRouteImport } from './routes/services.fire-alarm-systems'
+import { Route as ServicesGateAutomationRouteImport } from './routes/services.gate-automation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCctvCamerasRoute = ServicesCctvCamerasRouteImport.update({
+  id: '/cctv-cameras',
+  path: '/cctv-cameras',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesElectricFencingRoute = ServicesElectricFencingRouteImport.update({
+  id: '/electric-fencing',
+  path: '/electric-fencing',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesFireAlarmSystemsRoute =
+  ServicesFireAlarmSystemsRouteImport.update({
+    id: '/fire-alarm-systems',
+    path: '/fire-alarm-systems',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesGateAutomationRoute = ServicesGateAutomationRouteImport.update({
+  id: '/gate-automation',
+  path: '/gate-automation',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/cctv-cameras': typeof ServicesCctvCamerasRoute
+  '/services/electric-fencing': typeof ServicesElectricFencingRoute
+  '/services/fire-alarm-systems': typeof ServicesFireAlarmSystemsRoute
+  '/services/gate-automation': typeof ServicesGateAutomationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/cctv-cameras': typeof ServicesCctvCamerasRoute
+  '/services/electric-fencing': typeof ServicesElectricFencingRoute
+  '/services/fire-alarm-systems': typeof ServicesFireAlarmSystemsRoute
+  '/services/gate-automation': typeof ServicesGateAutomationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/cctv-cameras': typeof ServicesCctvCamerasRoute
+  '/services/electric-fencing': typeof ServicesElectricFencingRoute
+  '/services/fire-alarm-systems': typeof ServicesFireAlarmSystemsRoute
+  '/services/gate-automation': typeof ServicesGateAutomationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/services'
+    | '/services/cctv-cameras'
+    | '/services/electric-fencing'
+    | '/services/fire-alarm-systems'
+    | '/services/gate-automation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/services'
+    | '/services/cctv-cameras'
+    | '/services/electric-fencing'
+    | '/services/fire-alarm-systems'
+    | '/services/gate-automation'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/services'
+    | '/services/cctv-cameras'
+    | '/services/electric-fencing'
+    | '/services/fire-alarm-systems'
+    | '/services/gate-automation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +127,73 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/cctv-cameras': {
+      id: '/services/cctv-cameras'
+      path: '/cctv-cameras'
+      fullPath: '/services/cctv-cameras'
+      preLoaderRoute: typeof ServicesCctvCamerasRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/electric-fencing': {
+      id: '/services/electric-fencing'
+      path: '/electric-fencing'
+      fullPath: '/services/electric-fencing'
+      preLoaderRoute: typeof ServicesElectricFencingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/fire-alarm-systems': {
+      id: '/services/fire-alarm-systems'
+      path: '/fire-alarm-systems'
+      fullPath: '/services/fire-alarm-systems'
+      preLoaderRoute: typeof ServicesFireAlarmSystemsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/gate-automation': {
+      id: '/services/gate-automation'
+      path: '/gate-automation'
+      fullPath: '/services/gate-automation'
+      preLoaderRoute: typeof ServicesGateAutomationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesCctvCamerasRoute: typeof ServicesCctvCamerasRoute
+  ServicesElectricFencingRoute: typeof ServicesElectricFencingRoute
+  ServicesFireAlarmSystemsRoute: typeof ServicesFireAlarmSystemsRoute
+  ServicesGateAutomationRoute: typeof ServicesGateAutomationRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesCctvCamerasRoute: ServicesCctvCamerasRoute,
+  ServicesElectricFencingRoute: ServicesElectricFencingRoute,
+  ServicesFireAlarmSystemsRoute: ServicesFireAlarmSystemsRoute,
+  ServicesGateAutomationRoute: ServicesGateAutomationRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
