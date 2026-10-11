@@ -20,7 +20,7 @@
 
 @theme inline {
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Georama", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -81,7 +81,7 @@
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
+  --muted-foreground: oklch(0.46 0.012 255);
   --accent: oklch(0.94 0.031 250);
   --accent-foreground: oklch(0.33 0.12 255);
   --destructive: oklch(0.577 0.245 27.325);
@@ -160,6 +160,20 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: 0;
+  }
+
+  main p.text-sm {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+
+  .logo-heading::after {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2px;
+    margin-top: 0.625rem;
+    background: var(--primary);
   }
 
   a, button, input, select, textarea {
