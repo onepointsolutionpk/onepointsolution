@@ -124,7 +124,12 @@ export const clients = [
   { name: "Coca-Cola, Raiwind Road" },
 ] as const;
 
-export const suppliedLogos = [...brands, ...clients].flatMap((item) =>
+// Client relationships and media were explicitly supplied by the owner.
+// Never combine these with equipment manufacturers or invent missing logos.
+export const clientLogos = clients.flatMap((item) =>
+  "image" in item ? [{ name: item.name, image: item.image }] : [],
+);
+export const brandLogos = brands.flatMap((item) =>
   "image" in item ? [{ name: item.name, image: item.image }] : [],
 );
 
