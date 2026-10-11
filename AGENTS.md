@@ -15,3 +15,4 @@
 - Source homepage carousel slides and separate client/brand logo lists from centralized media mappings; keep manufacturer logos out of client sections and show controls only for genuinely scrollable media.
 - Use the shared Embla logo carousel with autoplay, manual navigation, pause controls, focus/hover pausing and reduced-motion handling so both logo sections behave consistently.
 - Use one shared, content-sized navigation with explicit submenu state across breakpoints; document dismissal and focus-leave handling keep click, keyboard, and touch behaviour consistent.
+- Animate company statistics once upon viewport entry, retaining final values for reduced motion and server rendering so claims remain readable without animation.
