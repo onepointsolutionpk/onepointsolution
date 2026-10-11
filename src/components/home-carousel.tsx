@@ -31,7 +31,7 @@ export function HomeCarousel() {
     <section
       aria-label="Security installation images"
       aria-roledescription="carousel"
-      className="w-full overflow-hidden border-b border-border bg-black"
+      className="relative isolate w-full overflow-hidden border-b border-border bg-ink"
     >
       <div ref={viewportRef} className="w-full overflow-hidden">
         <div className="flex touch-pan-y">
@@ -92,8 +92,8 @@ export function HomeCarousel() {
                 <span
                   className={`size-1.5 rounded-full ${
                     selected === index
-                      ? "bg-white"
-                      : "bg-white/60"
+                      ? "bg-primary-foreground"
+                      : "bg-primary-foreground/60"
                   }`}
                 />
               </Button>

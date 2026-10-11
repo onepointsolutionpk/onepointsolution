@@ -1,5 +1,5 @@
-# Homepage redesign
-- [ ] Inspect reference and genuine assets.
-- [ ] Compact header and accessible expandable Services menu.
-- [ ] Image-only controlled carousel, supplied-logo strip, About Us, refined remaining sections.
-- [ ] Verify responsive layouts, navigation, preserved quotations, and automatic production build.
+# Design refinement
+- [x] Analyze Durable Technologies typography, colors, layout and controls.
+- [x] Separate supplied client and equipment-brand logos into automatic, manually controlled sections.
+- [x] Refine shared styling without changing company details, services or quotation workflow.
+- [x] Verify mobile, tablet, desktop, navigation, logo motion, routes and tests.

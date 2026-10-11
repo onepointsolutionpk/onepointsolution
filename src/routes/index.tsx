@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { HomeCarousel } from "@/components/home-carousel";
+import { LogoCarousel } from "@/components/logo-carousel";
 
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { QuoteForm } from "@/components/quote-form";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { articles, industries, offices, services, site, stats, suppliedLogos } from "@/lib/site-data";
+import { articles, brandLogos, clientLogos, industries, offices, services, site, stats } from "@/lib/site-data";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -18,11 +19,8 @@ function HomePage() {
   return <>
     <HomeCarousel />
 
-    <section aria-label="Brands and clients" className="border-b border-border bg-background">
-      <div className="mx-auto grid max-w-[1180px] grid-cols-4 items-center gap-x-5 gap-y-4 px-5 py-5 sm:grid-cols-7 sm:gap-6 sm:px-7 sm:py-6">
-        {suppliedLogos.map((logo) => <div key={logo.name} className="flex h-10 min-w-0 items-center justify-center sm:h-12"><img src={logo.image} alt={`${logo.name} logo`} className="max-h-full max-w-full object-contain" /></div>)}
-      </div>
-    </section>
+    <LogoCarousel title="Our Clients" logos={clientLogos} />
+    <LogoCarousel title="Brands We Deal In" logos={brandLogos} tone="soft" />
 
     <section className="mx-auto max-w-[1180px] px-5 py-6 sm:px-7 sm:py-8">
       <h1 className="text-2xl font-bold sm:text-3xl">About Us</h1>
