@@ -41,7 +41,7 @@ export function HomeCarousel() {
               role="group"
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${heroSlides.length}`}
-              className="flex h-[240px] min-w-0 flex-[0_0_100%] items-center justify-center min-[390px]:h-[270px] sm:h-[360px] md:h-[400px] lg:h-[420px] xl:h-[440px]"
+              className="flex h-[280px] min-w-0 flex-[0_0_100%] items-center justify-center min-[390px]:h-[310px] sm:h-[390px] md:h-[440px] lg:h-[480px] xl:h-[500px]"
             >
               <img
                 src={image.src}
@@ -49,7 +49,7 @@ export function HomeCarousel() {
                 width="1920"
                 height="1440"
                 fetchPriority={index === 0 ? "high" : "auto"}
-                className="block h-full w-full object-cover object-center"
+                className="block h-full w-full object-contain object-center"
               />
             </div>
           ))}
@@ -62,7 +62,7 @@ export function HomeCarousel() {
             variant="brand"
             size="icon"
             aria-label="Previous image"
-            className="absolute left-[max(0.5rem,calc(50%_-_276px))] top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm "
+            className="absolute left-3 top-1/2 z-10 -translate-y-1/2 size-8 rounded-full p-0 sm:left-5"
             onClick={() => carousel?.scrollPrev()}
           >
             <ChevronLeft />
@@ -72,7 +72,7 @@ export function HomeCarousel() {
             variant="brand"
             size="icon"
             aria-label="Next image"
-            className="absolute right-[max(0.5rem,calc(50%_-_276px))] top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm "
+            className="absolute right-3 top-1/2 z-10 -translate-y-1/2 size-8 rounded-full p-0 sm:right-5"
             onClick={() => carousel?.scrollNext()}
           >
             <ChevronRight />
