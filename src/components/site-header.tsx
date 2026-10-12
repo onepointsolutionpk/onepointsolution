@@ -82,55 +82,17 @@ export function SiteHeader() {
           />
         </Link>
 
-        <div className="hidden items-center gap-3 lg:col-start-3 lg:flex">
-          <a
-            href={site.phoneHref}
-            aria-label={`Call ${site.phoneDisplay}`}
-            className="flex items-center gap-2 text-xs font-semibold"
-          >
-            <Phone className="size-4 text-primary" />
-            <span className="hidden xl:inline">{site.phoneDisplay}</span>
-          </a>
-
-          <Button
-            asChild
-            variant="brand"
-            size="sm"
-            className="h-9 rounded-sm"
-          >
-            <Link to="/contact" onClick={closeMenus}>
-              Request a Quote
-            </Link>
-          </Button>
-        </div>
-
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-11 w-11 lg:hidden"
-          aria-label={open ? "Close navigation" : "Open navigation"}
-          aria-expanded={open}
-          aria-controls="site-navigation"
-          onClick={() => {
-            setOpen((value) => !value);
-            setServicesOpen(false);
-          }}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </Button>
-      </div>
-
       <nav
         id="site-navigation"
         aria-label="Main navigation"
         className={`${
-          open ? "block" : "hidden"
-        } absolute inset-x-0 top-full border-b border-border bg-background px-5 py-2 lg:absolute lg:inset-x-auto lg:left-1/2 lg:top-0 lg:flex lg:h-[68px] lg:-translate-x-1/2 lg:items-center lg:justify-center lg:gap-7 lg:border-0 lg:p-0`}
+          open ? "block mobile-nav-open" : "hidden"
+        } absolute inset-x-0 top-full border-b border-border bg-background px-5 py-2 lg:static lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-5 lg:border-0 lg:p-0`}
       >
         {navItems.map((item) => (
           <div
             key={item.to}
-            className="relative"
+            className="relative nav-item"
             onBlur={(event) => {
               if (!event.currentTarget.contains(event.relatedTarget)) {
                 setServicesOpen(false);
@@ -187,6 +149,46 @@ export function SiteHeader() {
           </div>
         ))}
       </nav>
+
+        <div className="hidden items-center gap-3 lg:col-start-3 lg:flex">
+          <a
+            href={site.phoneHref}
+            aria-label={`Call ${site.phoneDisplay}`}
+            className="flex items-center gap-2 text-xs font-semibold"
+          >
+            <Phone className="size-4 text-primary" />
+            <span className="hidden xl:inline">{site.phoneDisplay}</span>
+          </a>
+
+          <Button
+            asChild
+            variant="brand"
+            size="sm"
+            className="h-9 rounded-sm"
+          >
+            <Link to="/contact" onClick={closeMenus}>
+              Request a Quote
+            </Link>
+          </Button>
+        </div>
+
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-11 w-11 lg:hidden"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="site-navigation"
+          onClick={() => {
+            setOpen((value) => !value);
+            setServicesOpen(false);
+          }}
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </Button>
+      </div>
+
+
     </header>
   );
 }
