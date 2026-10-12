@@ -4,7 +4,6 @@ import { CompanyStats } from "@/components/company-stats";
 import { HomeCarousel } from "@/components/home-carousel";
 import { LogoCarousel } from "@/components/logo-carousel";
 
-import { MediaPlaceholder } from "@/components/media-placeholder";
 import { QuoteForm } from "@/components/quote-form";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ import { articles, brandLogos, clientLogos, industries, offices, services, site 
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ ...pageHead("One Point Solution | Security Systems in Pakistan", "Electric fencing, CCTV cameras, gate automation and fire alarm systems for properties across Pakistan.", "/"), scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: site.name, url: site.domain, telephone: "+923265284800", foundingDate: "2015", sameAs: [site.facebook], address: offices.map((office) => ({ "@type": "PostalAddress", addressLocality: office.city, streetAddress: office.address, addressCountry: "PK" })) }) }] }),
+  head: () => ({ ...pageHead("One Point Solution | Security Systems in Pakistan", "Electric fencing, CCTV cameras, gate automation and fire alarm systems for properties across Pakistan.", "/", "website", site.heroImage), scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: site.name, url: site.domain, telephone: "+923265284800", foundingDate: "2015", sameAs: [site.facebook], address: offices.map((office) => ({ "@type": "PostalAddress", addressLocality: office.city, streetAddress: office.address, addressCountry: "PK" })) }) }] }),
   component: HomePage,
 });
 
@@ -38,7 +37,7 @@ function HomePage() {
     <section className="border-t border-border bg-background"><div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7 lg:py-16"><h2 className="text-center text-3xl font-extrabold uppercase sm:text-4xl">Security Solutions</h2><div className="mt-10 grid gap-12 md:grid-cols-3">{industries.map((industry) => <div key={industry.title} className="text-center"><industry.icon strokeWidth={1.3} className="mx-auto size-24 text-primary sm:size-28" /><h3 className="mt-6 text-xl font-extrabold uppercase">{industry.title}</h3><p className="mx-auto mt-4 max-w-sm text-lg leading-8 text-muted-foreground">{industry.copy}</p></div>)}</div></div></section>
 
 
-    <section className="mx-auto max-w-[1180px] px-5 py-10 sm:px-7 lg:py-14"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><SectionHeading eyebrow="Projects & installations" title="Our installations" /><Button asChild variant="outline"><Link to="/projects">View projects <ArrowRight /></Link></Button></div><div className="mt-7 grid gap-5 md:grid-cols-[1.3fr_.7fr]"><img src={site.displayImage} alt="Completed perimeter security installation" className="aspect-[4/3] h-full w-full object-contain" width="1920" height="1440" /><MediaPlaceholder label="More installations" /></div></section>
+
 
     <section className="bg-brand-soft"><div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7 lg:py-16"><h2 className="text-center text-3xl font-extrabold uppercase sm:text-4xl">Blogs</h2><div className="mt-9 grid gap-x-8 gap-y-12 md:grid-cols-2">{articles.map((article) => <article key={article.slug}><div aria-hidden="true" className="aspect-[16/9] rounded-md border border-border bg-background" /><p className="mt-5 text-sm font-medium text-muted-foreground">{article.service}</p><h3 className="mt-3 text-2xl font-semibold leading-snug"><Link to={article.path}>{article.title}</Link></h3><p className="mt-4 text-base leading-7 text-muted-foreground">{article.excerpt}</p><Link to={article.path} className="mt-5 inline-flex items-center gap-2 text-lg font-bold text-primary">Read More <ArrowRight className="size-5" /></Link></article>)}</div></div></section>
 
