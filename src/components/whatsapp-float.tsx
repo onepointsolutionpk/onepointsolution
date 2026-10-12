@@ -13,8 +13,8 @@ export function WhatsAppFloat() {
       <img
         src={whatsappIcon}
         alt="WhatsApp"
-        width={56}
-        height={56}
+        width={60}
+        height={60}
         className="size-full object-contain"
       />
     </a>
