@@ -1,6 +1,6 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -197,6 +197,15 @@
 
 @utility animate-fade-up {
   animation: fade-up 600ms ease-out both;
+}
+
+@media (max-width: 1023px) {
+  .mobile-nav-open { animation: fade-up 220ms ease-out both; }
+  .mobile-nav-open .nav-item { animation: fade-up 280ms ease-out both; }
+  .mobile-nav-open .nav-item:nth-child(2) { animation-delay: 35ms; }
+  .mobile-nav-open .nav-item:nth-child(3) { animation-delay: 70ms; }
+  .mobile-nav-open .nav-item:nth-child(4) { animation-delay: 105ms; }
+  .mobile-nav-open .nav-item:nth-child(5) { animation-delay: 140ms; }
 }
 
 @media (prefers-reduced-motion: reduce) {

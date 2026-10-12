@@ -9,16 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import logoAsset from "@/assets/one-point-solution-logo.png.asset.json";
-import displayAsset from "@/assets/installation-display.jpg.asset.json";
-import heroAsset from "@/assets/hero-security.webp.asset.json";
-import nemtekAsset from "@/assets/nemtek-logo.png.asset.json";
-import tongherAsset from "@/assets/tongher-logo.jpg.asset.json";
-import gatexpertAsset from "@/assets/gatexpert-logo.jpeg.asset.json";
-import centurionAsset from "@/assets/centurion-logo.png.asset.json";
-import bahriaAsset from "@/assets/bahria-town-logo.png.asset.json";
-import parkviewAsset from "@/assets/park-view-city-logo.jpg.asset.json";
-import dhaAsset from "@/assets/dha-lahore-logo.jpg.asset.json";
+import { media } from "@/lib/media";
 
 export const site = {
   name: "One Point Solution",
@@ -27,13 +18,16 @@ export const site = {
   phoneHref: "tel:+923265284800",
   whatsapp: "https://wa.me/923265284800",
   facebook: "https://www.facebook.com/profile.php?id=61567149481360",
-  logo: logoAsset.url,
-  displayImage: displayAsset.url,
-  heroImage: heroAsset.url,
+  logo: media["one-point-solution-logo.png"],
+  displayImage: media["installation-display.jpg"],
+  heroImage: media["hero-security.webp"],
 } as const;
 
 // Only the owner-supplied carousel image belongs here; display photography is separate.
-export const heroSlides = [{ src: site.heroImage, alt: "Owner-supplied One Point Solution security installation banner" }];
+export const heroSlides = [
+  { src: site.heroImage, alt: "Owner-supplied One Point Solution security installation banner" },
+  { src: media["electric-fence-banner.jpg"], alt: "Electric fencing above a residential gate and boundary wall" },
+];
 
 export const offices = [
   { city: "Lahore", address: "Office No. 204, 2nd Floor, Corporate Plaza, Gulberg III, Lahore, Pakistan." },
@@ -107,21 +101,21 @@ export const industries = [
 ] as const;
 
 export const brands = [
-  { name: "Nemtek", image: nemtekAsset.url, category: "Electric fencing" },
-  { name: "Tongher", image: tongherAsset.url, category: "Electric fencing" },
-  { name: "GateXpert", image: gatexpertAsset.url, category: "Gate automation" },
-  { name: "Centurion", image: centurionAsset.url, category: "Gate automation" },
-  { name: "Dahua", category: "CCTV" },
-  { name: "Hikvision", category: "CCTV" },
-  { name: "Pollo", category: "CCTV" },
+  { name: "Nemtek", image: media["nemtek-logo.png"], category: "Electric fencing" },
+  { name: "Tongher", image: media["tongher-logo.jpg"], category: "Electric fencing" },
+  { name: "GateXpert", image: media["gatexpert-logo.jpeg"], category: "Gate automation" },
+  { name: "Centurion", image: media["centurion-logo.png"], category: "Gate automation" },
+  { name: "Dahua", image: media["dahua-logo.png"], category: "CCTV" },
+  { name: "Hikvision", image: media["hikvision-logo.png"], category: "CCTV" },
+  { name: "Pollo", image: media["pollo-logo.png"], category: "CCTV" },
 ] as const;
 
 export const clients = [
-  { name: "Bahria Town", image: bahriaAsset.url },
-  { name: "Park View City Islamabad", image: parkviewAsset.url },
-  { name: "DHA Lahore", image: dhaAsset.url },
-  { name: "Syed Brother Builders" },
-  { name: "Coca-Cola, Raiwind Road" },
+  { name: "Bahria Town", image: media["bahria-town-logo.png"] },
+  { name: "Park View City Islamabad", image: media["park-view-city-logo.jpg"] },
+  { name: "DHA Lahore", image: media["dha-lahore-logo.jpg"] },
+  { name: "Syed Brother Builders", image: media["syed-brother-builders-logo.png"] },
+  { name: "Coca-Cola, Raiwind Road", image: media["coca-cola-logo.png"] },
 ] as const;
 
 // Client relationships and media were explicitly supplied by the owner.
@@ -175,7 +169,6 @@ export const navItems = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Projects", to: "/projects" },
   { label: "Blogs", to: "/blog" },
   { label: "Contact Us", to: "/contact" },
 ] as const;

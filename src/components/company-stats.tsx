@@ -29,7 +29,7 @@ export function CompanyStats() {
         const target = Number(stat.value.replace(/[^0-9]/g, ""));
         const count = Math.max(1, Math.round(target * progress)).toLocaleString("en-US");
         const value = stat.value === "24/7" ? `${Math.max(1, Math.round(24 * progress))}/7` : `${count}${stat.value.includes("+") ? "+" : ""}`;
-        return <div key={stat.label} className="text-center"><strong aria-label={stat.value} className="block font-display text-4xl font-extrabold text-primary sm:text-5xl">{value}</strong><span className="mt-3 block text-sm font-medium text-muted-foreground">{stat.label}</span></div>;
+        return <div key={stat.label} className="text-center"><strong aria-label={stat.value} className="block font-display text-3xl font-extrabold text-primary sm:text-4xl">{value}</strong><span className="mt-3 block text-sm font-medium text-muted-foreground">{stat.label}</span></div>;
       })}
     </div>
   </section>;

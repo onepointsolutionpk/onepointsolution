@@ -31,7 +31,7 @@ export function HomeCarousel() {
     <section
       aria-label="Security installation images"
       aria-roledescription="carousel"
-      className="relative isolate w-full overflow-hidden border-b border-border bg-ink"
+      className="relative isolate w-full overflow-hidden border-b border-border bg-surface"
     >
       <div ref={viewportRef} className="w-full overflow-hidden">
         <div className="flex touch-pan-y">
@@ -41,7 +41,7 @@ export function HomeCarousel() {
               role="group"
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${heroSlides.length}`}
-              className="flex h-[240px] min-w-0 flex-[0_0_100%] items-center justify-center min-[390px]:h-[270px] sm:h-[360px] md:h-[400px] lg:h-[460px] xl:h-[500px]"
+              className="flex h-[240px] min-w-0 flex-[0_0_100%] items-center justify-center min-[390px]:h-[270px] sm:h-[360px] md:h-[400px] lg:h-[420px] xl:h-[440px]"
             >
               <img
                 src={image.src}
@@ -59,20 +59,20 @@ export function HomeCarousel() {
       {heroSlides.length > 1 && (
         <>
           <Button
-            variant="outline"
+            variant="brand"
             size="icon"
             aria-label="Previous image"
-            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-sm sm:left-4"
+            className="absolute left-[max(0.5rem,calc(50%_-_276px))] top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm "
             onClick={() => carousel?.scrollPrev()}
           >
             <ChevronLeft />
           </Button>
 
           <Button
-            variant="outline"
+            variant="brand"
             size="icon"
             aria-label="Next image"
-            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-sm sm:right-4"
+            className="absolute right-[max(0.5rem,calc(50%_-_276px))] top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm "
             onClick={() => carousel?.scrollNext()}
           >
             <ChevronRight />
