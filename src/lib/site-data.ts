@@ -160,7 +160,7 @@ export const articles = [
 
 export const stats = [
   { value: "7+", label: "Years Experience" },
-  { value: "1,000+", label: "Projects Completed" },
+  { value: "3296+", label: "Projects Completed" },
   { value: "24/7", label: "Availability" },
   { value: "3", label: "Physical Offices" },
 ] as const;
