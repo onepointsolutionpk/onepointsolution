@@ -62,7 +62,7 @@ export function HomeCarousel() {
             variant="brand"
             size="icon"
             aria-label="Previous image"
-            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm sm:left-4"
+            className="absolute left-[max(0.5rem,calc(50%_-_276px))] top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm "
             onClick={() => carousel?.scrollPrev()}
           >
             <ChevronLeft />
@@ -72,7 +72,7 @@ export function HomeCarousel() {
             variant="brand"
             size="icon"
             aria-label="Next image"
-            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm sm:right-4"
+            className="absolute right-[max(0.5rem,calc(50%_-_276px))] top-1/2 z-10 -translate-y-1/2 size-9 rounded-sm "
             onClick={() => carousel?.scrollNext()}
           >
             <ChevronRight />
