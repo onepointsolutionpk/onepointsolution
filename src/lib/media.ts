@@ -1,5 +1,5 @@
 // Original owner-supplied media served by stable HTTPS URLs on any deployment host.
-export const media = {
+export const media: Readonly<Record<string, string>> = {
   "bahria-town-logo.png": "https://onepointsolution.lovable.app/__l5e/assets-v1/87de2959-b911-4f97-b277-fc6fd964c503/bahria-town-logo.png",
   "centurion-logo.png": "https://onepointsolution.lovable.app/__l5e/assets-v1/32d9e1bd-71c7-4ce3-bf71-b8cd824d8575/centurion-logo.png",
   "coca-cola-logo.png": "https://onepointsolution.lovable.app/__l5e/assets-v1/714e6b15-bc08-40b8-8bcd-9b45b114e5f9/coca-cola-logo.png",
@@ -16,4 +16,4 @@ export const media = {
   "pollo-logo.png": "https://onepointsolution.lovable.app/__l5e/assets-v1/51abd777-e048-4b52-ac8a-387350c0d9d6/pollo-logo.png",
   "syed-brother-builders-logo.png": "https://onepointsolution.lovable.app/__l5e/assets-v1/d1e67cfe-0a18-4594-9079-28a0a79d0f74/syed-brother-builders-logo.png",
   "tongher-logo.jpg": "https://onepointsolution.lovable.app/__l5e/assets-v1/67049585-d67d-4f08-8cad-abea8e2ff037/tongher-logo.jpg"
-} as const;
+};
