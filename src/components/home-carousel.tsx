@@ -49,7 +49,7 @@ export function HomeCarousel() {
                 width="1920"
                 height="1440"
                 fetchPriority={index === 0 ? "high" : "auto"}
-                className="block h-full w-full object-contain object-center"
+                className="block h-full w-full object-cover object-center"
               />
             </div>
           ))}
