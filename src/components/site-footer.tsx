@@ -22,7 +22,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-[1180px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-10">
+      <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {["Lahore", "Islamabad", "Bahawalpur"].map((city) => {
             const office = offices.find((item) => item.city === city);
@@ -31,7 +31,7 @@ export function SiteFooter() {
 
             return (
               <section key={office.city} className="min-w-0">
-                <h2 className="text-2xl font-bold tracking-normal sm:text-2xl">
+                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
                   {office.city} Office
                 </h2>
 
@@ -65,7 +65,7 @@ export function SiteFooter() {
                     aria-label={`WhatsApp ${office.city} office at ${phone}`}
                     className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-75"
                   >
-                    <WhatsAppIcon className="size-5 shrink-0 text-primary-foreground" />
+                    <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
                     <span className="min-w-0">
                       <span className="block text-xs text-primary-foreground/65">
                         WhatsApp
@@ -87,4 +87,4 @@ export function SiteFooter() {
       </div>
     </footer>
   );
-}
+                }
