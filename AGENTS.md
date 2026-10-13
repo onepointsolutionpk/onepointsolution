@@ -18,3 +18,4 @@
 - Animate company statistics once upon viewport entry, retaining final values for reduced motion and server rendering so claims remain readable without animation.
 
 - Public pages consume centralized absolute HTTPS original-media URLs, while asset pointers remain upload records only; this keeps external-host deployments independent of same-origin asset routing.
+- Share service cards, project galleries and quotation sections across public pages; centralized service detail and project records keep presentation and editorial information consistent without inventing media.

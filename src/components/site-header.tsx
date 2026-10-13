@@ -1,6 +1,6 @@
 
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -66,7 +66,7 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="mx-auto grid h-[62px] max-w-[1180px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 lg:h-[68px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-7">
+      <div className="mx-auto grid h-[68px] max-w-[1180px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 lg:h-[78px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-7">
         <Link
           to="/"
           aria-label="One Point Solution home"
@@ -87,7 +87,7 @@ export function SiteHeader() {
         aria-label="Main navigation"
         className={`${
           open ? "block mobile-nav-open" : "hidden"
-        } absolute inset-x-0 top-full border-b border-border bg-background px-5 py-2 lg:static lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-5 lg:border-0 lg:p-0`}
+        } absolute inset-x-0 top-full max-h-[calc(100dvh-68px)] overflow-y-auto border-b border-border bg-background px-5 py-3 lg:static lg:flex lg:max-h-none lg:min-w-0 lg:items-center lg:justify-center lg:gap-5 lg:overflow-visible lg:border-0 lg:p-0`}
       >
         {navItems.map((item) => (
           <div
@@ -104,7 +104,7 @@ export function SiteHeader() {
                 <Button
                   ref={servicesTrigger}
                   variant="ghost"
-                  className="h-11 w-full justify-between rounded-none px-0 font-sans text-[15px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
+                  className="h-11 w-full justify-between rounded-none px-0 font-sans text-sm font-semibold hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
                   aria-expanded={servicesOpen}
                   aria-controls="services-submenu"
                   onClick={() => setServicesOpen((value) => !value)}
@@ -120,8 +120,9 @@ export function SiteHeader() {
                 {servicesOpen && (
                   <div
                     id="services-submenu"
-                    className="border-l border-border pl-4 lg:absolute lg:left-0 lg:top-full lg:w-56 lg:border lg:bg-background lg:p-2"
+                    className="border-l border-border pl-4 lg:absolute lg:left-0 lg:top-full lg:w-60 lg:rounded-md lg:border lg:border-t-2 lg:border-t-primary lg:bg-background lg:p-2"
                   >
+                    <Link to="/services" onClick={closeMenus} className="block border-b border-border py-2.5 text-sm font-bold text-primary lg:px-3">All Services <ArrowUpRight className="ml-2 inline size-4" /></Link>
                     {services.map((service) => (
                       <Link
                         key={service.slug}
@@ -139,7 +140,7 @@ export function SiteHeader() {
               <Link
                 to={item.to}
                 onClick={closeMenus}
-                className="flex min-h-11 items-center whitespace-nowrap font-sans text-[15px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
+                className="flex min-h-11 items-center whitespace-nowrap font-sans text-sm font-semibold transition-colors hover:text-primary"
                 activeProps={{ className: "text-primary" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
@@ -154,10 +155,10 @@ export function SiteHeader() {
           <a
             href={site.phoneHref}
             aria-label={`Call ${site.phoneDisplay}`}
-            className="flex items-center gap-2 text-xs font-semibold"
+            className="hidden items-center gap-2 text-xs font-semibold xl:flex"
           >
             <Phone className="size-4 text-primary" />
-            <span className="hidden xl:inline">{site.phoneDisplay}</span>
+            <span><span className="block text-[10px] font-medium text-muted-foreground">Call us · 24/7</span>{site.phoneDisplay}</span>
           </a>
 
           <Button
@@ -168,6 +169,7 @@ export function SiteHeader() {
           >
             <Link to="/contact" onClick={closeMenus}>
               Request a Quote
+              <ArrowUpRight />
             </Link>
           </Button>
         </div>
