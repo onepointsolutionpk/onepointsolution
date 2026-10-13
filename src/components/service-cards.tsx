@@ -1,15 +1,18 @@
+import electricFenceImage from "@/assets/IMG_20260808_170309_172.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { services, site } from "@/lib/site-data";
 import { media } from "@/lib/media";
 
 
+
 const images: Partial<Record<string, string>> = {
-  "electric-fencing": media["@/assets/IMG_20260808_170309_172.jpg"],
+  "electric-fencing": electricFenceImage,
   "cctv-cameras": media["installation-display.jpg"],
   "gate-automation": media["hero-security.webp"],
-  "fire-alarm-systems": media["installation-display.jpg"],
+  "fire-alarm-systems": media["electric-fence-banner.jpg"],
 };
+
 
 void media;
 
