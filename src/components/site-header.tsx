@@ -57,7 +57,7 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b-0 bg-background"
+      className="sticky top-0 z-50 bg-background"
     >
       <a
         href="#main-content"
@@ -66,7 +66,7 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="mx-auto mt-3 grid h-[58px] max-w-[1240px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-5 shadow-sm sm:mx-5 sm:px-6 lg:mx-auto lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6 lg:px-7 xl:px-9">
+      <div className="mx-4 mt-3 grid h-[58px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-4 shadow-sm sm:mx-6 sm:px-6 lg:mx-8 lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-6 xl:mx-auto xl:max-w-[1240px] xl:px-8">
         <Link
           to="/"
           aria-label="One Point Solution home"
@@ -82,79 +82,79 @@ export function SiteHeader() {
           />
         </Link>
 
-      <nav
-        id="site-navigation"
-        aria-label="Main navigation"
-        className={`${
-          open ? "block mobile-nav-open" : "hidden"
-        } absolute inset-x-0 top-full border-b border-border bg-background px-5 py-2 lg:static lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-4 lg:border-0 lg:p-0`}
-      >
-        {navItems.map((item) => (
-          <div
-            key={item.to}
-            className="relative nav-item"
-            onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget)) {
-                setServicesOpen(false);
-              }
-            }}
-          >
-            {item.to === "/services" ? (
-              <>
-                <Button
-                  ref={servicesTrigger}
-                  variant="ghost"
-                  className="h-11 w-full justify-between rounded-none px-0 font-sans text-[14px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
-                  aria-expanded={servicesOpen}
-                  aria-controls="services-submenu"
-                  onClick={() => setServicesOpen((value) => !value)}
-                >
-                  Services
-                  <ChevronDown
-                    className={`size-4 transition-transform ${
-                      servicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </Button>
-
-                {servicesOpen && (
-                  <div
-                    id="services-submenu"
-                    className="border-l border-border pl-4 lg:absolute lg:left-0 lg:top-full lg:w-56 lg:border lg:bg-background lg:p-2"
+        <nav
+          id="site-navigation"
+          aria-label="Main navigation"
+          className={`${
+            open ? "block mobile-nav-open" : "hidden"
+          } absolute inset-x-4 top-full mt-2 rounded-xl border border-border bg-background px-5 py-2 shadow-md sm:inset-x-6 lg:static lg:mt-0 lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-3 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none xl:gap-4`}
+        >
+          {navItems.map((item) => (
+            <div
+              key={item.to}
+              className="relative nav-item"
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setServicesOpen(false);
+                }
+              }}
+            >
+              {item.to === "/services" ? (
+                <>
+                  <Button
+                    ref={servicesTrigger}
+                    variant="ghost"
+                    className="h-11 w-full justify-between rounded-lg px-0 font-sans text-[14px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
+                    aria-expanded={servicesOpen}
+                    aria-controls="services-submenu"
+                    onClick={() => setServicesOpen((value) => !value)}
                   >
-                    {services.map((service) => (
-                      <Link
-                        key={service.slug}
-                        to={service.path}
-                        onClick={closeMenus}
-                        className="block py-2.5 font-sans text-sm font-medium hover:text-primary lg:px-3 lg:hover:bg-accent"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : (
-              <Link
-                to={item.to}
-                onClick={closeMenus}
-                className="flex min-h-11 items-center whitespace-nowrap font-sans text-[14px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
-                activeProps={{ className: "text-primary" }}
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                {item.label}
-              </Link>
-            )}
-          </div>
-        ))}
-      </nav>
+                    Services
+                    <ChevronDown
+                      className={`size-4 transition-transform ${
+                        servicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </Button>
+
+                  {servicesOpen && (
+                    <div
+                      id="services-submenu"
+                      className="border-l border-border pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:w-56 lg:rounded-xl lg:border lg:bg-background lg:p-2 lg:shadow-md"
+                    >
+                      {services.map((service) => (
+                        <Link
+                          key={service.slug}
+                          to={service.path}
+                          onClick={closeMenus}
+                          className="block py-2.5 font-sans text-sm font-medium hover:text-primary lg:rounded-md lg:px-3 lg:hover:bg-accent"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={item.to}
+                  onClick={closeMenus}
+                  className="flex min-h-11 items-center whitespace-nowrap rounded-lg font-sans text-[14px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
+                  activeProps={{ className: "text-primary" }}
+                  activeOptions={{ exact: item.to === "/" }}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+        </nav>
 
         <div className="hidden items-center gap-3 lg:col-start-3 lg:flex">
           <a
             href={site.phoneHref}
             aria-label={`Call ${site.phoneDisplay}`}
-            className="flex items-center gap-2 text-xs font-semibold"
+            className="flex items-center gap-2 whitespace-nowrap text-xs font-semibold"
           >
             <Phone className="size-4 text-primary" />
             <span className="hidden xl:inline">{site.phoneDisplay}</span>
@@ -164,7 +164,7 @@ export function SiteHeader() {
             asChild
             variant="brand"
             size="sm"
-            className="h-9 rounded-xl px-4 text-sm font-semibold"
+            className="h-9 whitespace-nowrap rounded-xl px-4 text-sm font-semibold"
           >
             <Link to="/contact" onClick={closeMenus}>
               Request a Quote
@@ -184,11 +184,9 @@ export function SiteHeader() {
             setServicesOpen(false);
           }}
         >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          {open ? <X className="size-[18px]" /> : <Menu className="size-[18px]" />}
         </Button>
       </div>
-
-
     </header>
   );
 }
