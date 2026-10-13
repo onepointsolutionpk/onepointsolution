@@ -5,7 +5,7 @@ import { media } from "@/lib/media";
 
 
 const images: Partial<Record<string, string>> = {
-  "electric-fencing": media["electric-fence-banner.jpg"],
+  "electric-fencing": media["@/assets/IMG_20260808_170309_172.jpg"],
   "cctv-cameras": media["installation-display.jpg"],
   "gate-automation": media["hero-security.webp"],
   "fire-alarm-systems": media["installation-display.jpg"],
