@@ -1,4 +1,3 @@
-
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -185,12 +184,21 @@ export function SiteHeader() {
           }}
         >
           {open ? (
-  <X className="size-5 text-white" />
-) : (
-  <Menu className="size-5 text-white" />
-)}
+            <X className="size-5 text-white" />
+          ) : (
+            <Menu className="size-5 text-white" />
+          )}
         </Button>
       </div>
+
+      {open && (
+        <button
+          type="button"
+          aria-label="Close navigation"
+          onClick={closeMenus}
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px] lg:hidden"
+        />
+      )}
     </header>
   );
-}
+      }
