@@ -65,7 +65,16 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="mx-4 mt-3 grid h-[58px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-4 shadow-sm sm:mx-6 sm:px-6 lg:mx-8 lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-6 xl:mx-auto xl:max-w-[1240px] xl:px-8">
+      {open && (
+        <button
+          type="button"
+          aria-label="Close navigation"
+          onClick={closeMenus}
+          className="fixed inset-0 z-40 cursor-default bg-black/40 backdrop-blur-[3px] lg:hidden"
+        />
+      )}
+
+      <div className="relative z-50 mx-4 mt-3 grid h-[58px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-4 shadow-sm sm:mx-6 sm:px-6 lg:mx-8 lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-6 xl:mx-auto xl:max-w-[1240px] xl:px-8">
         <Link
           to="/"
           aria-label="One Point Solution home"
@@ -86,7 +95,7 @@ export function SiteHeader() {
           aria-label="Main navigation"
           className={`${
             open ? "block mobile-nav-open" : "hidden"
-          } absolute inset-x-4 top-full mt-2 rounded-xl border border-border bg-background px-5 py-2 shadow-md sm:inset-x-6 lg:static lg:mt-0 lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-3 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none xl:gap-4`}
+          } absolute inset-x-0 top-full z-50 mt-2 rounded-xl border border-border bg-background px-5 py-2 shadow-md sm:inset-x-0 lg:static lg:mt-0 lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-3 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none xl:gap-4`}
         >
           {navItems.map((item) => (
             <div
@@ -190,15 +199,6 @@ export function SiteHeader() {
           )}
         </Button>
       </div>
-
-      {open && (
-        <button
-          type="button"
-          aria-label="Close navigation"
-          onClick={closeMenus}
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px] lg:hidden"
-        />
-      )}
     </header>
   );
-      }
+}
