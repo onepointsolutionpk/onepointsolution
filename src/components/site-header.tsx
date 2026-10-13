@@ -66,7 +66,7 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="mx-auto mt-3 grid h-[58px] max-w-[1320px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-5 shadow-sm sm:mx-5 sm:px-6 lg:mx-auto lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6 lg:px-7 xl:px-9">
+      <div className="mx-auto mt-3 grid h-[58px] max-w-[1240px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-5 shadow-sm sm:mx-5 sm:px-6 lg:mx-auto lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6 lg:px-7 xl:px-9">
         <Link
           to="/"
           aria-label="One Point Solution home"
