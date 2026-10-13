@@ -10,7 +10,7 @@ import { buildWhatsAppUrl, quoteSchema, type QuoteValues } from "@/lib/quote";
 export function QuoteForm() {
   const { register, handleSubmit, formState: { errors } } = useForm<QuoteValues>({ resolver: zodResolver(quoteSchema) });
   const submit = (values: QuoteValues) => { const popup = window.open(buildWhatsAppUrl(values), "_blank", "noopener,noreferrer"); if (!popup) window.location.href = buildWhatsAppUrl(values); };
-  const field = "mt-2 h-11 rounded-sm bg-background";
+  const field = "mt-2 h-12 rounded-sm bg-background";
   return <form onSubmit={handleSubmit(submit)} noValidate className="grid gap-5" aria-label="Quotation request form">
     <div className="grid gap-5 sm:grid-cols-2"><FormField label="Full Name" error={errors.fullName?.message}><Input {...register("fullName")} className={field} autoComplete="name" /></FormField><FormField label="Phone Number" error={errors.phone?.message}><Input {...register("phone")} className={field} inputMode="tel" autoComplete="tel" /></FormField></div>
     <div className="grid gap-5 sm:grid-cols-2"><FormField label="Required Service" error={errors.service?.message}><select {...register("service")} className="mt-2 h-12 w-full rounded-sm border border-input bg-background px-3 text-sm"><option value="">Select a service</option><option>Electric Fencing</option><option>CCTV Cameras</option><option>Gate Automation</option><option>Fire Alarm Systems</option></select></FormField><FormField label="Property Type" error={errors.propertyType?.message}><select {...register("propertyType")} className="mt-2 h-12 w-full rounded-sm border border-input bg-background px-3 text-sm"><option value="">Select property type</option><option>Residential</option><option>Commercial</option><option>Industrial</option></select></FormField></div>
@@ -20,4 +20,4 @@ export function QuoteForm() {
   </form>;
 }
 
-function FormField({ label, error, children }: { label: string; error: string | undefined; children: React.ReactNode }) { return <div><Label className="flex flex-col items-stretch gap-0 text-sm"><span>{label}<span className="text-primary"> *</span></span>{children}</Label>{error && <p role="alert" className="mt-1 text-xs text-destructive">{error}</p>}</div>; }
+function FormField({ label, error, children }: { label: string; error: string | undefined; children: React.ReactNode }) { return <div><Label>{label}<span className="text-primary"> *</span></Label>{children}{error && <p role="alert" className="mt-1 text-xs text-destructive">{error}</p>}</div>; }
