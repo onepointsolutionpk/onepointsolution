@@ -76,7 +76,7 @@ export function SiteHeader() {
           <img
             src={site.logo}
             alt="One Point Solution"
-            className="h-[44px] w-[92px] object-contain lg:h-[48px] lg:w-[100px]"
+            className="h-12 w-[110px] object-contain lg:h-14 lg:w-[125px]"
             width="116"
             height="58"
           />
