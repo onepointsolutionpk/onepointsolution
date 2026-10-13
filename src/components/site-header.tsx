@@ -175,7 +175,7 @@ export function SiteHeader() {
         <Button
           variant="ghost"
           size="icon"
-          className="h-10 w-10 rounded-xl border border-white/20 bg-black text-white hover:bg-gray-900 lg:hidden"
+          className="h-10 w-10 rounded-xl border border-primary/30 bg-primary text-white hover:bg-primary/90 lg:hidden"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
           aria-controls="site-navigation"
