@@ -41,7 +41,7 @@ export function HomeCarousel() {
               role="group"
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${heroSlides.length}`}
-              className="flex h-[280px] min-w-0 flex-[0_0_100%] items-center justify-center min-[390px]:h-[310px] sm:h-[390px] md:h-[440px] lg:h-[480px] xl:h-[500px]"
+              className="flex h-[360px] min-w-0 flex-[0_0_100%] items-center justify-center min-[390px]:h-[390px] sm:h-[480px] md:h-[540px] lg:h-[600px] xl:h-[640px]"
             >
               <img
                 src={image.src}
@@ -49,7 +49,7 @@ export function HomeCarousel() {
                 width="1920"
                 height="1440"
                 fetchPriority={index === 0 ? "high" : "auto"}
-                className="block h-full w-full object-contain object-center"
+                className="block h-full w-full object-cover object-center"
               />
             </div>
           ))}
