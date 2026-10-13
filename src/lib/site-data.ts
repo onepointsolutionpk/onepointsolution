@@ -45,7 +45,7 @@ export type Service = {
   benefits: readonly string[];
   applications: readonly string[];
   icon: LucideIcon;
-  image?: string;
+  image?: string | undefined;
 };
 
 export const services = [
