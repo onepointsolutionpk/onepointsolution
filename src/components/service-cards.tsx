@@ -1,6 +1,7 @@
 import electricFenceImage from "@/assets/IMG_20260808_170309_172.jpg";
 import cctvCamerasImage from "@/assets/diy-camera-vs-professional-installation.jpeg";
 import gateAutomationImage from "@/assets/1791916171446.jpg";
+import fireAlarmImage from "@/assets/fire-alarm-system-installation.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { services, site } from "@/lib/site-data";
@@ -12,7 +13,7 @@ const images: Partial<Record<string, string>> = {
   "electric-fencing": electricFenceImage,
   "cctv-cameras": cctvCamerasImage,
   "gate-automation": gateAutomationImage,
-  "fire-alarm-systems": media["electric-fence-banner.jpg"],
+  "fire-alarm-systems": fireAlarmImage,
 };
 
 
