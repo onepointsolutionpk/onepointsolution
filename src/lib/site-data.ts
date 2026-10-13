@@ -169,6 +169,7 @@ export const navItems = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
   { label: "Blogs", to: "/blog" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
