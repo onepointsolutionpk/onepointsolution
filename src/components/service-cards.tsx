@@ -1,4 +1,5 @@
 import electricFenceImage from "@/assets/IMG_20260808_170309_172.jpg";
+import cctvCamerasImage from "@/assets/diy-camera-vs-professional-installation.jpeg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { services, site } from "@/lib/site-data";
@@ -8,7 +9,7 @@ import { media } from "@/lib/media";
 
 const images: Partial<Record<string, string>> = {
   "electric-fencing": electricFenceImage,
-  "cctv-cameras": media["installation-display.jpg"],
+  "cctv-cameras": cctvCamerasImage,
   "gate-automation": media["hero-security.webp"],
   "fire-alarm-systems": media["electric-fence-banner.jpg"],
 };
