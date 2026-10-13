@@ -175,7 +175,7 @@ export function SiteHeader() {
         <Button
           variant="ghost"
           size="icon"
-          className="h-10 w-10 rounded-xl lg:hidden"
+          className="h-10 w-10 rounded-xl border border-white/20 bg-black text-white hover:bg-gray-900 lg:hidden"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
           aria-controls="site-navigation"
@@ -184,7 +184,11 @@ export function SiteHeader() {
             setServicesOpen(false);
           }}
         >
-          {open ? <X className="size-[18px]" /> : <Menu className="size-[18px]" />}
+          {open ? (
+  <X className="size-5 text-white" />
+) : (
+  <Menu className="size-5 text-white" />
+)}
         </Button>
       </div>
     </header>
