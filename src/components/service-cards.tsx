@@ -3,10 +3,14 @@ import { ArrowRight } from "lucide-react";
 import { services, site } from "@/lib/site-data";
 import { media } from "@/lib/media";
 
+
 const images: Partial<Record<string, string>> = {
-  "electric-fencing": site.displayImage,
-  "cctv-cameras": undefined,
+  "electric-fencing": media["electric-fence-banner.jpg"],
+  "cctv-cameras": media["installation-display.jpg"],
+  "gate-automation": media["hero-security.webp"],
+  "fire-alarm-systems": media["installation-display.jpg"],
 };
+
 void media;
 
 export function ServiceCards() {
