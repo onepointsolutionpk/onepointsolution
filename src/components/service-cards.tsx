@@ -14,8 +14,12 @@ export function ServiceCards() {
     const img = images[s.slug];
     return <Link key={s.slug} to={s.path} className="group flex flex-col overflow-hidden rounded-md border border-border bg-background shadow-sm transition hover:-translate-y-1 hover:border-primary hover:shadow-md">
       <div className="relative aspect-[4/3] bg-brand-soft">
-        {img ? <img src={img} alt={s.title} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><s.icon strokeWidth={1.3} className="size-20 text-primary" /></div>}
-        <span className="absolute bottom-0 left-4 translate-y-1/2 flex size-12 items-center justify-center rounded-sm bg-primary text-primary-foreground shadow"><s.icon className="size-6" /></span>
+        {img ? <img src={img} alt={s.title} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><span className="font-sans text-6xl font-black tracking-tight text-primary">
+  {String(services.findIndex((item) => item.slug === s.slug) + 1).padStart(2, "0")}
+</span></div>}
+        <span className="absolute bottom-0 left-4 flex size-12 translate-y-1/2 items-center justify-center rounded-2xl bg-primary font-sans text-sm font-extrabold tracking-wide text-primary-foreground shadow-md">
+  {String(services.findIndex((item) => item.slug === s.slug) + 1).padStart(2, "0")}
+</span>
       </div>
       <div className="flex flex-1 flex-col p-5 pt-9">
         <h3 className="text-lg font-extrabold uppercase">{s.title}</h3>
