@@ -57,7 +57,7 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-border bg-background"
+      className="sticky top-0 z-50 border-b-0 bg-background"
     >
       <a
         href="#main-content"
@@ -66,7 +66,7 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="mx-auto grid h-[62px] max-w-[1180px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 lg:h-[68px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-7">
+      <div className="mx-auto mt-3 grid h-[58px] max-w-[1320px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-5 shadow-sm sm:mx-5 sm:px-6 lg:mx-auto lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6 lg:px-7 xl:px-9">
         <Link
           to="/"
           aria-label="One Point Solution home"
@@ -76,7 +76,7 @@ export function SiteHeader() {
           <img
             src={site.logo}
             alt="One Point Solution"
-            className="h-[52px] w-[104px] object-contain lg:h-[58px] lg:w-[116px]"
+            className="h-[44px] w-[92px] object-contain lg:h-[48px] lg:w-[100px]"
             width="116"
             height="58"
           />
@@ -87,7 +87,7 @@ export function SiteHeader() {
         aria-label="Main navigation"
         className={`${
           open ? "block mobile-nav-open" : "hidden"
-        } absolute inset-x-0 top-full border-b border-border bg-background px-5 py-2 lg:static lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-5 lg:border-0 lg:p-0`}
+        } absolute inset-x-0 top-full border-b border-border bg-background px-5 py-2 lg:static lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-4 lg:border-0 lg:p-0`}
       >
         {navItems.map((item) => (
           <div
@@ -104,7 +104,7 @@ export function SiteHeader() {
                 <Button
                   ref={servicesTrigger}
                   variant="ghost"
-                  className="h-11 w-full justify-between rounded-none px-0 font-sans text-[15px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
+                  className="h-11 w-full justify-between rounded-none px-0 font-sans text-[14px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
                   aria-expanded={servicesOpen}
                   aria-controls="services-submenu"
                   onClick={() => setServicesOpen((value) => !value)}
@@ -139,7 +139,7 @@ export function SiteHeader() {
               <Link
                 to={item.to}
                 onClick={closeMenus}
-                className="flex min-h-11 items-center whitespace-nowrap font-sans text-[15px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
+                className="flex min-h-11 items-center whitespace-nowrap font-sans text-[14px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
                 activeProps={{ className: "text-primary" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
@@ -164,7 +164,7 @@ export function SiteHeader() {
             asChild
             variant="brand"
             size="sm"
-            className="h-9 rounded-sm"
+            className="h-9 rounded-xl px-4 text-sm font-semibold"
           >
             <Link to="/contact" onClick={closeMenus}>
               Request a Quote
@@ -175,7 +175,7 @@ export function SiteHeader() {
         <Button
           variant="ghost"
           size="icon"
-          className="h-11 w-11 lg:hidden"
+          className="h-10 w-10 rounded-xl lg:hidden"
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
           aria-controls="site-navigation"
