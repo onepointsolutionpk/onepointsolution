@@ -45,6 +45,7 @@ export type Service = {
   benefits: readonly string[];
   applications: readonly string[];
   icon: LucideIcon;
+  image?: string | undefined;
 };
 
 export const services = [
@@ -58,6 +59,7 @@ export const services = [
     benefits: ["Visible perimeter deterrence", "Suitable for varied property boundaries", "Can complement cameras and access control", "Planned around gates and entry points"],
     applications: ["Residential boundary walls", "Commercial premises", "Warehouses and yards", "Industrial facilities"],
     icon: Fence,
+    image: site.displayImage,
   },
   {
     slug: "cctv-cameras",
@@ -169,6 +171,35 @@ export const navItems = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Our Projects", to: "/projects" },
   { label: "Blogs", to: "/blog" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
+
+export const projects = [
+  { image: site.displayImage, title: "Residential perimeter fencing", description: "Electric fencing installed along a residential property boundary.", alt: "Genuine residential electric fencing installation" },
+  { image: media["electric-fence-banner.jpg"], title: "Boundary wall & gate fencing", description: "A supplied installation showing fencing above a boundary wall and entrance.", alt: "Electric fencing above a boundary wall and gate at night" },
+] as const;
+
+export const serviceDetails: Record<string, { considerations: readonly string[]; steps: readonly { title: string; copy: string }[]; faqs: readonly { question: string; answer: string }[] }> = {
+  "electric-fencing": {
+    considerations: ["Boundary length, wall condition and corners", "Gate access and areas within public reach", "Power supply, energizer location and maintenance access", "Integration with existing cameras and alarms"],
+    steps: [{ title: "Review the perimeter", copy: "Discuss the boundary layout, entrances and areas that need additional protection." }, { title: "Plan the arrangement", copy: "Consider wire runs, supports, power and safe access before confirming equipment." }, { title: "Installation & checks", copy: "Agree the installation scope, system checks and operating guidance as part of your quotation." }],
+    faqs: [{ question: "Is electric fencing suitable for every boundary?", answer: "Suitability depends on wall condition, available space, public access and local requirements. A property assessment helps identify the right approach." }, { question: "Can it work alongside CCTV?", answer: "Yes. Fencing provides a perimeter layer while cameras help monitor access points and activity. The exact arrangement depends on your property." }, { question: "How is the price calculated?", answer: "Boundary length, corners, gates, equipment and installation conditions affect the quotation. Share photos and approximate measurements for an initial discussion." }],
+  },
+  "cctv-cameras": {
+    considerations: ["Entrances, blind spots and important activity areas", "Lighting conditions during the day and at night", "Recording needs, storage and monitoring access", "Cable routes, power and network availability"],
+    steps: [{ title: "Map the coverage", copy: "Identify entrances, movement routes and the areas you need to see clearly." }, { title: "Select the system", copy: "Discuss camera placement, recording and viewing requirements suited to the site." }, { title: "Installation & review", copy: "Include positioning, recording checks and viewing setup in the agreed project scope." }],
+    faqs: [{ question: "How many cameras will I need?", answer: "The right number depends on the layout and coverage you need, not simply the size of the property. Entrances, blind spots and camera viewing angles all matter." }, { question: "Can I view cameras on my phone?", answer: "Remote viewing depends on the selected equipment, network access and configuration. Discuss this requirement before finalizing a system." }, { question: "How much recording can be stored?", answer: "Retention depends on storage capacity, resolution, recording settings and the number of cameras. Your quotation can be planned around your preferred recording needs." }],
+  },
+  "gate-automation": {
+    considerations: ["Sliding or swing gate type, weight and condition", "Clearance, movement space and daily traffic", "Power supply and access control preferences", "Safety devices and access during power interruptions"],
+    steps: [{ title: "Assess the gate", copy: "Review the existing gate, movement space and how vehicles enter and leave." }, { title: "Plan controls & safety", copy: "Discuss suitable drive equipment, access controls and safety requirements." }, { title: "Installation & operation", copy: "Agree the installation, operating checks and user guidance before work begins." }],
+    faqs: [{ question: "Can my existing gate be automated?", answer: "Possibly. Gate condition, weight, alignment and available space must be assessed before recommending automation." }, { question: "What happens during a power cut?", answer: "Manual release or backup options depend on the selected equipment. Confirm the preferred arrangement during the quotation discussion." }, { question: "Are remote controls the only option?", answer: "Control options vary by system and may include remotes or other access devices. We discuss how you want to manage everyday entry before proposing an arrangement." }],
+  },
+  "fire-alarm-systems": {
+    considerations: ["Building layout, occupancy and room use", "Areas requiring detection and audible warning", "Panel location, cable routes and power requirements", "Inspection, maintenance and applicable safety requirements"],
+    steps: [{ title: "Understand the premises", copy: "Review how the building is occupied and which areas require alarm coverage." }, { title: "Plan detection & alerts", copy: "Discuss the alarm arrangement and coverage alongside applicable building requirements." }, { title: "Installation & testing", copy: "Confirm equipment, testing, handover and maintenance expectations in the agreed scope." }],
+    faqs: [{ question: "Which alarm arrangement does my building need?", answer: "Building size, layout, occupancy and applicable requirements determine the suitable approach. A site-specific review is needed before selecting equipment." }, { question: "Can an existing system be expanded?", answer: "Expansion depends on the existing panel, available capacity and device compatibility. Share the current system details for a discussion." }, { question: "Does the system need regular checks?", answer: "Yes. Inspection and maintenance should follow the equipment guidance and applicable requirements. Confirm the maintenance scope before installation." }],
+  },
+};

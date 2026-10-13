@@ -1,5 +1,6 @@
-# Medium-sized website updates
-- [x] Make media links work independently of the deployment host and add six supplied images.
-- [x] Refine medium sizing across pages, desktop navigation and animated mobile menu.
-- [x] Remove logo controls and homepage/main-menu Projects; align Blogs page styling.
-- [x] Verify media, navigation, autoplay, responsive layout and existing tests.
+# Professional website refinement
+- [x] Review reference navigation and service presentation without copying.
+- [x] Update navigation and homepage order; restore Projects after Services.
+- [x] Create shared service cards and complete individual service pages.
+- [x] Polish quotation sections and genuine project presentation.
+- [x] Verify navigation, service pages, quotation flow, and responsive layout.
