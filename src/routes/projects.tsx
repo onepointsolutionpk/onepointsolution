@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MediaPlaceholder } from "@/components/media-placeholder";
-import { site } from "@/lib/site-data";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects")({
@@ -25,19 +24,14 @@ return (
 
   <section className="mx-auto max-w-[1180px] px-5 pt-5 pb-10 sm:px-8 lg:pt-5 lg:pb-10">
     <div className="mt-0 grid gap-5 md:grid-cols-2">
-      <figure>
-        <img
-          src={site.displayImage}
-          alt="Electric perimeter fencing installed around a property"
-          className="aspect-[4/3] w-full rounded-md border border-[#a3a3a3] object-cover"
-          width="1920"
-          height="1440"
-        />
-      </figure>
-
-      <MediaPlaceholder label="Reserved for a future genuine installation photo" />
-      <MediaPlaceholder label="Reserved for a future genuine installation photo" />
-      <MediaPlaceholder label="Reserved for a future genuine installation photo" />
+      {Array.from({ length: 10 }, (_, index) => (
+        <figure
+          key={index}
+          className="aspect-[4/3] overflow-hidden rounded-sm border border-[#525252] bg-background"
+        >
+          <MediaPlaceholder label="" />
+        </figure>
+      ))}
     </div>
   </section>
 </>
