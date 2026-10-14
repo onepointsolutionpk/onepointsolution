@@ -37,7 +37,46 @@ function HomePage() {
 
     <section className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7"><h2 className="text-center text-2xl font-extrabold uppercase">Our Projects</h2><div className="mt-7 grid gap-5 sm:grid-cols-3">{[site.displayImage, site.heroImage, media["electric-fence-banner.jpg"]].map((src, i) => <img key={i} src={src} alt="One Point Solution installation" loading="lazy" className="aspect-[4/3] w-full rounded-md object-cover" />)}</div><div className="mt-6 text-center"><Button asChild variant="brand"><Link to="/projects">View All Projects <ArrowRight /></Link></Button></div></section>
 
-    <section className="bg-brand-soft"><div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7"><h2 className="text-center text-2xl font-extrabold uppercase">Blogs</h2><div className="mt-8 grid gap-8 md:grid-cols-2">{articles.map((article) => <article key={article.slug}><p className="text-sm font-medium text-muted-foreground">{article.service}</p><h3 className="mt-2 text-xl font-semibold leading-snug"><Link to={article.path}>{article.title}</Link></h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{article.excerpt}</p><Link to={article.path} className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">Read More <ArrowRight className="size-4" /></Link></article>)}</div></div></section>
+    <section className="bg-brand-soft">
+  <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7">
+    <h2 className="text-center text-2xl font-extrabold uppercase">
+      Blogs
+    </h2>
+
+    <div className="mt-8 grid gap-8 md:grid-cols-2">
+      {articles.slice(0, 3).map((article) => (
+        <article key={article.slug}>
+          <p className="text-sm font-medium text-muted-foreground">
+            {article.service}
+          </p>
+
+          <h3 className="mt-2 text-xl font-semibold leading-snug">
+            <Link to={article.path}>{article.title}</Link>
+          </h3>
+
+          <p className="mt-3 text-sm leading-7 text-muted-foreground">
+            {article.excerpt}
+          </p>
+
+          <Link
+            to={article.path}
+            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary"
+          >
+            Read More <ArrowRight className="size-4" />
+          </Link>
+        </article>
+      ))}
+    </div>
+
+    <div className="mt-9 text-center">
+      <Button asChild variant="brand">
+        <Link to="/blog">
+          View All Blogs <ArrowRight className="size-4" />
+        </Link>
+      </Button>
+    </div>
+  </div>
+</section>
 
     <section className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7"><div className="grid overflow-hidden rounded-md border border-border shadow-sm lg:grid-cols-[.85fr_1.15fr]"><div className="bg-primary p-7 text-primary-foreground sm:p-9"><p className="text-xs font-bold uppercase tracking-widest opacity-80">Request a Quote</p><h2 className="mt-3 text-2xl font-extrabold">Get a free consultation for your property</h2><p className="mt-3 text-sm leading-6 opacity-90">Share your requirements and our team will respond on WhatsApp with guidance and a quotation.</p><a href={site.phoneHref} className="mt-6 flex items-center gap-3 font-bold"><Phone className="size-5" />{site.phoneDisplay}</a><div className="mt-5 space-y-3">{offices.map((office) => <div key={office.city} className="flex gap-3 text-sm leading-6"><MapPin className="mt-1 size-4 shrink-0" /><span><strong className="block">{office.city}</strong><span className="opacity-90">{office.address}</span></span></div>)}</div></div><div className="bg-background p-6 sm:p-9"><QuoteForm /></div></div></section>
   </>;
