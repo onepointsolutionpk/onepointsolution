@@ -1,4 +1,4 @@
-import project1 from "@/assets/project-1.jpg";
+import project1 from "@/assets/IMG_20260417_202328_885.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { pageHead } from "@/lib/seo";
