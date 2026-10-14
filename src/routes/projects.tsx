@@ -1,3 +1,4 @@
+import project1 from "@/assets/project-1.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { pageHead } from "@/lib/seo";
@@ -23,7 +24,18 @@ return (
 </section>
 
   <section className="mx-auto max-w-[1180px] px-5 pt-5 pb-10 sm:px-8 lg:pt-5 lg:pb-10">
-    <div className="mt-0 grid gap-5 md:grid-cols-2">
+    <div className="mt-0 grid gap-5 md:grid-cols-2"
+      
+<figure className="overflow-hidden rounded-sm border border-[#525252]">
+  <img
+    src={project1}
+    alt="Electric fencing installation project"
+    className="aspect-[4/3] w-full object-cover"
+    loading="lazy"
+  />
+</figure>
+    
+      >
       {Array.from({ length: 10 }, (_, index) => (
         <figure
           key={index}
