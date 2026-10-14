@@ -54,10 +54,12 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header
-      ref={headerRef}
-      className="sticky top-0 z-50 bg-background"
-    >
+    
+<header
+  ref={headerRef}
+  className="sticky top-0 z-50 bg-transparent"
+>
+  
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:bg-background focus:p-3"
