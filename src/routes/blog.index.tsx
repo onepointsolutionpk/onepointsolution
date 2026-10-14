@@ -17,7 +17,7 @@ component: BlogPage,
 function BlogPage() {
 return (
 <>
-<section className="bg-brand-soft px-5 py-14 text-center sm:py-20">
+<section className="bg-brand-soft px-5 py-6 text-center sm:py-8">
   <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
     Blogs
   </h1>
