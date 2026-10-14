@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MediaPlaceholder } from "@/components/media-placeholder";
-import { PageHero } from "@/components/page-hero";
-import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/lib/site-data";
 import { pageHead } from "@/lib/seo";
 
@@ -31,7 +29,7 @@ return (
         <img
           src={site.displayImage}
           alt="Electric perimeter fencing installed around a property"
-          className="aspect-[4/3] w-full rounded-lg border border-gray-300 object-cover"
+          className="aspect-[4/3] w-full rounded-md border border-[#a3a3a3] object-cover"
           width="1920"
           height="1440"
         />
@@ -45,4 +43,4 @@ return (
 </>
 
 );
-          }
+}
