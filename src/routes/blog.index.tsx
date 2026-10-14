@@ -17,7 +17,7 @@ component: BlogPage,
 function BlogPage() {
 
 return (
-  <div className="bg-brand-soft">
+  <div className="min-h-screen bg-brand-soft">
     <section className="px-5 pt-10 pb-2 text-center sm:pt-14 sm:pb-3">
       <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
         Blogs
