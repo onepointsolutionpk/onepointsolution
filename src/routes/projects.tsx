@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import project1 from "@/assets/IMG_20260417_202328_885.jpg";
 import project2 from "@/assets/IMG_20260807_154136_485.jpg";
-import project3 from "@/assets/WA_1791993759467.jpeg";
+import project3 from "@/assets/IMG_20260808_233757_716.jpg";
 import project4 from "@/assets/IMG_20250503_175506_696.jpg";
 import project5 from "@/assets/1791983481247.jpg";
 import project6 from "@/assets/1791984459077.jpg";
