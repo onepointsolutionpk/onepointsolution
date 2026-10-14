@@ -17,14 +17,14 @@ component: BlogPage,
 function BlogPage() {
 return (
 <>
-<section className="bg-brand-soft px-5 pt-12 pb-4 text-center sm:pt-16 sm:pb-6">
-  <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+<section className="bg-brand-soft px-5 pt-10 pb-2 text-center sm:pt-14 sm:pb-3">
+  <h1 className="text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
     Blogs
   </h1>
 </section>
 
 <section className="bg-brand-soft">  
-    <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-x-8 gap-y-12 px-5 pt-2 pb-10 sm:px-8 md:grid-cols-2 lg:gap-y-14">
+    <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-x-8 gap-y-12 px-5 pt-0 pb-10 sm:px-8 md:grid-cols-2 lg:gap-y-14">
       {articles.map((article) => (  
         <article key={article.slug} className="min-w-0">  
           <Link  
