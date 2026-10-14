@@ -252,6 +252,7 @@ function HomePage() {
             </div>
           </div>
 
+          
           <div className="bg-background p-6 sm:p-9">
             <QuoteForm />
           </div>
@@ -259,4 +260,4 @@ function HomePage() {
       </section>
     </>
   );
-                    }
+}
