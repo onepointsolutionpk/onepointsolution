@@ -1,3 +1,4 @@
+
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { CompanyStats } from "@/components/company-stats";
@@ -54,6 +55,36 @@ function HomePage() {
     <>
       <HomeCarousel />
 
+      {/* Our Services */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7">
+          <h2 className="text-center text-2xl font-extrabold uppercase">
+            Our Services
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-muted-foreground">
+            Complete security systems planned, installed and supported by our
+            team.
+          </p>
+
+          <div className="mt-8">
+            <ServiceCards />
+          </div>
+        </div>
+      </section>
+
+      <CompanyStats />
+
+      {/* Our Clients */}
+      <LogoCarousel title="Our Clients" logos={clientLogos} />
+
+      {/* Brands We Deal In */}
+      <LogoCarousel
+        title="Brands We Deal In"
+        logos={brandLogos}
+        tone="soft"
+      />
+
       {/* About Us */}
       <section className="mx-auto max-w-[1180px] px-5 py-10 sm:px-7">
         <h1 className="text-center text-2xl font-extrabold uppercase">
@@ -86,36 +117,6 @@ function HomePage() {
           />
         </div>
       </section>
-
-      <CompanyStats />
-
-      {/* Our Services */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7">
-          <h2 className="text-center text-2xl font-extrabold uppercase">
-            Our Services
-          </h2>
-
-          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-muted-foreground">
-            Complete security systems planned, installed and supported by our
-            team.
-          </p>
-
-          <div className="mt-8">
-            <ServiceCards />
-          </div>
-        </div>
-      </section>
-
-      {/* Our Clients */}
-      <LogoCarousel title="Our Clients" logos={clientLogos} />
-
-      {/* Brands We Deal In */}
-      <LogoCarousel
-        title="Brands We Deal In"
-        logos={brandLogos}
-        tone="soft"
-      />
 
       {/* Our Projects */}
       <section className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7">
@@ -172,7 +173,6 @@ function HomePage() {
                 </Link>
 
                 <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground sm:text-base">
-                  <span>13-10-2026</span>
                   <span>{article.service}</span>
                 </div>
 
@@ -252,7 +252,6 @@ function HomePage() {
             </div>
           </div>
 
-          
           <div className="bg-background p-6 sm:p-9">
             <QuoteForm />
           </div>
@@ -260,4 +259,4 @@ function HomePage() {
       </section>
     </>
   );
-}
+      }
