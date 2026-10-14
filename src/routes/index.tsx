@@ -81,16 +81,7 @@ function HomePage() {
         <h1 className="text-center text-2xl font-extrabold uppercase">
           About Us
         </h1>
-
-        {/* Our Clients */}
-      <LogoCarousel title="Our Clients" logos={clientLogos} />
-
-      {/* Brands We Deal In */}
-      <LogoCarousel
-        title="Brands We Deal In"
-        logos={brandLogos}
-        tone="soft"
-      />
+        
 
         <div className="mt-6 grid gap-7 md:grid-cols-[1.1fr_.9fr] md:items-center md:gap-12">
           <div>
@@ -118,6 +109,16 @@ function HomePage() {
           />
         </div>
       </section>
+
+        {/* Our Clients */}
+      <LogoCarousel title="Our Clients" logos={clientLogos} />
+
+      {/* Brands We Deal In */}
+      <LogoCarousel
+        title="Brands We Deal In"
+        logos={brandLogos}
+        tone="soft"
+      />
 
       {/* Our Projects */}
       <section className="mx-auto max-w-[1180px] px-5 py-12 sm:px-7">
