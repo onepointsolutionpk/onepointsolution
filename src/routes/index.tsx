@@ -230,7 +230,7 @@ function HomePage() {
               variant="brand"
               className="min-h-12 rounded-md px-7 text-sm font-bold"
             >
-              <Link to="/blog">
+              <Link to="/blog/">
                 View All Blogs
                 <ArrowRight className="ml-2 size-4" />
               </Link>
