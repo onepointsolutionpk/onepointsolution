@@ -5,7 +5,7 @@ import project3 from "@/assets/WA_1791993759467.jpeg";
 import project4 from "@/assets/IMG_20250503_175506_696.jpg";
 import project5 from "@/assets/1791983481247.jpg";
 import project6 from "@/assets/1791984459077.jpg";
-import project7 from "@/assets/1791984575824.jpg";
+import project7 from "@/assets/WA_1791993759467.jpeg";
 import project8 from "@/assets/654977092_18177861259380044_7977575305293587210_n.webp";
 import project9 from "@/assets/IMG-20261014-WA0073.jpg";
 import project10 from "@/assets/IMG-20261014-WA0077.jpg";
