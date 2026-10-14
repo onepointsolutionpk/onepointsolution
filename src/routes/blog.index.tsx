@@ -17,10 +17,11 @@ component: BlogPage,
 function BlogPage() {
 return (
 <>
-<PageHero
-  title="Blogs"
-  copy="Practical reading on electric fencing, CCTV, gate automation and fire alarm systems."
-/>
+<section className="bg-brand-soft px-5 py-14 text-center sm:py-20">
+  <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+    Blogs
+  </h1>
+</section>
 
 <section className="bg-brand-soft">  
     <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-x-8 gap-y-12 px-5 py-10 sm:px-8 md:grid-cols-2 lg:gap-y-14">  
