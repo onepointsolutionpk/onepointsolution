@@ -1,6 +1,8 @@
-
 import { createFileRoute } from "@tanstack/react-router";
 import project1 from "@/assets/IMG_20260417_202328_885.jpg";
+import project2 from "@/assets/IMG_20260807_154136_485.jpg";
+import project3 from "@/assets/IMG_20260808_233757_716.jpg";
+import project4 from "@/assets/IMG_20250503_175506_696.jpg";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects")({
@@ -28,6 +30,30 @@ function ProjectsPage() {
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
             <img
               src={project1}
+              alt="Electric fencing installation project"
+              className="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="overflow-hidden rounded-sm border border-[#525252]">
+            <img
+              src={project2}
+              alt="Electric fencing installation project"
+              className="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="overflow-hidden rounded-sm border border-[#525252]">
+            <img
+              src={project3}
+              alt="Electric fencing installation project"
+              className="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="overflow-hidden rounded-sm border border-[#525252]">
+            <img
+              src={project4}
               alt="Electric fencing installation project"
               className="aspect-[4/3] w-full object-cover"
               loading="lazy"
