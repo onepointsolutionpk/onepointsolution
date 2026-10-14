@@ -115,12 +115,7 @@ function ProjectsPage() {
             />
           </figure>
 
-          {Array.from({ length: 9 }, (_, index) => (
-            <figure
-              key={index}
-              className="aspect-[4/3] overflow-hidden rounded-sm border border-[#525252] bg-background"
-            />
-          ))}
+          
         </div>
       </section>
     </>
