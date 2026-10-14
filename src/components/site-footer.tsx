@@ -1,5 +1,5 @@
 
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { offices, site } from "@/lib/site-data";
 
 function WhatsAppIcon({ className = "size-5" }: { className?: string }) {
@@ -19,6 +19,7 @@ export function SiteFooter() {
   const phone = site.phoneDisplay;
   const phoneHref = site.phoneHref;
   const whatsappHref = site.whatsapp;
+  const email = "onepointsolutionpk@gmail.com";
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -41,44 +42,65 @@ export function SiteFooter() {
                     {office.address}
                   </p>
                 </div>
-
-                <div className="mt-5 space-y-4">
-                  <a
-                    href={phoneHref}
-                    className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-75"
-                  >
-                    <Phone className="size-4 shrink-0" />
-                    <span className="min-w-0">
-                      <span className="block text-xs text-primary-foreground/65">
-                        Contact
-                      </span>
-                      <span className="mt-1 block break-words text-sm font-medium">
-                        {phone}
-                      </span>
-                    </span>
-                  </a>
-
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`WhatsApp ${office.city} office at ${phone}`}
-                    className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-75"
-                  >
-                    <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
-                    <span className="min-w-0">
-                      <span className="block text-xs text-primary-foreground/65">
-                        WhatsApp
-                      </span>
-                      <span className="mt-1 block break-words text-sm font-medium">
-                        {phone}
-                      </span>
-                    </span>
-                  </a>
-                </div>
               </section>
             );
           })}
+
+          <section className="min-w-0">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              Contact Us
+            </h2>
+
+            <div className="mt-5 space-y-4">
+              <a
+                href={phoneHref}
+                className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-75"
+              >
+                <Phone className="size-4 shrink-0" />
+                <span className="min-w-0">
+                  <span className="block text-xs text-primary-foreground/65">
+                    Contact
+                  </span>
+                  <span className="mt-1 block break-words text-sm font-medium">
+                    {phone}
+                  </span>
+                </span>
+              </a>
+
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`WhatsApp One Point Solution at ${phone}`}
+                className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-75"
+              >
+                <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
+                <span className="min-w-0">
+                  <span className="block text-xs text-primary-foreground/65">
+                    WhatsApp
+                  </span>
+                  <span className="mt-1 block break-words text-sm font-medium">
+                    {phone}
+                  </span>
+                </span>
+              </a>
+
+              <a
+                href={`mailto:${email}`}
+                className="flex min-w-0 items-center gap-3 transition-opacity hover:opacity-75"
+              >
+                <Mail className="size-4 shrink-0" />
+                <span className="min-w-0">
+                  <span className="block text-xs text-primary-foreground/65">
+                    Email
+                  </span>
+                  <span className="mt-1 block break-words text-sm font-medium">
+                    {email}
+                  </span>
+                </span>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
 
@@ -87,4 +109,4 @@ export function SiteFooter() {
       </div>
     </footer>
   );
-                }
+}
