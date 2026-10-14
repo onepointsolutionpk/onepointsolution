@@ -22,7 +22,7 @@ void media;
 export function ServiceCards() {
   return <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{services.map((s) => {
     const img = images[s.slug];
-    return <Link key={s.slug} to={s.path} className="group flex flex-col overflow-hidden rounded-md border border-border bg-background shadow-sm transition hover:-translate-y-1 hover:border-primary hover:shadow-md">
+    return <Link key={s.slug} to={s.path} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm transition hover:-translate-y-1 hover:border-primary hover:shadow-md">
       <div className="relative aspect-[4/3] bg-brand-soft">
         {img ? <img src={img} alt={s.title} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><span className="font-sans text-6xl font-black tracking-tight text-primary">
   {String(services.findIndex((item) => item.slug === s.slug) + 1).padStart(2, "0")}
