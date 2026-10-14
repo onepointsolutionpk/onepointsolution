@@ -75,7 +75,14 @@ function HomePage() {
 
       <CompanyStats />
 
-      {/* Our Clients */}
+
+      {/* About Us */}
+      <section className="mx-auto max-w-[1180px] px-5 py-10 sm:px-7">
+        <h1 className="text-center text-2xl font-extrabold uppercase">
+          About Us
+        </h1>
+
+        {/* Our Clients */}
       <LogoCarousel title="Our Clients" logos={clientLogos} />
 
       {/* Brands We Deal In */}
@@ -84,12 +91,6 @@ function HomePage() {
         logos={brandLogos}
         tone="soft"
       />
-
-      {/* About Us */}
-      <section className="mx-auto max-w-[1180px] px-5 py-10 sm:px-7">
-        <h1 className="text-center text-2xl font-extrabold uppercase">
-          About Us
-        </h1>
 
         <div className="mt-6 grid gap-7 md:grid-cols-[1.1fr_.9fr] md:items-center md:gap-12">
           <div>
