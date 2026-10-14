@@ -1,4 +1,7 @@
 
+import project1 from "@/assets/IMG_20260417_202328_885.jpg";
+import project2 from "@/assets/1791983481247.jpg";
+import project3 from "@/assets/IMG-20261014-WA0073.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { CompanyStats } from "@/components/company-stats";
@@ -126,21 +129,23 @@ function HomePage() {
           Our Projects
         </h2>
 
-        <div className="mt-7 grid gap-5 sm:grid-cols-3">
-          {[
-            site.displayImage,
-            site.heroImage,
-            media["electric-fence-banner.jpg"],
-          ].map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt="One Point Solution installation"
-              loading="lazy"
-              className="aspect-[4/3] w-full rounded-md object-cover"
-            />
-          ))}
-        </div>
+        
+<div className="mt-7 grid gap-5 sm:grid-cols-3">
+  {[project1, project2, project3].map((src, i) => (
+    <img
+      key={i}
+      src={src}
+      alt={[
+        "Electric fencing installation project",
+        "CCTV camera installation project",
+        "Gate automation installation project",
+      ][i]}
+      loading="lazy"
+      className="aspect-[4/3] w-full rounded-md object-cover"
+    />
+  ))}
+</div>
+
 
         <div className="mt-6 text-center">
           <Button asChild variant="brand">
