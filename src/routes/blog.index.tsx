@@ -18,7 +18,7 @@ function BlogPage() {
 return (
 <>
 <section className="bg-brand-soft px-5 pt-10 pb-2 text-center sm:pt-14 sm:pb-3">
-  <h1 className="text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+  <h1 className=" mb-4 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
     Blogs
   </h1>
 </section>
