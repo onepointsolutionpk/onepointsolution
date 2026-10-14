@@ -104,7 +104,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/15 px-5 py-4 text-center text-xs leading-5 text-primary-foreground/70 sm:px-8">
+      <div className="border-t border-primary-foreground/15 bg-black px-5 py-4 text-center text-xs leading-5 text-white sm:px-8">
         © {new Date().getFullYear()} One Point Solution. All rights reserved.
       </div>
     </footer>
