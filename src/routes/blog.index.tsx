@@ -17,10 +17,9 @@ component: BlogPage,
 function BlogPage() {
 return (
 <>
-<PageHero  
-eyebrow="One Point Solution"  
-title="Blogs"  
-copy="Practical reading on electric fencing, CCTV, gate automation and fire alarm systems."  
+<PageHero
+  title="Blogs"
+  copy="Practical reading on electric fencing, CCTV, gate automation and fire alarm systems."
 />
 
 <section className="bg-brand-soft">  
