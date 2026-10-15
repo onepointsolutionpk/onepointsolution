@@ -1,41 +1,758 @@
+
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, MessageCircle, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  BatteryCharging,
+  BellRing,
+  Building2,
+  Cable,
+  Check,
+  CheckCircle2,
+  ClipboardCheck,
+  Fence,
+  Home,
+  MapPin,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+  Smartphone,
+  Wifi,
+  Wrench,
+  Zap,
+} from "lucide-react";
+
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { electricFenceComponents, serviceDetails } from "@/lib/service-details";
+import {
+  electricFenceComponents,
+  serviceDetails,
+} from "@/lib/service-details";
 import { services, site, type Service } from "@/lib/site-data";
 
-const container = "mx-auto max-w-[1180px] px-5 py-10 sm:px-8 sm:py-12";
+const container = "mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8";
+
+const materialIcons = [
+  Zap,
+  ShieldCheck,
+  Cable,
+  Fence,
+  Wrench,
+  CheckCircle2,
+  BellRing,
+  BatteryCharging,
+  Wifi,
+  Smartphone,
+];
+
+const installationSteps = [
+  {
+    number: "01",
+    icon: ClipboardCheck,
+    title: "Discuss Your Requirements",
+    copy: "Share your city, property type and approximate boundary length so the proposed system can be discussed around your requirements.",
+  },
+  {
+    number: "02",
+    icon: Fence,
+    title: "Assess the Property",
+    copy: "Boundary walls, gates, access points, power arrangements and installation conditions should be considered before the system is specified.",
+  },
+  {
+    number: "03",
+    icon: Wrench,
+    title: "Confirm Materials and Quote",
+    copy: "Review the proposed equipment, materials, supported features, price and warranty terms before approving the installation.",
+  },
+  {
+    number: "04",
+    icon: ShieldCheck,
+    title: "Installation and Handover",
+    copy: "The completed installation, operating instructions and agreed maintenance or warranty arrangements should be reviewed at handover.",
+  },
+];
+
+const applications = [
+  {
+    icon: Home,
+    title: "Electric Fence for Homes",
+    copy: "Boundary walls and suitable gates for houses, villas and residential plots, planned with everyday access in mind.",
+  },
+  {
+    icon: Building2,
+    title: "Commercial Properties",
+    copy: "Offices, business premises and suitable commercial boundaries where perimeter deterrence is required.",
+  },
+  {
+    icon: Fence,
+    title: "Industrial Sites",
+    copy: "Warehouses, yards and facility boundaries planned around site access and operational requirements.",
+  },
+];
 
 export function ServicePage({ service }: { service: Service }) {
+  if (service.slug === "electric-fencing") {
+    return <ElectricFenceContent />;
+  }
+
   const detail = serviceDetails[service.slug as keyof typeof serviceDetails];
+
   if (!detail) return null;
+
   const related = services.filter((item) => item.slug !== service.slug);
-  return <>
-    <PageHero eyebrow="One Point Solution · Pakistan" title={service.title} copy={detail.intro} />
-    <section className={`${container} grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12`}>
-      <div className="min-w-0"><SectionHeading eyebrow="System overview" title={detail.heading} /><p className="mt-5 text-sm leading-7 text-muted-foreground">{detail.overview}</p><a href={site.phoneHref} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"><Phone className="size-4 shrink-0" />Discuss your requirements: {site.phoneDisplay}</a></div>
-      <figure className="min-w-0"><img src={detail.image} alt={detail.alt} className="h-auto max-h-[360px] w-full rounded-sm object-contain" /><figcaption className="mt-3 border-l-2 border-primary pl-3 text-xs leading-5 text-muted-foreground">{service.title} — equipment and layout are selected for your property.</figcaption></figure>
-    </section>
-    <section className="border-y border-border bg-surface"><div className={container}><SectionHeading eyebrow="Designed around your requirements" title="Features and installation considerations" /><div className="mt-7 grid gap-7 md:grid-cols-3">{detail.features.map((feature, i) => <div key={feature.title} className="min-w-0 border-t-2 border-primary pt-5"><span className="text-sm font-bold text-primary">0{i + 1}</span><h3 className="mt-3 text-lg font-bold">{feature.title}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{feature.copy}</p></div>)}</div></div></section>
-    <section className={`${container} grid gap-9 md:grid-cols-2 md:gap-12`}><div><SectionHeading eyebrow="Practical advantages" title={`Benefits of ${service.title.toLowerCase()}`} /><Checklist items={detail.benefits} /></div><div><SectionHeading eyebrow="Property suitability" title="Residential, commercial and industrial applications" /><Checklist items={detail.applications} /></div></section>
-    {service.slug === "electric-fencing" && <>
-      <section className="border-y border-border bg-brand-soft"><div className={container}><SectionHeading eyebrow="Supplied materials and specifications" title="Electric Fence System Components" copy="The following supplied components describe the proposed system options. Your quotation confirms the selected device, materials and standard or optional inclusions." /><Checklist items={electricFenceComponents} columns /><div className="mt-7 border-l-2 border-primary bg-background p-5 text-sm leading-7 text-muted-foreground"><strong className="text-foreground">Specification note.</strong> The supplied voltage ratings are product specifications, not verified actual shock output or a guarantee of electrical performance. Wi-Fi, UPS, alarm and mobile functions depend on the selected equipment and configuration. The supplied 5–6 hour battery backup is not a guaranteed runtime. Earthing is part of the installation plan, not a guarantee against lightning damage.</div></div></section>
-      <section className={`${container} grid gap-7 md:grid-cols-[1.2fr_.8fr] md:items-center`}><div><SectionHeading eyebrow="Electric fence pricing and warranty" title="A quotation based on your perimeter, not a fixed package" /><p className="mt-4 text-sm leading-7 text-muted-foreground">Pricing depends on perimeter length, installation requirements, the selected device and materials. Wall condition, gate access, power arrangements and optional monitoring also influence the specification. Share your property details to discuss a suitable installation.</p><p className="mt-3 text-sm leading-7 text-muted-foreground">Warranty coverage and duration will be confirmed for the selected equipment in your quotation. No fixed price or warranty duration is stated here.</p></div><div className="border-l-2 border-primary pl-6"><h3 className="text-lg font-bold">Planning fencing for your home?</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Tell us your city, approximate boundary length and whether you require alarm integration or supported mobile monitoring.</p><Button asChild variant="brand" className="mt-5"><Link to="/contact">Request a Quote <ArrowRight /></Link></Button></div></section>
-    </>}
-    <section className="bg-surface"><div className={container}><SectionHeading eyebrow="A focused security company" title="Why Choose One Point Solution" /><div className="mt-7 grid gap-7 md:grid-cols-3">{[
-      ["Established in 2015", "A Pakistani security company offering electric fencing, CCTV cameras, gate automation and fire alarm systems."],
-      ["A property-first approach", "Requirements, access, equipment suitability and installation conditions form the basis of the discussion and quotation."],
-      ["Direct contact and support", "Discuss equipment, operation and support requirements with our team by phone or WhatsApp, with offices in Lahore, Islamabad and Bahawalpur."],
-    ].map(([title, copy]) => <div key={title} className="min-w-0"><Check className="size-6 text-primary" /><h3 className="mt-3 text-lg font-bold">{title}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{copy}</p></div>)}</div></div></section>
-    <section className={`${container} grid gap-7 lg:grid-cols-[.65fr_1.35fr] lg:gap-12`}><SectionHeading eyebrow="Common questions" title={`${service.title} FAQs`} /><Accordion type="single" collapsible className="min-w-0 border-t border-border">{detail.faqs.map((faq, index) => <AccordionItem key={faq.question} value={`faq-${index}`}><AccordionTrigger className="gap-4 py-5 font-semibold">{faq.question}</AccordionTrigger><AccordionContent className="leading-7 text-muted-foreground">{faq.answer}</AccordionContent></AccordionItem>)}</Accordion></section>
-    <section className="bg-primary text-primary-foreground"><div className={`${container} grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center`}><div className="min-w-0"><h2 className="text-2xl font-bold">Discuss your {service.title.toLowerCase()} requirements</h2><p className="mt-3 max-w-xl text-sm leading-7">Share your property type, city and priorities for a considered quotation.</p></div><div className="flex flex-wrap gap-3"><Button asChild variant="secondary"><Link to="/contact">Request a Quote <ArrowRight /></Link></Button><Button asChild variant="outline" className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href={site.whatsapp} target="_blank" rel="noreferrer">WhatsApp <MessageCircle /></a></Button></div></div></section>
-    <section className={container}><SectionHeading eyebrow="Explore our expertise" title="Related security services" /><div className="mt-6 grid gap-5 md:grid-cols-3">{related.map((item) => <Link key={item.slug} to={item.path} className="group flex min-w-0 items-center justify-between gap-3 border-b border-border py-4 text-base font-bold hover:text-primary"><span>{item.title}</span><ArrowRight className="size-5 shrink-0 text-primary" /></Link>)}</div></section>
-  </>;
+
+  return (
+    <>
+      <PageHero
+        eyebrow="One Point Solution · Pakistan"
+        title={service.title}
+        copy={detail.intro}
+      />
+
+      <section
+        className={`${container} grid gap-8 py-10 lg:grid-cols-2 lg:items-center lg:gap-12 sm:py-12`}
+      >
+        <div className="min-w-0">
+          <SectionHeading eyebrow="System overview" title={detail.heading} />
+          <p className="mt-5 text-sm leading-7 text-muted-foreground">
+            {detail.overview}
+          </p>
+          <a
+            href={site.phoneHref}
+            className="mt-5 inline-flex max-w-full items-center gap-2 break-words text-sm font-semibold text-primary"
+          >
+            <Phone className="size-4 shrink-0" />
+            Discuss your requirements: {site.phoneDisplay}
+          </a>
+        </div>
+
+        <figure className="min-w-0">
+          <img
+            src={detail.image}
+            alt={detail.alt}
+            className="h-auto max-h-[360px] w-full rounded-xl object-contain"
+          />
+          <figcaption className="mt-3 border-l-2 border-primary pl-3 text-xs leading-5 text-muted-foreground">
+            {service.title} — equipment and layout are selected for your
+            property.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-12`}>
+          <SectionHeading
+            eyebrow="Designed around your requirements"
+            title="Features and installation considerations"
+          />
+          <div className="mt-7 grid gap-7 md:grid-cols-3">
+            {detail.features.map((feature, index) => (
+              <div
+                key={feature.title}
+                className="min-w-0 border-t-2 border-primary pt-5"
+              >
+                <span className="text-sm font-bold text-primary">
+                  0{index + 1}
+                </span>
+                <h3 className="mt-3 text-lg font-bold">{feature.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {feature.copy}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={`${container} grid gap-9 py-10 md:grid-cols-2 md:gap-12 sm:py-12`}
+      >
+        <div>
+          <SectionHeading
+            eyebrow="Practical advantages"
+            title={`Benefits of ${service.title.toLowerCase()}`}
+          />
+          <Checklist items={detail.benefits} />
+        </div>
+        <div>
+          <SectionHeading
+            eyebrow="Property suitability"
+            title="Residential, commercial and industrial applications"
+          />
+          <Checklist items={detail.applications} />
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-12`}>
+          <SectionHeading
+            eyebrow="Common questions"
+            title={`${service.title} FAQs`}
+          />
+          <Accordion
+            type="single"
+            collapsible
+            className="mt-5 min-w-0 border-t border-border"
+          >
+            {detail.faqs.map((faq, index) => (
+              <AccordionItem key={faq.question} value={`faq-${index}`}>
+                <AccordionTrigger className="gap-4 py-5 font-semibold">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="leading-7 text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="bg-primary text-primary-foreground">
+        <div
+          className={`${container} grid gap-6 py-9 md:grid-cols-[minmax(0,1fr)_auto] md:items-center sm:py-12`}
+        >
+          <div className="min-w-0">
+            <h2 className="text-2xl font-bold">
+              Discuss your {service.title.toLowerCase()} requirements
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-7">
+              Share your property type, city and priorities for a considered
+              quotation.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="secondary">
+              <Link to="/contact">
+                Request a Quote <ArrowRight className="ml-2 size-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            >
+              <a href={site.whatsapp} target="_blank" rel="noreferrer">
+                WhatsApp <MessageCircle className="ml-2 size-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${container} py-10 sm:py-12`}>
+        <SectionHeading
+          eyebrow="Explore our expertise"
+          title="Related security services"
+        />
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
+          {related.map((item) => (
+            <Link
+              key={item.slug}
+              to={item.path}
+              className="group flex min-w-0 items-center justify-between gap-3 border-b border-border py-4 text-base font-bold hover:text-primary"
+            >
+              <span>{item.title}</span>
+              <ArrowRight className="size-5 shrink-0 text-primary" />
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
+  );
 }
 
-function Checklist({ items, columns = false }: { items: readonly string[]; columns?: boolean }) {
-  return <ul className={`mt-5 grid gap-x-8 gap-y-4 ${columns ? "md:grid-cols-2" : ""}`}>{items.map((item) => <li key={item} className="flex min-w-0 items-start gap-3"><Check aria-hidden="true" className="mt-1 size-5 shrink-0 text-primary" /><span className="text-sm leading-7 text-muted-foreground">{item}</span></li>)}</ul>;
+function ElectricFenceContent() {
+  const detail = serviceDetails["electric-fencing"];
+
+  const moreServices = services.filter((item) =>
+    ["electric-fencing", "gate-automation", "cctv-cameras"].includes(
+      item.slug,
+    ),
+  );
+
+  return (
+    <main className="w-full min-w-0 overflow-x-clip bg-background">
+      {/* Centered page heading */}
+      <section className="px-4 pb-5 pt-10 text-center sm:px-6 sm:pb-6 sm:pt-14 lg:pt-16">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
+            One Point Solution · Pakistan
+          </p>
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            Electric Fence{" "}
+            <span className="text-primary">Installation</span>
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted-foreground sm:mt-4 sm:text-base">
+            Professional electric fence installation solutions for homes,
+            commercial properties and industrial sites across Pakistan.
+            Explore materials, system features and installation considerations,
+            and request a quotation for your property.
+          </p>
+        </div>
+      </section>
+
+      {/* Blue hero section */}
+      <section className="bg-primary py-8 text-primary-foreground sm:py-12 lg:py-14">
+        <div
+          className={`${container} grid min-w-0 items-center gap-7 sm:gap-9 lg:grid-cols-2 lg:gap-12`}
+        >
+          <div className="order-2 min-w-0 lg:order-1">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/80 sm:text-sm">
+              Perimeter Security Solutions
+            </p>
+            <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
+              A Considered First Line of Perimeter Deterrence
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-primary-foreground/90 sm:text-base sm:leading-8">
+              An electric fence can provide a visible deterrent along a
+              suitable property boundary. One Point Solution plans the
+              proposed arrangement around boundary walls, gates, access points
+              and the requirements of each site.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-primary-foreground/90 sm:text-base sm:leading-8">
+              Compatible energizer, alarm and monitoring options may be
+              discussed according to the selected equipment. Materials,
+              included features and installation requirements are confirmed in
+              the quotation before work begins.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button asChild variant="secondary" className="min-h-11">
+                <Link to="/contact">
+                  Request a Quote <ArrowRight className="ml-2 size-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="min-h-11 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
+                <a href={site.whatsapp} target="_blank" rel="noreferrer">
+                  <MessageCircle className="mr-2 size-4" />
+                  WhatsApp Us
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <figure className="order-1 min-w-0 lg:order-2">
+            <div className="overflow-hidden rounded-2xl border border-white/20 shadow-xl sm:rounded-3xl">
+              <img
+                src={detail.image}
+                alt="Electric fence wires, insulators and posts installed along a property boundary"
+                className="aspect-[4/3] w-full object-cover object-center"
+                fetchPriority="high"
+              />
+            </div>
+            <figcaption className="mt-3 text-xs leading-5 text-primary-foreground/80 sm:text-sm">
+              Electric fence equipment and layout should be selected according
+              to site conditions and system requirements.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+            Planned for Your Property
+          </p>
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Electric Fence Security Features
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+            A suitable system starts with a clear understanding of the property,
+            its boundary and the features supported by the selected equipment.
+          </p>
+        </div>
+
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
+          {detail.features.map((feature, index) => {
+            const icons = [Fence, Smartphone, Wrench];
+            const Icon = icons[index % icons.length];
+
+            return (
+              <article
+                key={feature.title}
+                className="min-w-0 border-t-2 border-primary bg-surface p-5 sm:p-6"
+              >
+                <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Icon aria-hidden="true" className="size-5" />
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                  {feature.copy}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {detail.benefits.map((benefit) => (
+            <div key={benefit} className="flex min-w-0 items-start gap-3">
+              <CheckCircle2
+                aria-hidden="true"
+                className="mt-1 size-5 shrink-0 text-primary"
+              />
+              <p className="text-sm leading-6 text-muted-foreground">
+                {benefit}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Materials */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+              Materials & Equipment
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Electric Fence Materials and Specifications
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              This list reflects the supplied electric fence component
+              specifications. Actual inclusions depend on the selected
+              equipment, property assessment and written quotation.
+            </p>
+          </div>
+
+          <div className="mt-7 grid grid-cols-1 gap-3 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
+            {electricFenceComponents.map((component, index) => {
+              const Icon = materialIcons[index % materialIcons.length];
+
+              return (
+                <div
+                  key={component}
+                  className="flex min-w-0 items-start gap-3 border border-border bg-background p-4"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon aria-hidden="true" className="size-5" />
+                  </span>
+                  <p className="min-w-0 break-words text-sm leading-6 text-foreground">
+                    {component}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-6 border-l-2 border-primary bg-background p-4 sm:p-5">
+            <h3 className="font-bold text-foreground">
+              Important Specification Notes
+            </h3>
+            <ul className="mt-3 space-y-2 text-sm leading-7 text-muted-foreground">
+              <li>
+                Tongher and Nemtek/Nemtec product options should be confirmed
+                against the actual model supplied.
+              </li>
+              <li>
+                The supplied 12,000 DC and 9,000 DC figures are product
+                specifications, not independently verified output measurements
+                or a performance guarantee.
+              </li>
+              <li>
+                Alarm, UPS, Wi-Fi, mobile access and battery backup depend on
+                the selected device and configuration. The supplied 5–6 hour
+                battery figure is not a guaranteed runtime.
+              </li>
+              <li>
+                Proper installation, warning signs, earthing, inspection and
+                maintenance are important. Earthing does not guarantee
+                protection against lightning damage.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Homes and other applications */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+            Suitable Applications
+          </p>
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Electric Fencing for Homes, Businesses and Industrial Sites
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+            Each property has different boundary conditions and access
+            requirements. The proposed system should be planned for the actual
+            site rather than treated as a one-size-fits-all package.
+          </p>
+        </div>
+
+        <div className="mt-7 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {applications.map((application) => {
+            const Icon = application.icon;
+
+            return (
+              <article
+                key={application.title}
+                className="min-w-0 border border-border p-5 sm:p-6"
+              >
+                <Icon aria-hidden="true" className="size-7 text-primary" />
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {application.title}
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                  {application.copy}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Installation process */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+              From Planning to Handover
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Our Electric Fence Installation Process
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              Clear planning helps align the installation with the property,
+              required features and agreed quotation.
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {installationSteps.map((step) => {
+              const Icon = step.icon;
+
+              return (
+                <article key={step.number} className="min-w-0">
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-extrabold text-primary">
+                      {step.number}
+                    </span>
+                    <span className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Icon aria-hidden="true" className="size-5" />
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                    {step.copy}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing and warranty */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="grid min-w-0 gap-7 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:gap-12">
+          <div className="min-w-0">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+              Pricing & Warranty
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Electric Fence Installation Cost in Pakistan
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              Installation cost depends on perimeter length, wall and gate
+              conditions, post layout, selected energizer, wiring, power
+              arrangements and monitoring requirements. A property-specific
+              assessment helps establish the materials and work required.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              Warranty coverage and duration depend on the selected equipment
+              and agreed terms. The written quotation should confirm the
+              applicable warranty, included components and optional features
+              before installation.
+            </p>
+          </div>
+
+          <div className="min-w-0 border-l-2 border-primary bg-surface p-5 sm:p-7">
+            <ClipboardCheck aria-hidden="true" className="size-7 text-primary" />
+            <h3 className="mt-4 text-xl font-bold text-foreground">
+              Request a Property-Specific Quote
+            </h3>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              Share your city, approximate boundary length and whether you need
+              alarm integration or compatible mobile monitoring.
+            </p>
+            <Button asChild variant="brand" className="mt-5 min-h-11 w-full">
+              <Link to="/contact">
+                Request a Quote <ArrowRight className="ml-2 size-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Service coverage */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-9 sm:py-11`}>
+          <div className="flex min-w-0 items-start gap-4">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <MapPin aria-hidden="true" className="size-5" />
+            </span>
+            <div className="min-w-0">
+              <h2 className="text-xl font-bold text-foreground sm:text-2xl">
+                Electric Fence Installation Services Across Pakistan
+              </h2>
+              <p className="mt-2 text-sm leading-7 text-muted-foreground sm:text-base">
+                Contact One Point Solution to discuss electric fencing for
+                your home, commercial property or industrial site. Service
+                arrangements and site-visit availability should be confirmed
+                for your city and project.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* More Services — no FAQ accordion on the Electric Fence page */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+            Complete Security Solutions
+          </p>
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            More Services
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+            Explore other security systems for your property.
+          </p>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {moreServices.map((item) => {
+            const isCurrentPage = item.slug === "electric-fencing";
+            const title =
+              item.slug === "electric-fencing"
+                ? "Electric Fence Installation"
+                : item.slug === "cctv-cameras"
+                  ? "CCTV Installation"
+                  : item.title;
+
+            return (
+              <div
+                key={item.slug}
+                className="flex min-w-0 items-center justify-between gap-3 border border-border p-4 transition-colors hover:border-primary sm:p-5"
+              >
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <ShieldCheck aria-hidden="true" className="size-5" />
+                  </span>
+                  <span className="min-w-0 break-words text-sm font-bold text-foreground sm:text-base">
+                    {title}
+                  </span>
+                </div>
+
+                {isCurrentPage ? (
+                  <span className="shrink-0 text-xs font-semibold text-primary">
+                    Current
+                  </span>
+                ) : (
+                  <Link
+                    to={item.path}
+                    aria-label={`Explore ${title}`}
+                    className="flex size-9 shrink-0 items-center justify-center rounded-lg text-primary hover:bg-primary/10"
+                  >
+                    <ArrowRight aria-hidden="true" className="size-5" />
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="bg-primary text-primary-foreground">
+        <div
+          className={`${container} grid min-w-0 gap-6 py-9 sm:py-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-center`}
+        >
+          <div className="min-w-0">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/80 sm:text-sm">
+              We Are Here to Help
+            </p>
+            <h2 className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
+              Any Questions? Let&apos;s Talk
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-primary-foreground/90 sm:text-base">
+              Discuss your electric fence requirements, materials, installation
+              planning and quotation with One Point Solution.
+            </p>
+            <a
+              href={site.phoneHref}
+              className="mt-4 inline-flex max-w-full items-center gap-2 break-words text-xl font-extrabold sm:text-2xl"
+            >
+              <Phone aria-hidden="true" className="size-5 shrink-0" />
+              {site.phoneDisplay}
+            </a>
+          </div>
+
+          <div className="flex min-w-0 flex-col gap-3 sm:flex-row md:flex-col">
+            <Button asChild variant="secondary" className="min-h-11">
+              <a href={site.phoneHref}>
+                <Phone className="mr-2 size-4" />
+                Call Us
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="min-h-11 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            >
+              <a href={site.whatsapp} target="_blank" rel="noreferrer">
+                <MessageCircle className="mr-2 size-4" />
+                WhatsApp
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function Checklist({
+  items,
+  columns = false,
+}: {
+  items: readonly string[];
+  columns?: boolean;
+}) {
+  return (
+    <ul
+      className={`mt-5 grid gap-x-8 gap-y-4 ${
+        columns ? "md:grid-cols-2" : ""
+      }`}
+    >
+      {items.map((item) => (
+        <li key={item} className="flex min-w-0 items-start gap-3">
+          <Check
+            aria-hidden="true"
+            className="mt-1 size-5 shrink-0 text-primary"
+          />
+          <span className="text-sm leading-7 text-muted-foreground">
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
 }
