@@ -247,56 +247,7 @@ export function ServicePage({ service }: { service: Service }) {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
-        <div
-          className={`${container} grid gap-6 py-9 md:grid-cols-[minmax(0,1fr)_auto] md:items-center sm:py-12`}
-        >
-          <div className="min-w-0">
-            <h2 className="text-2xl font-bold">
-              Discuss your {service.title.toLowerCase()} requirements
-            </h2>
-            <p className="mt-3 max-w-xl text-sm leading-7">
-              Share your property type, city and priorities for a considered
-              quotation.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild variant="secondary">
-              <Link to="/contact">
-                Request a Quote <ArrowRight className="ml-2 size-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
-              <a href={site.whatsapp} target="_blank" rel="noreferrer">
-                WhatsApp <MessageCircle className="ml-2 size-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className={`${container} py-10 sm:py-12`}>
-        <SectionHeading
-          eyebrow="Explore our expertise"
-          title="Related security services"
-        />
-        <div className="mt-6 grid gap-5 md:grid-cols-3">
-          {related.map((item) => (
-            <Link
-              key={item.slug}
-              to={item.path}
-              className="group flex min-w-0 items-center justify-between gap-3 border-b border-border py-4 text-base font-bold hover:text-primary"
-            >
-              <span>{item.title}</span>
-              <ArrowRight className="size-5 shrink-0 text-primary" />
-            </Link>
-          ))}
-        </div>
-      </section>
+      
     </>
   );
 }
@@ -556,29 +507,7 @@ function CctvContent() {
         </div>
       </section>
 
-      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-            Frequently Asked Questions About CCTV Cameras
-          </h2>
-        </div>
-        <Accordion
-          type="single"
-          collapsible
-          className="mt-5 min-w-0 border-t border-border"
-        >
-          {detail.faqs.map((faq, index) => (
-            <AccordionItem key={faq.question} value={`cctv-faq-${index}`}>
-              <AccordionTrigger className="gap-4 py-5 font-semibold">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="leading-7 text-muted-foreground">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
+      
 
       <section className="border-t border-border bg-surface">
         <div className={`${container} py-10 sm:py-12`}>
@@ -594,38 +523,6 @@ function CctvContent() {
                 <ArrowRight className="size-5 shrink-0 text-primary" />
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-primary text-primary-foreground">
-        <div
-          className={`${container} grid gap-6 py-9 md:grid-cols-[minmax(0,1fr)_auto] md:items-center sm:py-12`}
-        >
-          <div className="min-w-0">
-            <h2 className="text-2xl font-bold">
-              Discuss Your CCTV Requirements
-            </h2>
-            <p className="mt-3 max-w-xl text-sm leading-7 text-primary-foreground/90">
-              Share your city, property type and monitoring priorities
-              to discuss a suitable CCTV system.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild variant="secondary">
-              <Link to="/contact">
-                Contact Us <ArrowRight className="ml-2 size-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
-              <a href={site.whatsapp} target="_blank" rel="noreferrer">
-                WhatsApp <MessageCircle className="ml-2 size-4" />
-              </a>
-            </Button>
           </div>
         </div>
       </section>
