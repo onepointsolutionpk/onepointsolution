@@ -1,4 +1,4 @@
-
+import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -309,7 +309,7 @@ function CctvContent() {
                 className="min-h-11 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
                 <a href={site.whatsapp} target="_blank" rel="noreferrer">
-                  <MessageCircle className="mr-2 size-4" />
+                  <FaWhatsapp className="mr-2 size-5" />
                   WhatsApp Us
                 </a>
               </Button>
