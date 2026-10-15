@@ -435,9 +435,9 @@ function CctvContent() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface">
-      
-<section className={`${container} py-10 sm:py-14 lg:py-16`}>
+      <section
+  className={`${container} border-y border-border bg-surface py-10 sm:py-14 lg:py-16`}
+>
   <div className="max-w-3xl">
     <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
       CCTV Solutions for Different Property Types
