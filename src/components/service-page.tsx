@@ -506,26 +506,7 @@ function CctvContent() {
           </div>
         </div>
       </section>
-
       
-
-      <section className="border-t border-border bg-surface">
-        <div className={`${container} py-10 sm:py-12`}>
-          <SectionHeading title="Related Security Services" />
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {related.map((item) => (
-              <Link
-                key={item.slug}
-                to={item.path}
-                className="group flex min-w-0 items-center justify-between gap-3 border-b border-border py-4 text-base font-bold hover:text-primary"
-              >
-                <span>{item.title}</span>
-                <ArrowRight className="size-5 shrink-0 text-primary" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
