@@ -271,21 +271,12 @@ export function ServicePage({ service }: { service: Service }) {
 function ElectricFenceContent() {
   const detail = serviceDetails["electric-fencing"];
 
-  const moreServices = services.filter((item) =>
-    ["electric-fencing", "gate-automation", "cctv-cameras"].includes(
-      item.slug,
-    ),
-  );
-
   return (
     <main className="w-full min-w-0 overflow-x-clip bg-background">
       {/* Centered page heading */}
       <section className="px-4 pb-5 pt-10 text-center sm:px-6 sm:pb-6 sm:pt-14 lg:pt-16">
         <div className="mx-auto max-w-4xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
-            One Point Solution · Pakistan
-          </p>
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Electric Fence{" "}
             <span className="text-primary">Installation</span>
           </h1>
@@ -358,73 +349,16 @@ function ElectricFenceContent() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
-            Planned for Your Property
-          </p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Electric Fence Security Features
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
-            A suitable system starts with a clear understanding of the property,
-            its boundary and the features supported by the selected equipment.
-          </p>
-        </div>
-
-        <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
-          {detail.features.map((feature, index) => {
-            const icons = [Fence, Smartphone, Wrench];
-            const Icon = icons[index % icons.length];
-
-            return (
-              <article
-                key={feature.title}
-                className="min-w-0 border-t-2 border-primary bg-surface p-5 sm:p-6"
-              >
-                <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Icon aria-hidden="true" className="size-5" />
-                </span>
-                <h3 className="mt-4 text-lg font-bold text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                  {feature.copy}
-                </p>
-              </article>
-            );
-          })}
-        </div>
-
-        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {detail.benefits.map((benefit) => (
-            <div key={benefit} className="flex min-w-0 items-start gap-3">
-              <CheckCircle2
-                aria-hidden="true"
-                className="mt-1 size-5 shrink-0 text-primary"
-              />
-              <p className="text-sm leading-6 text-muted-foreground">
-                {benefit}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Materials */}
+      {/* Materials — moved above security features */}
       <section className="border-y border-border bg-surface">
         <div className={`${container} py-10 sm:py-14 lg:py-16`}>
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
-              Materials & Equipment
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Electric Fence Materials and Specifications
             </h2>
             <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
-              This list reflects the supplied electric fence component
-              specifications. Actual inclusions depend on the selected
+              Review the components that may be specified for your electric
+              fence installation. Final inclusions depend on the selected
               equipment, property assessment and written quotation.
             </p>
           </div>
@@ -478,13 +412,57 @@ function ElectricFenceContent() {
         </div>
       </section>
 
+      {/* Security features — extra eyebrow and introductory copy removed */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Electric Fence Security Features
+          </h2>
+        </div>
+
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
+          {detail.features.map((feature, index) => {
+            const icons = [Fence, Smartphone, Wrench];
+            const Icon = icons[index % icons.length];
+
+            return (
+              <article
+                key={feature.title}
+                className="min-w-0 border-t-2 border-primary bg-surface p-5 sm:p-6"
+              >
+                <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Icon aria-hidden="true" className="size-5" />
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                  {feature.copy}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {detail.benefits.map((benefit) => (
+            <div key={benefit} className="flex min-w-0 items-start gap-3">
+              <CheckCircle2
+                aria-hidden="true"
+                className="mt-1 size-5 shrink-0 text-primary"
+              />
+              <p className="text-sm leading-6 text-muted-foreground">
+                {benefit}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Homes and other applications */}
       <section className={`${container} py-10 sm:py-14 lg:py-16`}>
         <div className="max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
-            Suitable Applications
-          </p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Electric Fencing for Homes, Businesses and Industrial Sites
           </h2>
           <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
@@ -520,10 +498,7 @@ function ElectricFenceContent() {
       <section className="border-y border-border bg-surface">
         <div className={`${container} py-10 sm:py-14 lg:py-16`}>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
-              From Planning to Handover
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Our Electric Fence Installation Process
             </h2>
             <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
@@ -563,10 +538,7 @@ function ElectricFenceContent() {
       <section className={`${container} py-10 sm:py-14 lg:py-16`}>
         <div className="grid min-w-0 gap-7 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:gap-12">
           <div className="min-w-0">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
-              Pricing & Warranty
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Electric Fence Installation Cost in Pakistan
             </h2>
             <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
@@ -619,109 +591,6 @@ function ElectricFenceContent() {
                 for your city and project.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* More Services — no FAQ accordion on the Electric Fence page */}
-      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
-        <div className="max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
-            Complete Security Solutions
-          </p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            More Services
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
-            Explore other security systems for your property.
-          </p>
-        </div>
-
-        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {moreServices.map((item) => {
-            const isCurrentPage = item.slug === "electric-fencing";
-            const title =
-              item.slug === "electric-fencing"
-                ? "Electric Fence Installation"
-                : item.slug === "cctv-cameras"
-                  ? "CCTV Installation"
-                  : item.title;
-
-            return (
-              <div
-                key={item.slug}
-                className="flex min-w-0 items-center justify-between gap-3 border border-border p-4 transition-colors hover:border-primary sm:p-5"
-              >
-                <div className="flex min-w-0 items-center gap-3">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <ShieldCheck aria-hidden="true" className="size-5" />
-                  </span>
-                  <span className="min-w-0 break-words text-sm font-bold text-foreground sm:text-base">
-                    {title}
-                  </span>
-                </div>
-
-                {isCurrentPage ? (
-                  <span className="shrink-0 text-xs font-semibold text-primary">
-                    Current
-                  </span>
-                ) : (
-                  <Link
-                    to={item.path}
-                    aria-label={`Explore ${title}`}
-                    className="flex size-9 shrink-0 items-center justify-center rounded-lg text-primary hover:bg-primary/10"
-                  >
-                    <ArrowRight aria-hidden="true" className="size-5" />
-                  </Link>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="bg-primary text-primary-foreground">
-        <div
-          className={`${container} grid min-w-0 gap-6 py-9 sm:py-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-center`}
-        >
-          <div className="min-w-0">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/80 sm:text-sm">
-              We Are Here to Help
-            </p>
-            <h2 className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
-              Any Questions? Let&apos;s Talk
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-primary-foreground/90 sm:text-base">
-              Discuss your electric fence requirements, materials, installation
-              planning and quotation with One Point Solution.
-            </p>
-            <a
-              href={site.phoneHref}
-              className="mt-4 inline-flex max-w-full items-center gap-2 break-words text-xl font-extrabold sm:text-2xl"
-            >
-              <Phone aria-hidden="true" className="size-5 shrink-0" />
-              {site.phoneDisplay}
-            </a>
-          </div>
-
-          <div className="flex min-w-0 flex-col gap-3 sm:flex-row md:flex-col">
-            <Button asChild variant="secondary" className="min-h-11">
-              <a href={site.phoneHref}>
-                <Phone className="mr-2 size-4" />
-                Call Us
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="min-h-11 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
-              <a href={site.whatsapp} target="_blank" rel="noreferrer">
-                <MessageCircle className="mr-2 size-4" />
-                WhatsApp
-              </a>
-            </Button>
           </div>
         </div>
       </section>
