@@ -436,34 +436,51 @@ function CctvContent() {
       </section>
 
       <section className="border-y border-border bg-surface">
-        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
-          <div className="max-w-3xl">
-            <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-              CCTV Solutions for Different Property Types
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
-              Camera placement should reflect how each property is used
-              and which areas need monitoring.
-            </p>
-          </div>
-          <div className="mt-7 grid grid-cols-1 gap-4 md:grid-cols-3">
-            {detail.applications.map((application, index) => {
-              const Icon = applicationIcons[index] ?? Camera;
-              return (
-                <article
-                  key={application}
-                  className="min-w-0 border border-border bg-background p-5 sm:p-6"
-                >
-                  <Icon aria-hidden="true" className="size-7 text-primary" />
-                  <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                    {application}
-                  </p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
+<section className={`${container} py-10 sm:py-14 lg:py-16`}>
+  <div className="max-w-3xl">
+    <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+      CCTV Solutions for Different Property Types
+    </h2>
+    <p className="mt-3 leading-7 text-muted-foreground">
+      Camera placement should reflect how each property is used and which
+      areas require reliable monitoring and security coverage.
+    </p>
+  </div>
+
+  <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="border-l-4 border-primary pl-5 py-2">
+      <h3 className="text-xl font-bold text-primary sm:text-2xl">
+        Residential CCTV
+      </h3>
+      <p className="mt-3 leading-7 text-muted-foreground">
+        Monitor entrances, driveways and shared access areas to help protect
+        your home and family, while respecting personal privacy.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-primary pl-5 py-2">
+      <h3 className="text-xl font-bold text-primary sm:text-2xl">
+        Commercial CCTV
+      </h3>
+      <p className="mt-3 leading-7 text-muted-foreground">
+        Improve security across shops, offices, reception areas and storage
+        spaces with camera placement tailored to your business.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-primary pl-5 py-2">
+      <h3 className="text-xl font-bold text-primary sm:text-2xl">
+        Industrial CCTV
+      </h3>
+      <p className="mt-3 leading-7 text-muted-foreground">
+        Monitor loading bays, movement routes, warehouses and compound access
+        points across industrial facilities.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       <section className={`${container} py-10 sm:py-14 lg:py-16`}>
         <div className="mx-auto max-w-3xl text-center">
