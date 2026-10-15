@@ -133,6 +133,414 @@ export function ServicePage({ service }: { service: Service }) {
   if (service.slug === "cctv-cameras") {
     return <CctvContent />;
   }
+  
+  if (service.slug === "gate-automation") {
+    return <GateAutomationContent />;
+  }
+
+  
+function GateAutomationContent() {
+  const detail = serviceDetails["gate-automation"];
+
+  const solutions = [
+    {
+      number: "01",
+      icon: ArrowRight,
+      title: "Sliding Gate Automation",
+      copy: "Motorised sliding gates are suitable for entrances where a gate moves sideways along a track. Gate weight, travel distance, track condition and available space all affect motor selection.",
+    },
+    {
+      number: "02",
+      icon: Building2,
+      title: "Swing Gate Automation",
+      copy: "Swing gate systems use compatible operators to open and close hinged gates. Gate dimensions, hinge condition, opening angle and available clearance should be checked before installation.",
+    },
+    {
+      number: "03",
+      icon: Smartphone,
+      title: "Automatic Gate Controls",
+      copy: "Compatible remote controls, keypads, intercoms and other access-control options can be considered according to the selected motor and the access requirements of the property.",
+    },
+  ];
+
+  const applications = [
+    {
+      icon: Home,
+      title: "Residential Properties",
+      copy: "Automated entrance gates for houses, villas and residential communities, planned around convenient entry, available space and everyday use.",
+    },
+    {
+      icon: Building2,
+      title: "Commercial Buildings",
+      copy: "Controlled vehicle access for offices, shops, business premises and parking entrances, with suitable operating controls for the site.",
+    },
+    {
+      icon: Factory,
+      title: "Industrial Facilities",
+      copy: "Gate automation for warehouses, factories and facility entrances where gate size, operating frequency and site conditions influence the system choice.",
+    },
+  ];
+
+  const process = [
+    {
+      number: "01",
+      icon: ClipboardCheck,
+      title: "Site Assessment",
+      copy: "Review the existing gate, opening direction, dimensions, structural condition, available space and power arrangements.",
+    },
+    {
+      number: "02",
+      icon: ShieldCheck,
+      title: "System Selection",
+      copy: "Identify a compatible motor and operating method based on gate weight, movement, usage frequency and the required access controls.",
+    },
+    {
+      number: "03",
+      icon: Wrench,
+      title: "Installation",
+      copy: "Install and configure the agreed equipment, operator, control accessories and necessary connections for the specific gate.",
+    },
+    {
+      number: "04",
+      icon: CheckCircle2,
+      title: "Testing and Handover",
+      copy: "Test opening and closing cycles, available safety functions and agreed controls, then explain normal operation and maintenance.",
+    },
+  ];
+
+  return (
+    <main className="w-full min-w-0 overflow-x-clip bg-background">
+      {/* HERO */}
+      <section className="px-4 pb-8 pt-9 sm:px-6 sm:pb-12 sm:pt-14 lg:pt-16">
+        <div className={`${container} grid min-w-0 items-center gap-8 lg:grid-cols-2 lg:gap-12`}>
+          <div className="min-w-0">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+              One Point Solution · Pakistan
+            </p>
+
+            <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              Gate Automation
+              <span className="block text-primary">
+                Systems & Installation
+              </span>
+            </h1>
+
+            <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+              Make property access more convenient with a gate automation
+              system selected for your entrance, gate construction and
+              everyday operating requirements. One Point Solution can help
+              assess suitable automatic gate options for residential,
+              commercial and industrial properties across Pakistan.
+            </p>
+
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              The recommended motor and controls depend on the gate type,
+              dimensions, condition, available power and site layout.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button asChild variant="brand" className="min-h-11">
+                <Link to="/contact">
+                  Discuss Your Requirements
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                className="min-h-11 border-[#25D366] text-foreground hover:bg-[#25D366]/10"
+              >
+                <a
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Discuss gate automation on WhatsApp"
+                >
+                  <span className="mr-2 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="size-5"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.15 1.6 5.96L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.47-8.44ZM12.1 21.77a9.88 9.88 0 0 1-5.03-1.37l-.36-.21-3.74.98 1-3.65-.24-.38a9.85 9.85 0 1 1 8.37 4.63Zm5.41-7.39c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.71 1.19 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35Z" />
+                    </svg>
+                  </span>
+                  WhatsApp Us
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <figure className="min-w-0">
+            <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-lg sm:rounded-2xl">
+              <img
+                src={detail.image}
+                alt="Automatic gate automation system for a property entrance"
+                className="aspect-[4/3] w-full object-cover object-center"
+                fetchPriority="high"
+              />
+            </div>
+            <figcaption className="mt-3 text-xs leading-5 text-muted-foreground sm:text-sm">
+              Motor selection and installation depend on the gate design,
+              site conditions and required operating features.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* OVERVIEW */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} grid gap-7 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12`}>
+          <div className="min-w-0">
+            <SectionHeading
+              eyebrow="Understanding the system"
+              title="Automatic Gate Systems Planned for Your Entrance"
+            />
+            <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">
+              Gate automation uses a compatible motor and control system to
+              operate a gate without opening or closing it entirely by hand.
+              The right setup depends on how the gate moves, how much it
+              weighs, how often it is used and the space available around it.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              An assessment of the existing gate and its supporting structure
+              helps identify practical installation requirements before
+              equipment is selected.
+            </p>
+          </div>
+
+          <div className="min-w-0 border-l-2 border-primary bg-background p-5 sm:p-7">
+            <Zap aria-hidden="true" className="size-8 text-primary" />
+            <h3 className="mt-4 text-xl font-bold text-foreground">
+              Choose Compatibility Before Features
+            </h3>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              A suitable operator must match the gate's construction,
+              dimensions, movement and usage. Remote access and additional
+              controls should be selected only after checking compatibility
+              with the proposed equipment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* GATE TYPES */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <SectionHeading
+          eyebrow="Available system types"
+          title="Gate Automation Solutions"
+          description="Different gate designs need different operating mechanisms. The final recommendation should follow a site assessment rather than a one-size-fits-all package."
+        />
+
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {solutions.map((solution) => {
+            const Icon = solution.icon;
+
+            return (
+              <article
+                key={solution.number}
+                className="min-w-0 border-t-2 border-primary bg-surface p-5 sm:p-6"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-sm font-extrabold text-primary">
+                    {solution.number}
+                  </span>
+                  <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon aria-hidden="true" className="size-5" />
+                  </span>
+                </div>
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {solution.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {solution.copy}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ACCESS CONTROL */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+          <SectionHeading
+            eyebrow="Entry and operating controls"
+            title="Access Control Options for Automatic Gates"
+            description="Control options vary by motor model and system configuration. Confirm which features are supported before selecting the final setup."
+          />
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: Smartphone,
+                title: "Remote Controls",
+                copy: "Operate a compatible gate motor using its supported remote control, subject to range and system configuration.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Keypad Access",
+                copy: "Where compatible, a keypad can provide code-based entry for approved users at a suitable access point.",
+              },
+              {
+                icon: MessageCircle,
+                title: "Intercom Integration",
+                copy: "Compatible intercom systems can support communication with visitors before entry is granted.",
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  key={item.title}
+                  className="min-w-0 border border-border bg-background p-5 sm:p-6"
+                >
+                  <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon aria-hidden="true" className="size-5" />
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                    {item.copy}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* APPLICATIONS */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <SectionHeading
+          eyebrow="Where automation is used"
+          title="Gate Automation for Different Property Types"
+          description="The layout, operating frequency and access requirements of each property help determine the appropriate gate automation arrangement."
+        />
+
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {applications.map((application) => {
+            const Icon = application.icon;
+
+            return (
+              <article
+                key={application.title}
+                className="min-w-0 border-l-2 border-primary bg-surface p-5 sm:p-6"
+              >
+                <Icon aria-hidden="true" className="size-7 text-primary" />
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {application.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {application.copy}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* INSTALLATION PROCESS */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+          <SectionHeading
+            eyebrow="From assessment to handover"
+            title="Our Gate Automation Installation Process"
+            description="A planned installation helps ensure that the selected operator and controls suit the gate and the site."
+          />
+
+          <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+            {process.map((step) => {
+              const Icon = step.icon;
+
+              return (
+                <article key={step.number} className="min-w-0">
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-extrabold text-primary">
+                      {step.number}
+                    </span>
+                    <span className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Icon aria-hidden="true" className="size-5" />
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                    {step.copy}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* SAFETY AND MAINTENANCE */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <SectionHeading
+          eyebrow="Safe and reliable operation"
+          title="Gate Automation Safety and Maintenance"
+          description="An automated gate is a moving system. Correct installation, suitable safety devices and routine checks are important for its continued operation."
+        />
+
+        <div className="mt-7 grid gap-4 sm:grid-cols-2">
+          {[
+            "Check that the gate moves freely and that hinges, tracks, rollers and supporting structures remain in suitable condition.",
+            "Use compatible obstruction-detection and safety devices where supported by the selected system.",
+            "Make sure users understand the operating controls and any manual-release procedure provided with the equipment.",
+            "Arrange periodic inspection of the motor, control equipment, connections and safety features according to the manufacturer's guidance.",
+          ].map((item) => (
+            <div key={item} className="flex min-w-0 items-start gap-3">
+              <CheckCircle2
+                aria-hidden="true"
+                className="mt-1 size-5 shrink-0 text-primary"
+              />
+              <p className="text-sm leading-7 text-muted-foreground">
+                {item}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SERVICE COVERAGE — NO FINAL CTA */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-9 sm:py-11`}>
+          <div className="flex min-w-0 items-start gap-4">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <MapPin aria-hidden="true" className="size-5" />
+            </span>
+
+            <div className="min-w-0">
+              <h2 className="text-xl font-bold text-foreground sm:text-2xl">
+                Gate Automation Services Across Pakistan
+              </h2>
+              <p className="mt-2 text-sm leading-7 text-muted-foreground sm:text-base">
+                Contact One Point Solution to discuss automatic gate systems
+                for your home, commercial premises or industrial property.
+                Site visits, installation arrangements and service availability
+                should be confirmed for your city and project.
+              </p>
+              <a
+                href={site.phoneHref}
+                className="mt-4 inline-flex max-w-full items-center gap-2 break-words text-sm font-semibold text-primary"
+              >
+                <Phone aria-hidden="true" className="size-4 shrink-0" />
+                {site.phoneDisplay}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
 
   const detail = serviceDetails[service.slug as keyof typeof serviceDetails];
 
