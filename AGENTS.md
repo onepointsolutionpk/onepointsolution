@@ -18,3 +18,6 @@
 - Animate company statistics once upon viewport entry, retaining final values for reduced motion and server rendering so claims remain readable without animation.
 
 - Public pages consume centralized absolute HTTPS original-media URLs, while asset pointers remain upload records only; this keeps external-host deployments independent of same-origin asset routing.
+
+- Keep expanded service-detail content and existing-card image references in `src/lib/service-details.ts`; it is consumed only by service detail pages so owner-edited homepage mappings remain untouched.
+- Contact-specific form labels and placeholders are opt-in through `QuoteForm` props; unchanged defaults preserve the homepage form presentation and behaviour.
