@@ -517,16 +517,19 @@ function CctvContent() {
         </div>
       </section>
 
+      
       <section className="border-y border-border bg-surface">
         <div className={`${container} py-9 sm:py-11`}>
           <div className="flex min-w-0 items-start gap-4">
             <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
               <MapPin aria-hidden="true" className="size-5" />
             </span>
+
             <div className="min-w-0">
               <h2 className="text-xl font-bold text-primary sm:text-2xl">
                 CCTV Camera Services Across Pakistan
               </h2>
+
               <p className="mt-2 text-sm leading-7 text-muted-foreground sm:text-base">
                 Contact One Point Solution to discuss CCTV requirements
                 for your home, business or industrial property. Site visits
