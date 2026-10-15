@@ -1,4 +1,4 @@
-import { FaWhatsapp } from "react-icons/fa";
+
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -309,7 +309,17 @@ function CctvContent() {
                 className="min-h-11 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
                 <a href={site.whatsapp} target="_blank" rel="noreferrer">
-                  <FaWhatsapp className="mr-2 size-5" />
+                  
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  className="mr-2 size-5"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path d="M12.04 2a9.8 9.8 0 0 0-8.42 14.82L2.3 22l5.3-1.39A9.95 9.95 0 1 0 12.04 2Zm0 18.1a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.14.82.84-3.06-.2-.32A8.15 8.15 0 1 1 12.04 20.1Zm4.47-6.1c-.25-.13-1.47-.73-1.7-.81-.23-.09-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.07-.4-2.04-1.26-.76-.68-1.27-1.52-1.42-1.78-.15-.25-.02-.39.11-.51.12-.11.25-.3.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12s.91 2.46 1.04 2.63c.13.17 1.79 2.73 4.34 3.83.61.26 1.08.42 1.45.54.61.19 1.17.16 1.61.1.49-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.17-.49-.3Z" />
+</svg>
+                  
                   WhatsApp Us
                 </a>
               </Button>
