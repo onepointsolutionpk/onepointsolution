@@ -147,6 +147,7 @@ About <span className="text-primary">Us</span>
       </div>
     </div>
   </section>
+</main>
 
   {/* WHY CHOOSE US */}
   <section className="border-y border-border bg-surface">
