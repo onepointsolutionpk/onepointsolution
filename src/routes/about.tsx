@@ -223,76 +223,9 @@ function AboutPage() {
       </section>
 
       {/* OUR SERVICES */}
-      <section className="border-y border-border bg-surface">
-        <div className={`${container} py-12 sm:py-16 lg:py-20`}>
-          <SectionHeading
-            eyebrow="Our Expertise"
-            title="Integrated security solutions for different needs"
-          />
+      
 
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
-            Explore our core security services for homes, business
-            premises and industrial facilities across Pakistan.
-          </p>
-
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {services.map((service, index) => (
-              <article
-                key={service.slug}
-                className="group min-w-0 border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/5 sm:p-8"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <service.icon className="size-8 text-primary transition-transform duration-300 group-hover:scale-110" />
-                  <span className="text-sm font-bold tracking-widest text-primary/60">
-                    0{index + 1}
-                  </span>
-                </div>
-
-                <h3 className="mt-5 text-xl font-bold">
-                  {service.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  {service.short}
-                </p>
-
-                <Link
-                  to={service.path}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary"
-                >
-                  Explore Service
-                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* INDUSTRIES */}
-      <section className={`${container} py-12 sm:py-16 lg:py-20`}>
-        <SectionHeading
-          eyebrow="Who We Serve"
-          title="Security for the environments that matter"
-        />
-
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {industries.map((industry) => (
-            <article
-              key={industry.title}
-              className="border-t-2 border-primary pt-6 transition-all duration-300 hover:-translate-y-1"
-            >
-              <industry.icon className="size-8 text-primary" />
-              <h3 className="mt-5 text-xl font-bold">
-                {industry.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                {industry.copy}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      
 
       {/* OUR PROCESS */}
       <section className="border-y border-border bg-surface">
@@ -349,44 +282,3 @@ function AboutPage() {
           ))}
         </div>
       </section>
-
-      {/* CONTACT SECTION */}
-      <section className="bg-primary text-primary-foreground">
-        <div className={`${container} grid gap-6 py-12 sm:py-14 md:grid-cols-[minmax(0,1fr)_auto] md:items-center`}>
-          <div className="min-w-0">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground/75">
-              Let's Talk Security
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-              Let's discuss your property's security.
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-primary-foreground/85 sm:text-base">
-              Tell us about your property and requirements. Our team can
-              help you explore suitable security system options.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <Button asChild variant="secondary">
-              <Link to="/contact">
-                Request a Quote
-                <ArrowRight className="ml-2 size-4" />
-              </Link>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
-              <a href={site.whatsapp} target="_blank" rel="noreferrer">
-                WhatsApp
-                <MessageCircle className="ml-2 size-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
