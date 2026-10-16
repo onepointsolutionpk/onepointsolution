@@ -37,16 +37,16 @@ function ContactPage() {
         </section>
 
         {/* Full-width contact section */}
-        <section className="mx-3 overflow-hidden rounded-2xl bg-surface shadow-sm sm:mx-5 lg:mx-auto lg:max-w-[1380px]">
-          <div className="px-5 py-7 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+        <section className="w-full overflow-hidden rounded-none bg-primary text-primary-foreground shadow-sm">
+          <div className="px-4 py-7 sm:px-8 sm:py-9 lg:px-12 lg:py-10">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
                   One Point Solution
                 </p>
-                <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  Get in Touch
-                </h2>
+                <p className="max-w-md text-sm leading-6 text-primary-foreground/80">
+  Contact our team directly or find your nearest office.
+</p>
               </div>
               <p className="max-w-md text-sm leading-6 text-muted-foreground">
                 Choose a contact option or find the office location you need.
@@ -61,14 +61,14 @@ function ContactPage() {
                 rel="noopener noreferrer"
                 className="group flex min-w-0 items-center gap-4 rounded-xl border border-border bg-background p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md sm:p-6"
               >
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground">
                   <MessageCircle className="size-6" />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                     WhatsApp
                   </span>
-                  <span className="mt-1 block break-words text-lg font-bold text-foreground">
+                  <span className="mt-1 block text-base font-bold text-foreground sm:text-lg">
                     {site.phoneDisplay}
                   </span>
                   <span className="mt-1 block text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ function ContactPage() {
                   <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                     Contact Email
                   </span>
-                  <span className="mt-1 block break-all text-base font-bold text-foreground sm:text-lg">
+                  <span className="mt-1 block break-all text-sm font-bold text-foreground sm:text-base">
                     {contactEmail}
                   </span>
                   <span className="mt-1 block text-sm text-muted-foreground">
