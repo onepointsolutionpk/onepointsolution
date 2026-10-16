@@ -58,38 +58,53 @@ function AboutPage() {
   
 
       {/* PAGE INTRODUCTION */}
-      <section className={`${container} pb-12 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12`}>
-        <div className="mx-auto max-w-4xl text-center">
+<section className={`${container} pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20`}>
+  {/* Page Heading */}
+  <div className="text-center">
+    <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+      About <span className="text-primary">Us</span>
+    </h1>
 
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            About <span className="text-primary">Us</span>
-          </h1>
+    <div className="mx-auto mt-4 h-1 w-16 bg-primary" />
+  </div>
 
-          <div className="mx-auto mt-5 h-1 w-16 bg-primary" />
+  {/* About Us Image */}
+  <div className="group relative mt-8 overflow-hidden rounded-[4px] sm:mt-10">
+    <img
+      src={site.displayImage}
+      alt="One Point Solution security system installation"
+      width={1920}
+      height={900}
+      fetchPriority="high"
+      className="h-[230px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] sm:h-[340px] lg:h-[430px]"
+    />
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+  </div>
 
-              {/* ABOUT IMAGE BLOCK — replace this image source when your
-          custom About Us image is ready. */}
-      <section className={`${container} pt-5 sm:pt-7 lg:pt-9`}>
-        <div className="group relative overflow-hidden bg-surface">
-          <img
-            src={site.displayImage}
-            alt="Security systems and perimeter protection by One Point Solution"
-            width="1920"
-            height="900"
-            fetchPriority="high"
-            className="h-[230px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] sm:h-[340px] lg:h-[430px]"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-        </div>
-      </section>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
-            Security solutions for the places people live, work and build.
-            One Point Solution brings together electric fencing, CCTV
-            cameras, gate automation and fire alarm systems for residential,
-            commercial and industrial properties across Pakistan.
-          </p>
-        </div>
-      </section>
+  {/* About Us Content */}
+  <div className="mx-auto mt-10 max-w-4xl text-center sm:mt-12">
+    <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
+      Who We Are
+    </p>
+
+    <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+      Security Solutions Built Around Your Needs
+    </h2>
+
+    <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
+      One Point Solution provides security solutions designed to help protect
+      homes, businesses and industrial facilities across Pakistan. Our services
+      include electric fencing, CCTV camera systems, gate automation and fire
+      alarm systems, planned around the security requirements of each property.
+    </p>
+
+    <p className="mt-4 text-base leading-8 text-muted-foreground sm:text-lg">
+      We focus on practical solutions, professional installation and dependable
+      support to help customers make informed decisions about their security
+      needs.
+    </p>
+  </div>
+</section>
 
       {/* WHO WE ARE */}
       <section className="border-y border-border bg-surface">
