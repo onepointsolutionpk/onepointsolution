@@ -57,16 +57,47 @@ function AboutPage() {
     <main className="overflow-hidden">
   
 
-      {/* PAGE INTRODUCTION */}
-<section className={`${container} pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20`}>
-  {/* Page Heading */}
-  <div className="text-center">
-    <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-      About <span className="text-primary">Us</span>
-    </h1>
+      {/* COMPANY INTRODUCTION */}
+<div className="mx-auto mt-10 max-w-4xl sm:mt-12">
+  <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
+    One Point Solution
+  </p>
 
-    <div className="mx-auto mt-4 h-1 w-16 bg-primary" />
+  <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+    Tech-Driven Protection for Your Home and Business
+  </h2>
+
+  <div className="mt-5 space-y-4 text-sm leading-8 text-muted-foreground sm:text-base">
+    <p>
+      One Point Solution provides security solutions for residential,
+      commercial and industrial properties across Pakistan. We offer
+      electric fencing, CCTV camera systems, gate automation and fire
+      alarm systems to help customers address their property security needs.
+    </p>
+
+    <p>
+      Every property has different requirements. That is why we focus on
+      understanding the site, access points and intended use before
+      discussing suitable security equipment and installation options.
+      Our aim is to help customers make informed decisions with clear,
+      practical guidance.
+    </p>
+
+    <p>
+      From perimeter protection to surveillance and automated access,
+      our services are designed to support both security and everyday
+      convenience. We value careful planning, professional communication
+      and attention to installation requirements.
+    </p>
+
+    <p>
+      We believe good security starts with understanding what matters
+      most to each customer. One Point Solution aims to make the process
+      straightforward by discussing available options and helping
+      customers identify a solution suited to their property.
+    </p>
   </div>
+</div>
 
   {/* About Us Image */}
   <div className="group relative mt-8 overflow-hidden rounded-[4px] sm:mt-10">
@@ -83,13 +114,14 @@ function AboutPage() {
 
   {/* About Us Content */}
   <div className="mx-auto mt-10 max-w-4xl text-center sm:mt-12">
-    <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary sm:text-sm">
-      Who We Are
-    </p>
+    <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+  Why Choose Us
+</p>
 
-    <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-      Security Solutions Built Around Your Needs
-    </h2>
+<h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
+  Security Designed Around
+  <span className="text-primary"> Your Needs.</span>
+</h2>
 
     <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
       One Point Solution provides security solutions designed to help protect
