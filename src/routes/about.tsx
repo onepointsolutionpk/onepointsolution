@@ -282,3 +282,6 @@ function AboutPage() {
           ))}
         </div>
       </section>
+  );
+}
+
