@@ -82,7 +82,7 @@ return (
 <main className="overflow-hidden">
 {/* ABOUT US INTRODUCTION */}
 <section className={`${container} pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20`}>
-{/ Page Heading */}
+{/* Page Heading */}
 <div className="text-center">
 <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
 About <span className="text-primary">Us</span>
