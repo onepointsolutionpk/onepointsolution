@@ -55,21 +55,7 @@ function AboutPage() {
 
   return (
     <main className="overflow-hidden">
-      {/* ABOUT IMAGE BLOCK — replace this image source when your
-          custom About Us image is ready. */}
-      <section className={`${container} pt-5 sm:pt-7 lg:pt-9`}>
-        <div className="group relative overflow-hidden bg-surface">
-          <img
-            src={site.displayImage}
-            alt="Security systems and perimeter protection by One Point Solution"
-            width="1920"
-            height="900"
-            fetchPriority="high"
-            className="h-[230px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] sm:h-[340px] lg:h-[430px]"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-        </div>
-      </section>
+  
 
       {/* PAGE INTRODUCTION */}
       <section className={`${container} pb-12 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12`}>
@@ -84,6 +70,21 @@ function AboutPage() {
 
           <div className="mx-auto mt-5 h-1 w-16 bg-primary" />
 
+              {/* ABOUT IMAGE BLOCK — replace this image source when your
+          custom About Us image is ready. */}
+      <section className={`${container} pt-5 sm:pt-7 lg:pt-9`}>
+        <div className="group relative overflow-hidden bg-surface">
+          <img
+            src={site.displayImage}
+            alt="Security systems and perimeter protection by One Point Solution"
+            width="1920"
+            height="900"
+            fetchPriority="high"
+            className="h-[230px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] sm:h-[340px] lg:h-[430px]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        </div>
+      </section>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
             Security solutions for the places people live, work and build.
             One Point Solution brings together electric fencing, CCTV
