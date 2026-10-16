@@ -265,16 +265,23 @@ function ContactPage() {
 
           {/* Form */}
           <div className="min-w-0 p-5 sm:p-8 lg:p-10">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Book Your{" "}
-                <span className="text-primary">Free Site Survey</span>
-              </h3>
+            
 
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Fill in your details and select the services you need.
-              </p>
-            </div>
+<div className="mb-6">
+  <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+    Send Us a Message
+  </p>
+
+  <h3 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+    Book Your <span className="text-primary">Free Site Survey</span>
+  </h3>
+
+  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+    Fill in your details to schedule your site survey.
+  </p>
+</div>
+
+
 
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Name and phone */}
@@ -369,49 +376,62 @@ function ContactPage() {
                 />
               </div>
 
-              {/* Services */}
-              <fieldset>
-                <legend className={labelClass}>
-                  Services Required{" "}
-                  <span className="text-primary">*</span>
-                </legend>
+              
+{/* Services dropdown */}
+<div>
+  <label htmlFor="survey-services" className={labelClass}>
+    Services Required <span className="text-primary">*</span>
+  </label>
 
-                <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                  Select one or more services.
-                </p>
+  <div className="relative mt-2">
+    <select
+      id="survey-services"
+      value=""
+      onChange={(event) => {
+        const service = event.target.value;
+        if (service) toggleService(service);
+      }}
+      className={fieldClass}
+    >
+      <option value="" disabled>
+        Select services
+      </option>
+      {services.map((service) => (
+        <option key={service} value={service}>
+          {service}
+        </option>
+      ))}
+    </select>
+  </div>
 
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  {services.map((service) => {
-                    const checked = selectedServices.includes(service);
+  {selectedServices.length > 0 && (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {selectedServices.map((service) => (
+        <span
+          key={service}
+          className="inline-flex items-center gap-2 rounded-md border border-primary/20 bg-primary/5 px-3 py-1.5 text-sm font-medium text-foreground"
+        >
+          {service}
+          <button
+            type="button"
+            onClick={() => toggleService(service)}
+            aria-label={`Remove ${service}`}
+            className="font-bold text-primary hover:opacity-70"
+          >
+            ×
+          </button>
+        </span>
+      ))}
+    </div>
+  )}
 
-                    return (
-                      <label
-                        key={service}
-                        className={`flex cursor-pointer items-center gap-3 rounded-md border p-3.5 text-sm font-medium transition-colors ${
-                          checked
-                            ? "border-primary bg-primary/5 text-foreground"
-                            : "border-border bg-background text-foreground hover:border-primary/50"
-                        }`}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={() => toggleService(service)}
-                          className="size-4 shrink-0 accent-primary"
-                        />
+  {serviceError && (
+    <p role="alert" className="mt-2 text-sm text-destructive">
+      Please select at least one service.
+    </p>
+  )}
+</div>
 
-                        <span>{service}</span>
-                      </label>
-                    );
-                  })}
-                </div>
-
-                {serviceError && (
-                  <p role="alert" className="mt-2 text-sm text-destructive">
-                    Please select at least one service.
-                  </p>
-                )}
-              </fieldset>
 
               {/* Optional additional details */}
               <div>
