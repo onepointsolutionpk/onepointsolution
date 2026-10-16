@@ -114,7 +114,7 @@ About <span className="text-primary">Us</span>
         Advanced Security Solutions for Homes and Businesses
       </h2>
 
-      <div className="mt-5 space-y-2 text-sm leading-8 text-muted-foreground sm:text-base">
+      <div className="mt-5 space-y-4 text-sm leading-8 text-muted-foreground sm:text-base">
         <p>
           One Point Solution provides security solutions for residential,
           commercial and industrial properties across Pakistan. Our
@@ -150,7 +150,7 @@ About <span className="text-primary">Us</span>
   </section>
 
       {/* CALL BUTTON */}
-<div className="flex justify-center px-5 py-1">
+<div className="flex justify-center px-5 pt-0 pb-1">
   <a
     href="tel:+923265284800"
     className="inline-flex items-center justify-center gap-2.5 rounded-full bg-blue-600 px-5 py-2.5 text-white shadow-sm transition-colors duration-300 hover:bg-blue-700"
