@@ -82,7 +82,7 @@ icon: BellRing,
 return (
 <main className="overflow-hidden">
 {/* ABOUT US INTRODUCTION */}
-<section className={`${container} pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20`}>
+<section className={`${container} pt-8 pb-0 sm:pt-10 sm:pb-0 lg:pt-12 lg:pb-0`}>
 {/* Page Heading */}
 <div className="text-center">
 <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -150,7 +150,7 @@ About <span className="text-primary">Us</span>
   </section>
 
       {/* CALL BUTTON */}
-<div className="flex justify-center px-5 pt-0 pb-1">
+<div className="flex justify-center px-5 py-0">
   <a
     href="tel:+923265284800"
     className="inline-flex items-center justify-center gap-2.5 rounded-full bg-blue-600 px-5 py-2.5 text-white shadow-sm transition-colors duration-300 hover:bg-blue-700"
@@ -161,6 +161,7 @@ About <span className="text-primary">Us</span>
     </span>
   </a>
 </div>
+      
   {/* WHY CHOOSE US */}
   <section className="border-y border-border bg-surface">
     <div
