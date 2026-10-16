@@ -1,3 +1,4 @@
+import { PhoneCall } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
 ArrowRight,
@@ -148,6 +149,31 @@ About <span className="text-primary">Us</span>
     </div>
   </section>
 
+      {/* CALL US CTA */}
+<section className="px-4 py-10 sm:py-14 lg:py-16">
+  <div className="mx-auto max-w-7xl">
+    <div className="flex flex-col items-center justify-between gap-6 rounded-xl border border-blue-100 bg-slate-50 px-6 py-8 text-center shadow-sm sm:flex-row sm:px-10 sm:py-10 sm:text-left">
+      <div>
+        <h3 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+          Need Professional Security Solutions?
+        </h3>
+        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
+          Contact our team to discuss your security requirements.
+        </p>
+      </div>
+
+      <a
+        href="tel:+923265284800"
+        className="inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-white shadow-md transition-colors duration-300 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200"
+      >
+        <PhoneCall className="h-5 w-5 text-white" />
+        <span className="text-lg font-bold tracking-wide sm:text-xl">
+          0326-5284800
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
   {/* WHY CHOOSE US */}
   <section className="border-y border-border bg-surface">
     <div
