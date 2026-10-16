@@ -97,9 +97,6 @@ function ContactPage() {
     <main className="pb-14 sm:pb-20">
       {/* Page heading */}
       <section className="mx-auto max-w-[1180px] px-5 pb-7 pt-9 sm:px-8 sm:pb-9 sm:pt-12">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
-          ONE POINT SOLUTION
-        </p>
 
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Contact <span className="text-primary">Us</span>
@@ -222,46 +219,6 @@ function ContactPage() {
         className="mx-auto max-w-[1180px] px-5 sm:px-8"
       >
         <div className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm lg:grid-cols-[0.78fr_1.22fr]">
-          {/* Form introduction */}
-          <div className="bg-primary p-6 text-primary-foreground sm:p-8 lg:p-10">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/75">
-              LET'S GET STARTED
-            </p>
-
-            <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-3xl">
-              Send Us a Message
-            </h2>
-
-            <div className="mt-4 h-1 w-12 rounded-full bg-white" />
-
-            <p className="mt-4 text-sm leading-7 text-white/85">
-              Tell us about your property and security requirements. Our team
-              can use these details to understand your needs and arrange the
-              next step.
-            </p>
-
-            <div className="mt-8 flex items-start gap-3 border-t border-white/20 pt-5">
-              <CalendarDays className="mt-0.5 size-5 shrink-0" />
-
-              <div>
-                <p className="font-semibold">Choose Your Preferred Date</p>
-                <p className="mt-1 text-sm leading-6 text-white/80">
-                  Select a suitable date for your site survey.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-5 flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 size-5 shrink-0" />
-
-              <div>
-                <p className="font-semibold">Free Site Survey</p>
-                <p className="mt-1 text-sm leading-6 text-white/80">
-                  Submit your details to start your booking request.
-                </p>
-              </div>
-            </div>
-          </div>
 
           {/* Form */}
           <div className="min-w-0 p-5 sm:p-8 lg:p-10">
