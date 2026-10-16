@@ -220,8 +220,12 @@ function ContactPage() {
       >
         <div className="grid overflow-hidden rounded-xl border border-border bg-card shadow-sm lg:grid-cols-[0.78fr_1.22fr]">
 
-          {/* Form */}
-          <div className="min-w-0 p-5 sm:p-8 lg:p-10">
+         {/* Form */}
+<div>
+  {/* Blue element above the form */}
+  <div className="h-1.5 w-full rounded-t-xl bg-primary" />
+
+  <div className="min-w-0 rounded-b-xl border border-border bg-card p-5 shadow-sm sm:p-8 lg:p-10">
             
 
 <div className="mb-6">
