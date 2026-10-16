@@ -411,37 +411,57 @@ function FireAlarmContent() {
       </section>
 
       {/* PROPERTY TYPES */}
-      <section className={`${container} py-16`}>
-  <SectionHeading
-    title="Fire Alarm Solutions for Different Properties"
-    description="Detection and notification planning should reflect each building's occupancy, environment and operational needs."
-  />
+      <section className="border-y border-border bg-surface">
+  <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+    <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+      Fire Alarm Solutions for Different Properties
+    </h2>
 
-  <div className="mt-10 grid gap-6 md:grid-cols-3">
-    <div className="rounded-xl border p-6">
-      <h3 className="text-xl font-bold">Residential</h3>
-      <p className="mt-3 text-muted-foreground">
-        Homes and shared residential areas where the proposed fire alarm
-        system is suitable.
-      </p>
-    </div>
+    <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+      Detection and notification planning should reflect each building's
+      occupancy, environment and operational needs.
+    </p>
 
-    <div className="rounded-xl border p-6">
-      <h3 className="text-xl font-bold">Commercial</h3>
-      <p className="mt-3 text-muted-foreground">
-        Offices, shops and other occupied business premises.
-      </p>
-    </div>
+    <div className="mt-8 grid gap-5 md:grid-cols-3">
+      {[
+        {
+          title: "Residential",
+          description:
+            "Fire alarm solutions for homes and shared residential areas, based on the property's requirements.",
+          Icon: Home,
+        },
+        {
+          title: "Commercial",
+          description:
+            "Fire detection and notification solutions for offices, shops and other occupied business premises.",
+          Icon: Building2,
+        },
+        {
+          title: "Industrial",
+          description:
+            "Fire detection solutions for warehouses and industrial facilities, selected according to local operating conditions.",
+          Icon: Factory,
+        },
+      ].map(({ title, description, Icon }) => (
+        <article
+          key={title}
+          className="min-w-0 border border-border bg-background p-5 sm:p-6"
+        >
+          <Icon className="size-8 text-primary" aria-hidden="true" />
 
-    <div className="rounded-xl border p-6">
-      <h3 className="text-xl font-bold">Industrial</h3>
-      <p className="mt-3 text-muted-foreground">
-        Warehouses and industrial facilities, with detection selected
-        according to local operating conditions.
-      </p>
+          <h3 className="mt-4 text-lg font-bold text-foreground sm:text-xl">
+            {title}
+          </h3>
+
+          <p className="mt-2 text-sm leading-7 text-muted-foreground">
+            {description}
+          </p>
+        </article>
+      ))}
     </div>
   </div>
 </section>
+      
 
       {/* INSTALLATION PROCESS */}
       <section className={`${container} py-10 sm:py-14 lg:py-16`}>
