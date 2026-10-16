@@ -1,4 +1,3 @@
-
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -282,6 +281,7 @@ function AboutPage() {
           ))}
         </div>
       </section>
+    </main>
   );
 }
-
+  
