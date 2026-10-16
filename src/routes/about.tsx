@@ -110,7 +110,7 @@ About <span className="text-primary">Us</span>
       </p>
 
       <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-        Tech-Driven Protection for Your Home and Business
+        Advanced Security Solutions for Homes and Businesses
       </h2>
 
       <div className="mt-5 space-y-4 text-sm leading-8 text-muted-foreground sm:text-base">
