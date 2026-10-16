@@ -60,7 +60,6 @@ function AboutPage() {
       {/* PAGE INTRODUCTION */}
       <section className={`${container} pb-12 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12`}>
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary sm:text-sm">
 
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             About <span className="text-primary">Us</span>
