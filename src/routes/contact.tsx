@@ -39,9 +39,6 @@ function ContactPage() {
         <div className="mx-auto max-w-[1380px] px-4 py-7 sm:px-8 sm:py-9 lg:px-12 lg:py-10">
           {/* Section heading */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/75">
-              ONE POINT SOLUTION
-            </p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-primary-foreground sm:text-3xl">
               Get in Touch
             </h2>
@@ -143,9 +140,6 @@ function ContactPage() {
         className="mx-auto mt-10 grid max-w-[1180px] gap-7 px-5 sm:mt-14 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12"
       >
         <div className="pt-1">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            START YOUR PROJECT
-          </p>
 
           <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Request a <span className="text-primary">Quote</span>
