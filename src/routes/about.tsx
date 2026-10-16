@@ -1,31 +1,392 @@
+
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, MapPin, MessageCircle } from "lucide-react";
-import { PageHero } from "@/components/page-hero";
+import {
+  ArrowRight,
+  Check,
+  MapPin,
+  MessageCircle,
+  ShieldCheck,
+  Target,
+  Eye,
+  Building2,
+} from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { industries, offices, services, site } from "@/lib/site-data";
 import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/about")({ head: () => pageHead("About Us | One Point Solution Security Systems Pakistan", "Established in 2015, One Point Solution provides electric fencing, CCTV, gate automation and fire alarm solutions across Pakistan from three offices.", "/about", "website", site.displayImage), component: AboutPage });
-const container = "mx-auto max-w-[1180px] px-5 py-10 sm:px-8 sm:py-12";
+export const Route = createFileRoute("/about")({
+  head: () =>
+    pageHead(
+      "About Us | One Point Solution Security Systems Pakistan",
+      "Discover One Point Solution, providing electric fencing, CCTV cameras, gate automation and fire alarm solutions for residential, commercial and industrial properties across Pakistan.",
+      "/about",
+      "website",
+      site.displayImage
+    ),
+  component: AboutPage,
+});
+
+const container =
+  "mx-auto w-full max-w-[1180px] px-5 sm:px-8";
 
 function AboutPage() {
-  return <>
-    <PageHero eyebrow="One Point Solution · Established 2015" title="About Us" copy="Security solutions for the places people live, work and build. One Point Solution brings four core security services together for residential, commercial and industrial properties across Pakistan." />
-    <section className={`${container} grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-12`}>
-      <div className="min-w-0"><SectionHeading eyebrow="Who we are" title="One company. A considered approach to your security." /><p className="mt-5 text-sm leading-7 text-muted-foreground">Established in 2015, One Point Solution provides electric fencing, CCTV cameras, gate automation and fire alarm systems. From offices in Lahore, Islamabad and Bahawalpur, we discuss security requirements with customers across Pakistan and help shape a practical plan for each property.</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Every site has different boundaries, access points and daily routines. Our starting point is understanding those details, then discussing suitable equipment, installation requirements and the ways different systems can work together.</p><Button asChild variant="brand" className="mt-5"><Link to="/contact">Talk to Our Team <ArrowRight /></Link></Button></div>
-      <figure className="min-w-0"><img src={site.displayImage} alt="Genuine One Point Solution electric fencing installation around a residential property" className="h-auto max-h-[360px] w-full rounded-sm object-contain" width="1920" height="1440" /><figcaption className="mt-3 border-l-2 border-primary pl-3 text-xs leading-5 text-muted-foreground">Perimeter security installation by One Point Solution.</figcaption></figure>
-    </section>
-    <section className="border-y border-border bg-brand-soft"><div className={`${container} grid gap-8 md:grid-cols-2 md:gap-12`}><div><SectionHeading eyebrow="Company overview" title="Specialist services, connected by a practical plan" /><p className="mt-4 text-sm leading-7 text-muted-foreground">Perimeter deterrence, surveillance, controlled entry and early warning serve different purposes. We help customers consider those needs together, without treating any single system as a complete answer to every risk.</p></div><div className="border-l-2 border-primary pl-6"><h2 className="text-2xl font-bold">Our mission</h2><p className="mt-4 text-sm leading-7 text-muted-foreground">To help property owners make informed security decisions through clear advice, suitable equipment and thoughtful installation planning. Our focus is a solution that fits the premises and remains understandable to the people using it.</p></div></div></section>
-    <section className={container}><SectionHeading eyebrow="Our expertise" title="Four services. Clear purposes." /><div className="mt-7 grid gap-x-10 gap-y-7 sm:grid-cols-2">{services.map((service) => <div key={service.slug} className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-4 border-t border-border pt-5"><service.icon className="size-7 shrink-0 text-primary" /><div className="min-w-0"><h3 className="text-lg font-bold">{service.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{service.short}</p><Link to={service.path} className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-primary">Explore service <ArrowRight className="size-4" /></Link></div></div>)}</div></section>
-    <section className="bg-surface"><div className={container}><SectionHeading eyebrow="Across Pakistan" title="Security suited to your environment" /><div className="mt-7 grid gap-7 md:grid-cols-3">{industries.map((industry) => <div key={industry.title} className="min-w-0 border-t-2 border-primary pt-5"><industry.icon className="size-7 text-primary" /><h3 className="mt-4 text-lg font-bold">{industry.title}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{industry.copy}</p></div>)}</div></div></section>
-    <section className={container}><SectionHeading eyebrow="How we approach security" title="Clear decisions from the first discussion onward" /><div className="mt-7 grid gap-7 sm:grid-cols-2">{[
-      ["Understand the property", "We discuss the layout, boundary conditions, access points and the activities that matter to your security requirements."],
-      ["Specify suitable equipment", "Device capabilities, installation conditions and optional features are considered before a quotation is prepared."],
-      ["Plan installation quality", "Positioning, cabling, power and practical use are part of the installation discussion, rather than afterthoughts."],
-      ["Keep support straightforward", "Speak directly with our team about operation, maintenance needs and support arrangements for your chosen system."],
-    ].map(([title, copy]) => <div key={title} className="min-w-0"><h3 className="flex items-start gap-3 text-lg font-bold"><Check className="mt-1 size-5 shrink-0 text-primary" />{title}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{copy}</p></div>)}</div></section>
-    <section className="border-y border-border bg-surface"><div className={container}><SectionHeading eyebrow="Local points of contact" title="Our offices in Pakistan" /><div className="mt-7 grid gap-7 md:grid-cols-3">{offices.map((office) => <div key={office.city} className="min-w-0"><MapPin className="size-6 text-primary" /><h3 className="mt-3 text-lg font-bold">{office.city} Office</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{office.address}</p></div>)}</div></div></section>
-    <section className="bg-primary text-primary-foreground"><div className={`${container} grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center`}><div className="min-w-0"><h2 className="text-2xl font-bold">Let's discuss your property's security</h2><p className="mt-3 text-sm leading-7">Tell us what you need, and explore a suitable plan with our team.</p></div><div className="flex flex-wrap gap-3"><Button asChild variant="secondary"><Link to="/contact">Request a Quote <ArrowRight /></Link></Button><Button asChild variant="outline" className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href={site.whatsapp} target="_blank" rel="noreferrer">WhatsApp <MessageCircle /></a></Button></div></div></section>
-  </>;
+  const process = [
+    {
+      number: "01",
+      title: "Understand Your Property",
+      copy: "We begin by understanding your property's layout, access points, operating environment and security priorities.",
+    },
+    {
+      number: "02",
+      title: "Plan the Right Solution",
+      copy: "We discuss suitable equipment and system options according to the property's requirements and installation conditions.",
+    },
+    {
+      number: "03",
+      title: "Installation Planning",
+      copy: "Equipment positioning, cabling, power requirements and practical operation are considered during installation planning.",
+    },
+    {
+      number: "04",
+      title: "Ongoing Communication",
+      copy: "Our team can discuss system operation, maintenance requirements and available support arrangements for your selected solution.",
+    },
+  ];
+
+  return (
+    <main className="overflow-hidden">
+      {/* ABOUT IMAGE BLOCK — replace this image source when your
+          custom About Us image is ready. */}
+      <section className={`${container} pt-5 sm:pt-7 lg:pt-9`}>
+        <div className="group relative overflow-hidden bg-surface">
+          <img
+            src={site.displayImage}
+            alt="Security systems and perimeter protection by One Point Solution"
+            width="1920"
+            height="900"
+            fetchPriority="high"
+            className="h-[230px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] sm:h-[340px] lg:h-[430px]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        </div>
+      </section>
+
+      {/* PAGE INTRODUCTION */}
+      <section className={`${container} pb-12 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12`}>
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary sm:text-sm">
+            One Point Solution · Security Systems Pakistan
+          </p>
+
+          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            About <span className="text-primary">Us</span>
+          </h1>
+
+          <div className="mx-auto mt-5 h-1 w-16 bg-primary" />
+
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
+            Security solutions for the places people live, work and build.
+            One Point Solution brings together electric fencing, CCTV
+            cameras, gate automation and fire alarm systems for residential,
+            commercial and industrial properties across Pakistan.
+          </p>
+        </div>
+      </section>
+
+      {/* WHO WE ARE */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} grid gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-20`}>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              Who We Are
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
+              A thoughtful approach to{" "}
+              <span className="text-primary">property security.</span>
+            </h2>
+
+            <p className="mt-5 text-sm leading-8 text-muted-foreground sm:text-base">
+              One Point Solution provides security system options for
+              properties with different layouts, access requirements and
+              operating environments. Our services cover perimeter
+              protection, video surveillance, automated entry and fire
+              detection solutions.
+            </p>
+
+            <p className="mt-4 text-sm leading-8 text-muted-foreground sm:text-base">
+              Every property presents different considerations. We believe
+              security planning should start with understanding those needs,
+              discussing suitable equipment and considering how individual
+              systems can work together as part of a practical solution.
+            </p>
+
+            <Button asChild variant="brand" className="mt-7">
+              <Link to="/contact">
+                Talk to Our Team <ArrowRight className="ml-2 size-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <article className="border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:p-7">
+              <ShieldCheck className="size-8 text-primary" />
+              <h3 className="mt-5 text-lg font-bold">
+                Security-Focused
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Solutions selected around property requirements, site
+                conditions and practical security priorities.
+              </p>
+            </article>
+
+            <article className="border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:mt-8 sm:p-7">
+              <Target className="size-8 text-primary" />
+              <h3 className="mt-5 text-lg font-bold">
+                Purposeful Planning
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Clear consideration of equipment, installation needs and
+                the way each system will be used.
+              </p>
+            </article>
+
+            <article className="border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:p-7">
+              <Building2 className="size-8 text-primary" />
+              <h3 className="mt-5 text-lg font-bold">
+                Multiple Property Types
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Security options for residential, commercial and
+                industrial environments.
+              </p>
+            </article>
+
+            <article className="border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:mt-8 sm:p-7">
+              <Eye className="size-8 text-primary" />
+              <h3 className="mt-5 text-lg font-bold">
+                Clear Communication
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Understandable discussions about system options,
+                installation considerations and operation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPANY OVERVIEW AND MISSION */}
+      <section className={`${container} py-12 sm:py-16 lg:py-20`}>
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <SectionHeading
+              eyebrow="Our Approach"
+              title="Different systems. One considered security plan."
+            />
+            <p className="mt-5 text-sm leading-8 text-muted-foreground sm:text-base">
+              Electric fencing, CCTV surveillance, gate automation and
+              fire alarm systems serve different purposes. The right
+              combination depends on the building, its users and the risks
+              that need to be addressed.
+            </p>
+            <p className="mt-4 text-sm leading-8 text-muted-foreground sm:text-base">
+              Our approach is to help customers understand their options
+              and consider suitable solutions rather than assume one
+              system will address every security requirement.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            <article className="border-l-2 border-primary bg-surface p-6 sm:p-7">
+              <Target className="size-7 text-primary" />
+              <h3 className="mt-4 text-xl font-bold">Our Mission</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                To help customers make informed security decisions through
+                clear communication, suitable equipment options and
+                thoughtful installation planning.
+              </p>
+            </article>
+
+            <article className="border-l-2 border-primary bg-surface p-6 sm:p-7">
+              <Eye className="size-7 text-primary" />
+              <h3 className="mt-4 text-xl font-bold">Our Vision</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                To be a trusted security solutions provider by focusing
+                on practical planning, responsible recommendations and
+                lasting customer relationships.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR SERVICES */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-12 sm:py-16 lg:py-20`}>
+          <SectionHeading
+            eyebrow="Our Expertise"
+            title="Integrated security solutions for different needs"
+          />
+
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+            Explore our core security services for homes, business
+            premises and industrial facilities across Pakistan.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {services.map((service, index) => (
+              <article
+                key={service.slug}
+                className="group min-w-0 border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/5 sm:p-8"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <service.icon className="size-8 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  <span className="text-sm font-bold tracking-widest text-primary/60">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <h3 className="mt-5 text-xl font-bold">
+                  {service.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {service.short}
+                </p>
+
+                <Link
+                  to={service.path}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                >
+                  Explore Service
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className={`${container} py-12 sm:py-16 lg:py-20`}>
+        <SectionHeading
+          eyebrow="Who We Serve"
+          title="Security for the environments that matter"
+        />
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {industries.map((industry) => (
+            <article
+              key={industry.title}
+              className="border-t-2 border-primary pt-6 transition-all duration-300 hover:-translate-y-1"
+            >
+              <industry.icon className="size-8 text-primary" />
+              <h3 className="mt-5 text-xl font-bold">
+                {industry.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                {industry.copy}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* OUR PROCESS */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-12 sm:py-16 lg:py-20`}>
+          <SectionHeading
+            eyebrow="How We Work"
+            title="A clear process, from discussion to installation"
+          />
+
+          <div className="mt-9 grid gap-x-10 gap-y-9 sm:grid-cols-2">
+            {process.map((step) => (
+              <article key={step.number} className="flex gap-5">
+                <span className="shrink-0 text-3xl font-extrabold tracking-tight text-primary/70 sm:text-4xl">
+                  {step.number}
+                </span>
+                <div className="min-w-0 border-l border-border pl-5">
+                  <h3 className="text-lg font-bold">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {step.copy}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OUR OFFICES */}
+      <section className={`${container} py-12 sm:py-16 lg:py-20`}>
+        <SectionHeading
+          eyebrow="Our Presence"
+          title="Our offices in Pakistan"
+        />
+
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+          Connect with our team regarding your property's security
+          requirements and available solutions.
+        </p>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {offices.map((office) => (
+            <article
+              key={office.city}
+              className="border border-border p-6 transition-colors duration-300 hover:border-primary/60 sm:p-7"
+            >
+              <MapPin className="size-7 text-primary" />
+              <h3 className="mt-4 text-lg font-bold">
+                {office.city} Office
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                {office.address}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section className="bg-primary text-primary-foreground">
+        <div className={`${container} grid gap-6 py-12 sm:py-14 md:grid-cols-[minmax(0,1fr)_auto] md:items-center`}>
+          <div className="min-w-0">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground/75">
+              Let's Talk Security
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+              Let's discuss your property's security.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-primary-foreground/85 sm:text-base">
+              Tell us about your property and requirements. Our team can
+              help you explore suitable security system options.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="secondary">
+              <Link to="/contact">
+                Request a Quote
+                <ArrowRight className="ml-2 size-4" />
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="outline"
+              className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            >
+              <a href={site.whatsapp} target="_blank" rel="noreferrer">
+                WhatsApp
+                <MessageCircle className="ml-2 size-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
