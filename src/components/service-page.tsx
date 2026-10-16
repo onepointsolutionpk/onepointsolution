@@ -138,6 +138,474 @@ export function ServicePage({ service }: { service: Service }) {
     return <GateAutomationContent />;
   }
 
+  if (service.slug === "fire-alarm-systems") {
+  return <FireAlarmContent />;
+  }
+
+  
+function FireAlarmContent() {
+  const detail = serviceDetails["fire-alarm-systems"];
+
+  const systemTypes = [
+    {
+      icon: BellRing,
+      title: "Conventional Fire Alarm Systems",
+      copy: "Conventional systems organise detectors into zones. They may suit some smaller or simpler layouts, depending on the building design and project requirements.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Addressable Fire Alarm Systems",
+      copy: "Addressable systems can identify individual compatible devices at the control panel. They may be considered for larger or more complex premises.",
+    },
+    {
+      icon: Smartphone,
+      title: "Detection and Notification",
+      copy: "Compatible detectors, manual call points, sounders and control panels work together according to the selected system design.",
+    },
+  ];
+
+  const process = [
+    {
+      icon: ClipboardCheck,
+      title: "Understand the Building",
+      copy: "Discuss the property layout, occupancy, room usage and the areas requiring fire detection.",
+    },
+    {
+      icon: BellRing,
+      title: "Plan Detection Coverage",
+      copy: "Consider suitable detector types, device positions, alarm zones and notification requirements.",
+    },
+    {
+      icon: Wrench,
+      title: "Install the System",
+      copy: "Install the agreed devices, wiring and compatible control equipment according to the project plan.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Test and Handover",
+      copy: "Check system operation, discuss maintenance needs and explain the agreed operating arrangements.",
+    },
+  ];
+
+  return (
+    <main className="w-full min-w-0 overflow-x-clip bg-background">
+      {/* PAGE INTRO */}
+      <section className="px-4 pb-5 pt-10 text-center sm:px-6 sm:pb-6 sm:pt-14 lg:pt-16">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+            Fire Detection and Warning Solutions
+          </p>
+
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            Fire Alarm Systems{" "}
+            <span className="text-primary">Installation in Pakistan</span>
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+            One Point Solution discusses fire alarm system planning for
+            residential, commercial and industrial properties. Explore
+            detection options, alarm notification, installation planning
+            and maintenance considerations for your premises.
+          </p>
+        </div>
+      </section>
+
+      {/* BLUE HERO */}
+      <section className="bg-primary py-8 text-primary-foreground sm:py-12 lg:py-14">
+        <div className={`${container} grid min-w-0 items-center gap-7 sm:gap-9 lg:grid-cols-2 lg:gap-12`}>
+          <div className="order-2 min-w-0 lg:order-1">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/80 sm:text-sm">
+              Building Fire Detection
+            </p>
+
+            <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
+              Early Warning Starts with Thoughtful Detection Planning
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-primary-foreground/90 sm:text-base sm:leading-8">
+              A properly planned fire alarm system helps alert occupants
+              when connected detection devices identify specified fire
+              conditions. Detector selection and placement depend on
+              building layout, environmental conditions and how spaces
+              are used.
+            </p>
+
+            <p className="mt-3 text-sm leading-7 text-primary-foreground/90 sm:text-base sm:leading-8">
+              One Point Solution can discuss suitable detection devices,
+              control panels, alarm notification and installation
+              requirements before preparing a project-specific quotation.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button asChild variant="secondary" className="min-h-11">
+                <Link to="/contact">
+                  Discuss Your Requirements
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                className="min-h-11 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
+                <a
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Discuss fire alarm systems on WhatsApp"
+                >
+                  
+<span className="mr-2 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className="size-5"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.15 1.6 5.96L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.47-8.44ZM12.1 21.77a9.88 9.88 0 0 1-5.03-1.37l-.36-.21-3.74.98 1-3.65-.24-.38a9.85 9.85 0 1 1 8.37 4.63Zm5.41-7.39c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35Z" />
+  </svg>
+</span>
+  
+                  WhatsApp Us
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <figure className="order-1 min-w-0 lg:order-2">
+            <div className="overflow-hidden rounded-2xl border border-white/20 shadow-xl sm:rounded-3xl">
+              <img
+                src={detail.image}
+                alt={detail.alt}
+                className="aspect-[4/3] w-full object-cover object-center"
+                fetchPriority="high"
+              />
+            </div>
+
+            <figcaption className="mt-3 text-xs leading-5 text-primary-foreground/80 sm:text-sm">
+              Detector selection and alarm coverage should reflect
+              the premises and agreed system design.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* OVERVIEW */}
+      <section className={`${container} grid min-w-0 gap-8 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12`}>
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            Fire Alarm System Components and Coverage
+          </h2>
+
+          <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+            {detail.overview}
+          </p>
+
+          <a
+            href={site.phoneHref}
+            className="mt-5 inline-flex max-w-full items-center gap-2 break-words text-sm font-semibold text-primary"
+          >
+            <Phone className="size-4 shrink-0" />
+            Discuss your requirements: {site.phoneDisplay}
+          </a>
+        </div>
+
+        <div className="border-l-4 border-primary bg-surface p-5 sm:p-7">
+          <BellRing className="size-8 text-primary" aria-hidden="true" />
+
+          <h3 className="mt-4 text-xl font-bold text-foreground">
+            Match Detection to the Environment
+          </h3>
+
+          <p className="mt-3 text-sm leading-7 text-muted-foreground">
+            Smoke, heat, dust, steam, airflow and room usage can affect
+            detector suitability. Device positioning and system design
+            should be assessed for the actual building.
+          </p>
+        </div>
+      </section>
+
+      {/* SYSTEM TYPES */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+              Types of Fire Alarm Systems
+            </h2>
+
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              System selection depends on building size, layout,
+              intended coverage and the requirements established for
+              the project.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {systemTypes.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  key={item.title}
+                  className="min-w-0 border-t-2 border-primary bg-background p-5 sm:p-6"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-extrabold text-primary">
+                      0{index + 1}
+                    </span>
+
+                    <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Icon className="size-5" aria-hidden="true" />
+                    </span>
+                  </div>
+
+                  <h3 className="mt-4 text-lg font-bold text-foreground">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {item.copy}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            Fire Alarm Features and Installation Considerations
+          </h2>
+
+          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+            The final device list and available functions depend on the
+            selected equipment and project requirements.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {detail.features.map((feature, index) => (
+            <article
+              key={feature.title}
+              className="min-w-0 border-t-2 border-primary p-5 sm:p-6"
+            >
+              <span className="text-sm font-extrabold text-primary">
+                0{index + 1}
+              </span>
+
+              <h3 className="mt-3 text-lg font-bold text-foreground">
+                {feature.title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                {feature.copy}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* PROPERTY TYPES */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-10 sm:py-14 lg:py-16`}>
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            Fire Alarm Solutions for Different Properties
+          </h2>
+
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+            Detection and notification planning should reflect the
+            building's occupancy, environment and operational needs.
+          </p>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {detail.applications.map((application, index) => {
+              const Icon = [Home, Building2, Factory][index] ?? BellRing;
+
+              return (
+                <article
+                  key={application}
+                  className="min-w-0 border border-border bg-background p-5 sm:p-6"
+                >
+                  <Icon className="size-8 text-primary" aria-hidden="true" />
+
+                  <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                    {application}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* INSTALLATION PROCESS */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+            Our Fire Alarm Installation Process
+          </h2>
+
+          <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+            A structured planning process helps align detection devices,
+            alarm notification and installation work with the project.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          {process.map((step, index) => {
+            const Icon = step.icon;
+
+            return (
+              <article key={step.title} className="min-w-0">
+                <div className="flex items-center gap-3">
+                  <span className="text-sm font-extrabold text-primary">
+                    0{index + 1}
+                  </span>
+
+                  <span className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </span>
+                </div>
+
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {step.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                  {step.copy}
+                </p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* COST */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} grid min-w-0 gap-8 py-10 sm:py-14 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:gap-12`}>
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+              Fire Alarm Installation Cost in Pakistan
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              Fire alarm installation cost depends on building size,
+              detector quantity and type, control panel, wiring,
+              notification devices, site conditions and the proposed
+              system design. Conventional and addressable arrangements
+              may have different equipment and installation needs.
+            </p>
+
+            <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+              A property-specific assessment helps define the required
+              equipment and work. The quotation should identify included
+              devices, installation scope, testing arrangements and any
+              applicable warranty terms.
+            </p>
+          </div>
+
+          <div className="border-l-4 border-primary bg-background p-5 sm:p-7">
+            <ClipboardCheck className="size-8 text-primary" aria-hidden="true" />
+
+            <h3 className="mt-4 text-xl font-bold text-foreground">
+              What to Confirm in Your Quote
+            </h3>
+
+            <ul className="mt-4 space-y-3">
+              {[
+                "Proposed system type and control panel",
+                "Detector locations and device quantities",
+                "Alarm notification and wiring scope",
+                "Testing, maintenance and warranty arrangements",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 size-5 shrink-0 text-primary" aria-hidden="true" />
+                  <span className="text-sm leading-6 text-muted-foreground">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* MAINTENANCE */}
+      <section className={`${container} py-10 sm:py-14 lg:py-16`}>
+        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+          Fire Alarm Testing and Maintenance
+        </h2>
+
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+          Regular inspection and testing help identify faults and maintain
+          system readiness. The appropriate maintenance plan depends on
+          the installed equipment and applicable building requirements.
+        </p>
+
+        <div className="mt-7 grid gap-4 sm:grid-cols-2">
+          {[
+            "Arrange inspection and functional testing according to the equipment guidance.",
+            "Check reported faults and the condition of backup batteries where fitted.",
+            "Keep detectors and notification devices accessible for inspection.",
+            "Document maintenance and address faults without unnecessary delay.",
+          ].map((item) => (
+            <div key={item} className="flex min-w-0 items-start gap-3">
+              <CheckCircle2 className="mt-1 size-5 shrink-0 text-primary" aria-hidden="true" />
+              <p className="text-sm leading-7 text-muted-foreground">
+                {item}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-5 text-sm leading-7 text-muted-foreground">
+          A fire alarm provides warning; it does not extinguish a fire or
+          replace evacuation procedures, fire prevention measures or other
+          required life-safety provisions.
+        </p>
+      </section>
+
+      {/* FINAL COVERAGE SECTION — NO FAQ OR BOTTOM CTA */}
+      <section className="border-y border-border bg-surface">
+        <div className={`${container} py-9 sm:py-11`}>
+          <div className="flex min-w-0 items-start gap-4">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <MapPin className="size-5" aria-hidden="true" />
+            </span>
+
+            <div className="min-w-0">
+              <h2 className="text-xl font-bold text-primary sm:text-2xl">
+                Fire Alarm System Services Across Pakistan
+              </h2>
+
+              <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">
+                Contact One Point Solution to discuss fire alarm system
+                requirements for your residential, commercial or industrial
+                premises. Site visits and service availability should be
+                confirmed for your city and project.
+              </p>
+
+              <a
+                href={site.phoneHref}
+                className="mt-4 inline-flex max-w-full items-center gap-2 break-words text-sm font-semibold text-primary"
+              >
+                <Phone className="size-4 shrink-0" aria-hidden="true" />
+                {site.phoneDisplay}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+
   function GateAutomationContent() {
   const detail = serviceDetails["gate-automation"];
 
