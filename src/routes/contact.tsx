@@ -420,10 +420,10 @@ function ContactPage() {
               >
                 Book Now
               </button>
-            </form>
+             </form>
           </div>
         </div>
       </section>
     </main>
   );
-        }
+}
