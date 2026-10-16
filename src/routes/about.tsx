@@ -80,8 +80,8 @@ icon: BellRing,
 
 return (
 <main className="overflow-hidden">
-{/* ABOUT US INTRODUCTION /}
-<section className={"${container} pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20"}>
+{/* ABOUT US INTRODUCTION */}
+<section className={`${container} pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20`}>
 {/ Page Heading */}
 <div className="text-center">
 <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -147,7 +147,6 @@ About <span className="text-primary">Us</span>
       </div>
     </div>
   </section>
-</main>
 
   {/* WHY CHOOSE US */}
   <section className="border-y border-border bg-surface">
@@ -372,6 +371,5 @@ About <span className="text-primary">Us</span>
     </div>
   </section>
 </main>
-
 );
 }
