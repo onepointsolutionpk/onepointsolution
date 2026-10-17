@@ -1,4 +1,3 @@
-
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, CheckCircle2, Clock3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,13 +27,6 @@ export function ArticlePage({ slug }: { slug: string }) {
   return (
     <article className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-4xl px-5 pt-1 sm:px-8">
-        <Link
-          to="/blog"
-          className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-        >
-          <ArrowLeft className="size-4" />
-          All articles
-        </Link>
 
         {image && (
           <figure className="mb-7 w-full overflow-hidden rounded-xl border border-border bg-background">
@@ -128,16 +120,6 @@ export function ArticlePage({ slug }: { slug: string }) {
             </Button>
           </div>
         </section>
-
-        <div className="mt-8 border-t border-border pt-6">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 font-semibold text-primary hover:underline"
-          >
-            <ArrowLeft className="size-4" />
-            Back to all blogs
-          </Link>
-        </div>
       </div>
     </article>
   );
