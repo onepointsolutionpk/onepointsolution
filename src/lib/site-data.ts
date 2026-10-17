@@ -130,36 +130,44 @@ export const brandLogos = brands.flatMap((item) =>
   "image" in item ? [{ name: item.name, image: item.image }] : [],
 );
 
+
 export const articles = [
   {
     slug: "electric-fencing-for-homes-in-pakistan",
-    path: "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_080032_0000.png",
+    path: "/blog/electric-fencing-for-homes-in-pakistan",
     title: "Electric Fencing for Homes in Pakistan: Benefits, Safety and Installation",
-    excerpt: "What homeowners should consider when adding electric fencing to a wider residential security plan.",
+    excerpt:
+      "What homeowners should consider when adding electric fencing to a wider residential security plan.",
     service: "Electric Fencing",
+    image: electricFenceBlogImage,
   },
   {
     slug: "choosing-the-right-cctv-camera-system",
-    path: "@/assets/Electric Fencing for Homes in Pakistan Benefits, Safety and Installation_20261017_085537_0000.png",
+    path: "/blog/choosing-the-right-cctv-camera-system",
     title: "How to Choose the Right CCTV Camera System for Your Property",
-    excerpt: "A practical look at coverage, camera placement, image needs and everyday monitoring.",
+    excerpt:
+      "A practical look at coverage, camera placement, image quality and everyday monitoring.",
     service: "CCTV Cameras",
+    image: cctvBlogImage,
   },
   {
     slug: "gate-automation-installation-considerations",
     path: "/blog/gate-automation-installation-considerations",
     title: "Gate Automation: What to Consider Before Installing an Automatic Gate",
-    excerpt: "Gate type, available movement, traffic patterns and controls all shape a suitable installation.",
+    excerpt:
+      "Gate type, available movement, traffic patterns and controls all shape a suitable installation.",
     service: "Gate Automation",
   },
   {
     slug: "fire-alarm-systems-for-commercial-buildings",
     path: "/blog/fire-alarm-systems-for-commercial-buildings",
     title: "Fire Alarm Systems for Commercial Buildings: A Practical Guide",
-    excerpt: "Key questions for businesses preparing to discuss fire detection and alarm coverage.",
+    excerpt:
+      "Key questions for businesses preparing to discuss fire detection and alarm coverage.",
     service: "Fire Alarm Systems",
   },
 ] as const;
+
 
 export const stats = [
   { value: "7+", label: "Years Experience" },
