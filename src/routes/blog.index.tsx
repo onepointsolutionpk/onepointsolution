@@ -1,4 +1,4 @@
-
+import electricFenceBlogImage from "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_080032_0000.png";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
@@ -34,12 +34,13 @@ function BlogPage() {
                 className="mb-5 block overflow-hidden rounded-2xl border border-border bg-background"
               >
                 <div className="aspect-[16/9] w-full">
-                  {/* Blog image will be connected from article data */}
-                  <div
-                    aria-hidden="true"
-                    className="h-full w-full bg-muted"
-                  />
-                </div>
+  <img
+    src={electricFenceBlogImage}
+    alt="Electric fencing installed around a residential property in Pakistan"
+    className="h-full w-full object-cover"
+    loading="lazy"
+  />
+</div>
               </Link>
 
               <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground sm:text-base">
