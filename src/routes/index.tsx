@@ -171,11 +171,11 @@ function HomePage() {
                   aria-label={`Read ${article.title}`}
                   className="mb-5 block overflow-hidden rounded-2xl border border-border bg-background"
                 >
-                  <div className="aspect-[16/9] w-full">
+                  <div className="w-full overflow-hidden">
   <img
     src={electricFenceBlogImage}
     alt="Electric fencing installed around a residential property in Pakistan"
-    className="h-full w-full object-cover"
+    className="block h-auto w-full object-contain"
     loading="lazy"
   />
 </div>
