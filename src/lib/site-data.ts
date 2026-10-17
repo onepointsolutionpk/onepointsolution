@@ -1,6 +1,7 @@
 import electricFenceBlogImage from "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_080032_0000.png";
 import cctvBlogImage from "@/assets/Electric Fencing for Homes in Pakistan Benefits, Safety and Installation_20261017_085537_0000.png";
 import gateAutomationImage from "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_093829_0000.png";
+import fireAlarmImage from "";
 import {
   BellRing,
   Cctv,
@@ -166,6 +167,7 @@ export const articles = [
     excerpt:
       "Key questions for businesses preparing to discuss fire detection and alarm coverage.",
     service: "Fire Alarm Systems",
+    image: fireAlarmImage,
   },
 ] as const;
 
