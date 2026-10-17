@@ -26,7 +26,7 @@ export function ArticlePage({ slug }: { slug: string }) {
 
   return (
     <article className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-4xl px-5 pt-2 sm:px-8">
+      <div className="mx-auto max-w-4xl px-5 pt-4 sm:px-8">
 
         {image && (
           <figure className="mb-7 w-full overflow-hidden rounded-xl border border-border bg-background">
