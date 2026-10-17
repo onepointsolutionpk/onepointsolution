@@ -1,6 +1,6 @@
 import electricFenceBlogImage from "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_080032_0000.png";
-
 import cctvBlogImage from "@/assets/Electric Fencing for Homes in Pakistan Benefits, Safety and Installation_20261017_085537_0000.png";
+import gateAutomationImage from "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_093829_0000.png";
 import {
   BellRing,
   Cctv,
@@ -157,6 +157,7 @@ export const articles = [
     excerpt:
       "Gate type, available movement, traffic patterns and controls all shape a suitable installation.",
     service: "Gate Automation",
+    image: gateAutomationImage,
   },
   {
     slug: "fire-alarm-systems-for-commercial-buildings",
