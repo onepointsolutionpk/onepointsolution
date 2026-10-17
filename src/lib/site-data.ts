@@ -1,3 +1,6 @@
+import electricFenceBlogImage from "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_080032_0000.png";
+
+import cctvBlogImage from "@/assets/Electric Fencing for Homes in Pakistan Benefits, Safety and Installation_20261017_085537_0000.png";
 import {
   BellRing,
   Cctv,
@@ -137,7 +140,7 @@ export const articles = [
   },
   {
     slug: "choosing-the-right-cctv-camera-system",
-    path: "/blog/choosing-the-right-cctv-camera-system",
+    path: "@/assets/Electric Fencing for Homes in Pakistan Benefits, Safety and Installation_20261017_085537_0000.png",
     title: "How to Choose the Right CCTV Camera System for Your Property",
     excerpt: "A practical look at coverage, camera placement, image needs and everyday monitoring.",
     service: "CCTV Cameras",
