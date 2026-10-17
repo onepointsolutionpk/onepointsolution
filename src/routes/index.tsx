@@ -187,18 +187,22 @@ function HomePage() {
                   <span>{article.service}</span>
                 </div>
 
-                <h3 className="text-xl font-semibold leading-snug tracking-tight sm:text-2xl">
-                  <Link
-                    to={article.path}
-                    className="transition-colors hover:text-primary"
-                  >
-                    {article.title}
-                  </Link>
-                </h3>
+                
+<h3 className="line-clamp-2 text-xl font-semibold leading-snug tracking-tight sm:text-2xl">
+  <Link
+    to={article.path}
+    className="transition-colors hover:text-primary"
+  >
+    {article.title}
+  </Link>
+</h3>
 
-                <p className="mt-4 text-base leading-7 text-muted-foreground">
-                  {article.excerpt}
-                </p>
+
+                
+<p className="mt-4 line-clamp-2 text-base leading-7 text-muted-foreground">
+  {article.excerpt}
+</p>
+
 
                 <Link
                   to={article.path}
