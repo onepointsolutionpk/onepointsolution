@@ -130,7 +130,7 @@ export const brandLogos = brands.flatMap((item) =>
 export const articles = [
   {
     slug: "electric-fencing-for-homes-in-pakistan",
-    path: "/blog/electric-fencing-for-homes-in-pakistan",
+    path: "@/assets/Electric Fencing for Homes in Pakistan_ Benefits, Safety and Installation_20261017_080032_0000.png",
     title: "Electric Fencing for Homes in Pakistan: Benefits, Safety and Installation",
     excerpt: "What homeowners should consider when adding electric fencing to a wider residential security plan.",
     service: "Electric Fencing",
