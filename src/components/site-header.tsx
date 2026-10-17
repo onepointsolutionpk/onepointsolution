@@ -150,8 +150,14 @@ export function SiteHeader() {
                   to={item.to}
                   onClick={closeMenus}
                   className="flex min-h-11 items-center whitespace-nowrap rounded-lg font-sans text-[14px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
-                  activeProps={{ className: "text-primary" }}
-                  activeOptions={{ exact: item.to === "/" }}
+                  
+activeProps={{
+  className: "text-primary",
+}}
+activeOptions={{
+  exact: true,
+}}
+
                 >
                   {item.label}
                 </Link>
