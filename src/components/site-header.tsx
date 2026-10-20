@@ -76,7 +76,7 @@ export function SiteHeader() {
         />
       )}
 
-      <div className="relative z-50 ml-[12px] mr-4 mt-3 mb-[1px] grid h-[58px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-4 shadow-sm sm:mx-6 sm:px-6 lg:mx-8 lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-6 xl:mx-auto xl:max-w-[1240px] xl:px-8">
+      <div className="relative z-50 ml-[12px] mr-4 mt-3 grid h-[62px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border border-border bg-background px-4 shadow-sm sm:mx-6 sm:px-6 lg:mx-8 lg:mt-4 lg:h-[64px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-6 xl:mx-auto xl:max-w-[1240px] xl:px-8">
         <Link
           to="/"
           aria-label="One Point Solution home"
