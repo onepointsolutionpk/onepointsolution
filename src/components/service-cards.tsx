@@ -27,7 +27,7 @@ export function ServiceCards() {
         {img ? <img src={img} alt={s.title} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><span className="font-sans text-6xl font-black tracking-tight text-primary">
   {String(services.findIndex((item) => item.slug === s.slug) + 1).padStart(2, "0")}
 </span></div>}
-        <span className="absolute bottom-0 left-4 flex size-12 translate-y-1/2 items-center justify-center rounded-2xl bg-primary font-sans text-sm font-extrabold tracking-wide text-primary-foreground shadow-md">
+        <span className="absolute bottom-0 left-4 flex size-12 translate-y-1/2 items-center justify-center rounded-full bg-primary font-sans text-sm font-extrabold tracking-wide text-primary-foreground shadow-md">
   {String(services.findIndex((item) => item.slug === s.slug) + 1).padStart(2, "0")}
 </span>
       </div>
