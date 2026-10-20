@@ -57,7 +57,7 @@ export function SiteHeader() {
     
 <header
   ref={headerRef}
-  className="sticky top-3 z-50 bg-transparent"
+  className="fixed top-3 z-50 bg-transparent"
 >
   
       <a
