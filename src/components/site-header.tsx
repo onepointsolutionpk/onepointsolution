@@ -1,5 +1,4 @@
-
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -11,9 +10,6 @@ export function SiteHeader() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const servicesTrigger = useRef<HTMLButtonElement>(null);
-  const pathname = useRouterState({
-    select: (state) => state.location.pathname,
-  });
 
   const closeMenus = () => {
     setOpen(false);
@@ -58,10 +54,12 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header
-      ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent"
-    >
+    
+<header
+  ref={headerRef}
+  className="sticky top-3 z-50 bg-transparent"
+>
+  
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:bg-background focus:p-3"
@@ -101,74 +99,71 @@ export function SiteHeader() {
             open ? "block mobile-nav-open" : "hidden"
           } absolute inset-x-0 top-full z-50 mt-2 rounded-xl border border-border bg-background px-5 py-2 shadow-md sm:inset-x-0 lg:static lg:mt-0 lg:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-3 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none xl:gap-4`}
         >
-          {navItems.map((item) => {
-            const isActive =
-              item.to === "/blog"
-                ? pathname === "/blog" || pathname === "/blog/"
-                : item.to === "/"
-                  ? pathname === "/"
-                  : item.to !== "/services" && pathname === item.to;
-
-            return (
-              <div
-                key={item.to}
-                className="relative nav-item"
-                onBlur={(event) => {
-                  if (!event.currentTarget.contains(event.relatedTarget)) {
-                    setServicesOpen(false);
-                  }
-                }}
-              >
-                {item.to === "/services" ? (
-                  <>
-                    <Button
-                      ref={servicesTrigger}
-                      variant="ghost"
-                      className="h-11 w-full justify-between rounded-lg px-0 font-sans text-[14px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
-                      aria-expanded={servicesOpen}
-                      aria-controls="services-submenu"
-                      onClick={() => setServicesOpen((value) => !value)}
-                    >
-                      Services
-                      <ChevronDown
-                        className={`size-4 transition-transform ${
-                          servicesOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </Button>
-
-                    {servicesOpen && (
-                      <div
-                        id="services-submenu"
-                        className="border-l border-border pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:w-56 lg:rounded-xl lg:border lg:bg-background lg:p-2 lg:shadow-md"
-                      >
-                        {services.map((service) => (
-                          <Link
-                            key={service.slug}
-                            to={service.path}
-                            onClick={closeMenus}
-                            className="block py-2.5 font-sans text-sm font-medium hover:text-primary lg:rounded-md lg:px-3 lg:hover:bg-accent"
-                          >
-                            {service.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.to}
-                    onClick={closeMenus}
-                    className={`flex min-h-11 items-center whitespace-nowrap rounded-lg font-sans text-[14px] font-semibold tracking-[0.01em] transition-colors hover:text-primary ${
-                      isActive ? "text-primary" : ""
-                    }`}
+          {navItems.map((item) => (
+            <div
+              key={item.to}
+              className="relative nav-item"
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setServicesOpen(false);
+                }
+              }}
+            >
+              {item.to === "/services" ? (
+                <>
+                  <Button
+                    ref={servicesTrigger}
+                    variant="ghost"
+                    className="h-11 w-full justify-between rounded-lg px-0 font-sans text-[14px] font-semibold tracking-[0.01em] hover:bg-transparent hover:text-primary lg:w-auto lg:gap-1"
+                    aria-expanded={servicesOpen}
+                    aria-controls="services-submenu"
+                    onClick={() => setServicesOpen((value) => !value)}
                   >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            );
-          })}
+                    Services
+                    <ChevronDown
+                      className={`size-4 transition-transform ${
+                        servicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </Button>
+
+                  {servicesOpen && (
+                    <div
+                      id="services-submenu"
+                      className="border-l border-border pl-4 lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-2 lg:w-56 lg:rounded-xl lg:border lg:bg-background lg:p-2 lg:shadow-md"
+                    >
+                      {services.map((service) => (
+                        <Link
+                          key={service.slug}
+                          to={service.path}
+                          onClick={closeMenus}
+                          className="block py-2.5 font-sans text-sm font-medium hover:text-primary lg:rounded-md lg:px-3 lg:hover:bg-accent"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={item.to}
+                  onClick={closeMenus}
+                  className="flex min-h-11 items-center whitespace-nowrap rounded-lg font-sans text-[14px] font-semibold tracking-[0.01em] transition-colors hover:text-primary"
+                  
+activeProps={{
+  className: "text-primary",
+}}
+activeOptions={{
+  exact: true,
+}}
+
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:col-start-3 lg:flex">
@@ -214,4 +209,4 @@ export function SiteHeader() {
       </div>
     </header>
   );
-}
+          }
