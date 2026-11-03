@@ -1715,7 +1715,7 @@ function ElectricFenceContent() {
         <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
           {detail.features.map((feature, index) => {
             const icons = [Fence, Smartphone, Wrench];
-            const Icon = icons[index % icons.length];
+            const Icon = icons[index % icons.length]!;
 
             return (
               <article
