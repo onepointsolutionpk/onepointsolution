@@ -1508,7 +1508,7 @@ function CctvContent() {
               <article key={step.title} className="min-w-0">
                 <div className="flex items-center gap-3">
                   <span className="text-sm font-extrabold text-primary">
-                    {step.number}
+                    {(step as { number?: string }).number}
                   </span>
                   <span className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Icon aria-hidden="true" className="size-5" />
@@ -1658,7 +1658,7 @@ function ElectricFenceContent() {
 
           <div className="mt-7 grid grid-cols-1 gap-3 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
             {electricFenceComponents.map((component, index) => {
-              const Icon = materialIcons[index % materialIcons.length];
+              const Icon = materialIcons[index % materialIcons.length]!;
 
               return (
                 <div
@@ -1715,7 +1715,7 @@ function ElectricFenceContent() {
         <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
           {detail.features.map((feature, index) => {
             const icons = [Fence, Smartphone, Wrench];
-            const Icon = icons[index % icons.length];
+            const Icon = icons[index % icons.length]!;
 
             return (
               <article

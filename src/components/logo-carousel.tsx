@@ -36,7 +36,7 @@ export function LogoCarousel({ title, logos, tone = "light" }: { title: string; 
         <div className="-ml-4 flex touch-pan-y">
           {logos.map((logo, index) => <div key={logo.name} className="min-w-0 flex-[0_0_50%] pl-4 sm:flex-[0_0_33.333%] lg:flex-[0_0_25%]" role="group" aria-roledescription="slide" aria-label={`${logo.name}, ${index + 1} of ${logos.length}`}>
             <div className="flex h-24 items-center justify-center px-3 sm:h-28">
-              <img src={logo.image} alt={`${logo.name} logo`} loading="lazy" className="h-auto max-h-20 w-auto max-w-full object-contain sm:max-w-[160px]" />
+              <img src={logo.image} alt={`${logo.name} logo`} loading="lazy" decoding="async" className="h-auto max-h-20 w-auto max-w-full object-contain sm:max-w-[160px]" />
             </div>
           </div>)}
         </div>
