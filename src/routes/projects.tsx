@@ -43,7 +43,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project2}
               alt="Electric fencing installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -51,7 +51,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project3}
               alt="Electric fencing installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -59,7 +59,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project4}
               alt="Electric fencing installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -67,7 +67,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project5}
               alt="Cctv Cameras installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -75,7 +75,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project6}
               alt="Cctv Cameras installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -83,7 +83,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project7}
               alt="Gate Automation installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -91,7 +91,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project8}
               alt="Gate Automation installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -99,7 +99,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project9}
               alt="Fire Alarm installation project"
               className="aspect-[4/3] w-full object-cover"
@@ -107,7 +107,7 @@ function ProjectsPage() {
             />
           </figure>
           <figure className="overflow-hidden rounded-sm border border-[#525252]">
-            <img
+            <img loading="lazy" decoding="async"
               src={project10}
               alt="Fire Alarm installation project"
               className="aspect-[4/3] w-full object-cover"
