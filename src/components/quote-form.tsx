@@ -20,4 +20,4 @@ export function QuoteForm({ contactPage = false }: { contactPage?: boolean } = {
   </form>;
 }
 
-function FormField({ label, error, children, fieldId }: { label: string; error: string | undefined; children: React.ReactNode; fieldId?: string }) { return <div><Label htmlFor={fieldId}>{label}<span className="text-primary"> *</span></Label>{children}{error && <p role="alert" className="mt-1 text-xs text-destructive">{error}</p>}</div>; }
+function FormField({ label, error, children, fieldId }: { label: string; error: string | undefined; children: React.ReactNode; fieldId?: string | undefined }) { return <div><Label htmlFor={fieldId}>{label}<span className="text-primary"> *</span></Label>{children}{error && <p role="alert" className="mt-1 text-xs text-destructive">{error}</p>}</div>; }
