@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { ImageLoadWatcher } from "@/components/image-load-watcher";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -129,6 +130,7 @@ function RootComponent() {
         <main id="main-content"><Outlet /></main>
         <SiteFooter />
         <WhatsAppFloat />
+        <ImageLoadWatcher />
       </div>
     </QueryClientProvider>
   );
