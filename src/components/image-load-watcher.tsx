@@ -4,15 +4,15 @@ import { useEffect } from "react";
 export function ImageLoadWatcher() {
   useEffect(() => {
     const mark = (img: HTMLImageElement) => {
-      if (img.dataset.img) return;
+      if (img.dataset["img"]) return;
       if (img.complete && img.naturalWidth > 0) return; // already shown, no flash
-      img.dataset.img = "loading";
+      img.dataset["img"] = "loading";
       const done = () => {
-        const finish = () => { img.dataset.img = "loaded"; };
+        const finish = () => { img.dataset["img"] = "loaded"; };
         img.decode ? img.decode().then(finish, finish) : finish();
       };
       img.addEventListener("load", done, { once: true });
-      img.addEventListener("error", () => { delete img.dataset.img; }, { once: true });
+      img.addEventListener("error", () => { delete img.dataset["img"]; }, { once: true });
     };
     const scan = (root: ParentNode) => root.querySelectorAll("img").forEach(mark);
     scan(document);
